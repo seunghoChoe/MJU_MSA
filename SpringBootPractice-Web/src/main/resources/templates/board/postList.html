@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<h1>MenuList</h1>
+		<div th:each="post : ${postList}" th:object="${post}" th:attr="data-postIndex=*{post_index}">
+			<span th:text="*{post_index}"></span>
+			<span th:text="*{post_title}"></span>
+			<span th:text="*{post_content}"></span>
+			<span th:text="*{post_created_date}"></span>
+		</div>
+</body>
+</html>
