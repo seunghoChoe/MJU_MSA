@@ -1,0 +1,26 @@
+CREATE DATABASE `Board_MSA` /*!40100 DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci */;
+
+CREATE TABLE `post` (
+  `post_id` int(11) NOT NULL,
+  `post_title` varchar(45) DEFAULT NULL,
+  `post_content` varchar(500) DEFAULT NULL,
+  `post_created_date` timestamp NULL DEFAULT NULL,
+  PRIMARY KEY (`post_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+
+INSERT INTO `Board_MSA`.`post`
+(`post_id`,`post_title`,`post_content`,`post_created_date`)
+VALUES(1, "sample1", "sample1", "2019-10-08");
+
+INSERT INTO `Board_MSA`.`post`
+(`post_id`,`post_title`,`post_content`,`post_created_date`)
+VALUES(2, "sample2", "sample2", "2019-10-10");
+
+INSERT INTO `Board_MSA`.`post`
+(`post_id`,`post_title`,`post_content`,`post_created_date`)
+VALUES(3, "sample3", "sample3", "2019-10-12");
+
+INSERT INTO `Board_MSA`.`post`
+(`post_id`,`post_title`,`post_content`,`post_created_date`)
+VALUES(5, "sample4", "sample4", "2019-10-14");

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+		PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+		"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+		
+<mapper namespace="mapper.BoardMapper">
+	<resultMap type="Post" id="Post">
+		<result property="post_index" column="post_index" javaType="java.lang.Integer" jdbcType="INTEGER"/>
+		<result property="post_title" column="post_title" javaType="java.lang.String" jdbcType="VARCHAR"/>
+		<result property="post_content" column="post_content" javaType="java.lang.String" jdbcType="VARCHAR"/>
+		<result property="post_created_date" column="post_created_date" javaType="java.time.LocalDateTime" jdbcType="TIMESTAMP"/>
+	</resultMap>
+	
+	<!-- 전체 메모 조회 -->
+	<select id="selectAllPost" resultMap="Post">
+	<![CDATA[
+		SELECT *
+		FROM Post
+	]]>
+	</select>
+	
+	
+</mapper>
