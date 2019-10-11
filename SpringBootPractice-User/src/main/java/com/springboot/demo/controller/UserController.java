@@ -24,7 +24,7 @@ public class UserController {
 	private UserService userService;
 
 	
-	@RequestMapping(value="/user/userList", method=RequestMethod.GET)
+	@RequestMapping(value="/users", method=RequestMethod.GET)
 	public ResponseEntity<List<User>> selectAllUser() {
 		logger.info("selectAllUser()");
 		List<User> userList = userService.selectAllUser();
@@ -32,11 +32,15 @@ public class UserController {
 		return reponseEntity;
 	}
 	
-	@RequestMapping(value="/user/userJoin", method=RequestMethod.POST)
-	public void userJoin(RequestEntity<User> requestEntity) {
+	@RequestMapping(value="/user", method=RequestMethod.POST)
+	public ResponseEntity<User> userJoin(RequestEntity<User> request) {
 		logger.info("userJoin()");
+		User newUser = request.getBody();
+		logger.info("newUser : {}", newUser);
+		logger.info("HttpMethodType : " + request.getMethod());
 		
-		User user = requestEntity.getBody();
-		userService.createUser(user);
+		userService.createUser(newUser);
+		ResponseEntity<User> response = new ResponseEntity<User>(newUser, HttpStatus.OK);
+		return response;
 	}
 }

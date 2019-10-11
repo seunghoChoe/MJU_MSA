@@ -26,7 +26,7 @@ public class RestaurantController {
 	@RequestMapping(value="/restaurant/restaurantList", method=RequestMethod.GET)
 	public ModelAndView restaurantList(ModelAndView modelAndView) {
 		logger.info("restaurantList()");
-		String url = "http://localhost:8888/restaurant/restaurant";
+		String url = "http://localhost:8892/restaurant-service/restaurant";
 		ResponseEntity<List<Restaurant>> response =
 				restTemplate.exchange(url,HttpMethod.GET, null, new ParameterizedTypeReference<List<Restaurant>>() {});
 		List<Restaurant> restaurantList = response.getBody();
@@ -39,7 +39,7 @@ public class RestaurantController {
 	@RequestMapping(value="/restaurant/menuList", method=RequestMethod.GET)
 	public ModelAndView menuList(ModelAndView modelAndView) {
 		logger.info("menuList()");
-		String url = "http://localhost:8888/restaurant/menu";
+		String url = "http://localhost:8892/restaurant-service/menu";
 		ResponseEntity<List<Menu>> response =
 				restTemplate.exchange(url,HttpMethod.GET, null, new ParameterizedTypeReference<List<Menu>>() {});
 		List<Menu> menuList = response.getBody();

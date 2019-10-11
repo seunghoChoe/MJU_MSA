@@ -14,7 +14,6 @@ import com.springboot.demo.model.Restaurant;
 import com.springboot.demo.service.RestaurantService;
 
 @RestController
-@RequestMapping(value="/restaurant")
 public class Controller {
 	
     private static final Logger logger = LoggerFactory.getLogger(Controller.class);

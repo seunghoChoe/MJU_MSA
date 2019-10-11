@@ -1,12 +1,11 @@
 package com.springboot.demo.controller;
 
+import java.util.Arrays;
 import java.util.List;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.core.ParameterizedTypeReference;
-import org.springframework.http.HttpMethod;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -26,10 +25,10 @@ public class UserController {
 	@RequestMapping(value="/user/userList", method=RequestMethod.GET)
 	public ModelAndView userList(ModelAndView modelAndView) {
 		logger.info("userList()");
-		String url = "http://localhost:8889/user/userList";
-		ResponseEntity<List<User>> response =
-				restTemplate.exchange(url,HttpMethod.GET, null, new ParameterizedTypeReference<List<User>>() {});
-		List<User> userList = response.getBody();
+		String url = "http://localhost:8892/user-service/users";
+		
+		User[] users = restTemplate.getForObject(url, User[].class);
+		List<User> userList = Arrays.asList(users);
 		
 		modelAndView.addObject("userList", userList);
 		modelAndView.setViewName("user/userList");
@@ -47,8 +46,12 @@ public class UserController {
 	@RequestMapping(value="/user/userJoin", method=RequestMethod.POST)
 	public ModelAndView userJoin(ModelAndView modelAndView, @ModelAttribute User user) {
 		logger.info("userJoin()");
-		String url = "http://localhost:8889/user/userJoin";
-		restTemplate.postForObject(url, user, String.class);
+		String url = "http://localhost:8892/user-service/user";
+		
+		ResponseEntity<User> response = restTemplate.postForEntity(url, user, User.class);
+		User newUser = response.getBody();
+		logger.info("responseUser : {}", newUser);
+		
 		modelAndView.addObject("message", "회원 가입 완료" );
 		modelAndView.setViewName("index");
 		return modelAndView;

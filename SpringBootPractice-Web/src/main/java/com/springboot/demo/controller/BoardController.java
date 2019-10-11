@@ -25,7 +25,7 @@ public class BoardController {
 	@RequestMapping(value="/board/postList", method=RequestMethod.GET)
 	public ModelAndView postList(ModelAndView modelAndView) {
 		logger.info("postList()");
-		String url = "http://localhost:8890/board/postList";
+		String url = "http://localhost:8892/board-service/posts";
 		ResponseEntity<List<Post>> response =
 				restTemplate.exchange(url,HttpMethod.GET, null, new ParameterizedTypeReference<List<Post>>() {});
 		List<Post> postList = response.getBody();
