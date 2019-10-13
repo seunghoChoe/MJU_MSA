@@ -14,19 +14,23 @@ import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.client.RestTemplate;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.springboot.demo.global.Constants;
 import com.springboot.demo.model.Menu;
 import com.springboot.demo.model.Restaurant;
 @RestController
 public class RestaurantController {
 	private static final Logger logger = LoggerFactory.getLogger(WebController.class);
+	private String baseURI = "http://" + Constants.API_GATEWAY_IPADDRESS + ":"
+			+ Constants.API_GATEWAY_PORTNUMBER + "/restaurant-service";
 	
 	@Autowired
 	private RestTemplate restTemplate;
 	
+	
 	@RequestMapping(value="/restaurant/restaurantList", method=RequestMethod.GET)
 	public ModelAndView restaurantList(ModelAndView modelAndView) {
 		logger.info("restaurantList()");
-		String url = "http://localhost:8892/restaurant-service/restaurant";
+		String url = baseURI + "/restaurant";
 		ResponseEntity<List<Restaurant>> response =
 				restTemplate.exchange(url,HttpMethod.GET, null, new ParameterizedTypeReference<List<Restaurant>>() {});
 		List<Restaurant> restaurantList = response.getBody();
@@ -39,7 +43,7 @@ public class RestaurantController {
 	@RequestMapping(value="/restaurant/menuList", method=RequestMethod.GET)
 	public ModelAndView menuList(ModelAndView modelAndView) {
 		logger.info("menuList()");
-		String url = "http://localhost:8892/restaurant-service/menu";
+		String url = baseURI+ "/menu";
 		ResponseEntity<List<Menu>> response =
 				restTemplate.exchange(url,HttpMethod.GET, null, new ParameterizedTypeReference<List<Menu>>() {});
 		List<Menu> menuList = response.getBody();

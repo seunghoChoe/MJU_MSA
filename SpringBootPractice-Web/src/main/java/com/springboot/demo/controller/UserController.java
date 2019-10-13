@@ -2,6 +2,7 @@ package com.springboot.demo.controller;
 
 import java.util.Arrays;
 import java.util.List;
+import com.springboot.demo.global.Constants;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -18,6 +19,8 @@ import com.springboot.demo.model.User;
 @RestController
 public class UserController {
 	private static final Logger logger = LoggerFactory.getLogger(WebController.class);
+	private String baseURI = "http://" + Constants.API_GATEWAY_IPADDRESS + ":"
+										+ Constants.API_GATEWAY_PORTNUMBER + "/user-service";
 	
 	@Autowired
 	private RestTemplate restTemplate;
@@ -25,9 +28,9 @@ public class UserController {
 	@RequestMapping(value="/user/userList", method=RequestMethod.GET)
 	public ModelAndView userList(ModelAndView modelAndView) {
 		logger.info("userList()");
-		String url = "http://localhost:8892/user-service/users";
+		String uri = baseURI + "/users";
 		
-		User[] users = restTemplate.getForObject(url, User[].class);
+		User[] users = restTemplate.getForObject(uri, User[].class);
 		List<User> userList = Arrays.asList(users);
 		
 		modelAndView.addObject("userList", userList);
@@ -46,9 +49,9 @@ public class UserController {
 	@RequestMapping(value="/user/userJoin", method=RequestMethod.POST)
 	public ModelAndView userJoin(ModelAndView modelAndView, @ModelAttribute User user) {
 		logger.info("userJoin()");
-		String url = "http://localhost:8892/user-service/user";
+		String uri = baseURI + "/user";
 		
-		ResponseEntity<User> response = restTemplate.postForEntity(url, user, User.class);
+		ResponseEntity<User> response = restTemplate.postForEntity(uri, user, User.class);
 		User newUser = response.getBody();
 		logger.info("responseUser : {}", newUser);
 		

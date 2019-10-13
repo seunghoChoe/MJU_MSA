@@ -14,10 +14,13 @@ import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.client.RestTemplate;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.springboot.demo.global.Constants;
 import com.springboot.demo.model.Post;
 @RestController
 public class BoardController {
 	private static final Logger logger = LoggerFactory.getLogger(WebController.class);
+	private String baseURI = "http://" + Constants.API_GATEWAY_IPADDRESS + ":"
+			+ Constants.API_GATEWAY_PORTNUMBER + "/board-service";
 	
 	@Autowired
 	private RestTemplate restTemplate;
@@ -25,7 +28,7 @@ public class BoardController {
 	@RequestMapping(value="/board/postList", method=RequestMethod.GET)
 	public ModelAndView postList(ModelAndView modelAndView) {
 		logger.info("postList()");
-		String url = "http://localhost:8892/board-service/posts";
+		String url = baseURI + "/posts";
 		ResponseEntity<List<Post>> response =
 				restTemplate.exchange(url,HttpMethod.GET, null, new ParameterizedTypeReference<List<Post>>() {});
 		List<Post> postList = response.getBody();
