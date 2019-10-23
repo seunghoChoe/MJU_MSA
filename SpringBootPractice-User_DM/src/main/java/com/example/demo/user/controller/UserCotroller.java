@@ -82,30 +82,4 @@ public class UserCotroller {
  * @throws Exception 
  *
  */
-
-	@RequestMapping(value = "/home", method = RequestMethod.GET)
-	public String index() throws Exception {
-		return "home";
-	}
-	
-	@RequestMapping("/update/{bno}") // 수정폼 호출
-	private String boardUpdateForm(@PathVariable int bno, Model model) throws Exception {
-
-		model.addAttribute("detail", mUserService.boardDetailService(bno));
-
-		return "update";
-	}
-
-	@RequestMapping("/updateProc")
-	private String boardUpdateProc(HttpServletRequest request) throws Exception {
-
-		UserVO board = new UserVO();
-//        board.setSubject(request.getParameter("subject"));
-//        board.setContent(request.getParameter("content"));
-//        board.setBno(Integer.parseInt(request.getParameter("bno")));
-
-		mUserService.boardUpdateService(board);
-
-		return "redirect:/detail/" + request.getParameter("bno");
-	}
 }

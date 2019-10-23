@@ -3,21 +3,18 @@ package com.example.demo.user.service;
 import java.io.PrintWriter;
 import java.util.List;
 
-import javax.inject.Inject;
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletResponse;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.example.demo.user.mapper.UserMapper;
 import com.example.demo.user.model.UserVO;
 
 @Service("com.example.demo.user.service.UserService")
 public class UserServiceImpl implements UserService{
 
-	@Resource(name = "com.example.demo.user.mapper.UserMapper")
-	UserMapper mUserMapper;
-	@Inject
+	@Autowired
 	UserDAO mUserDAO;
 	
 	// 로그인
@@ -57,28 +54,13 @@ public class UserServiceImpl implements UserService{
 	
 	public List<UserVO> userListService() throws Exception {
 
-		return mUserMapper.userList();
+		return mUserDAO.userList();
 	}
 
-	public UserVO boardDetailService(int bno) throws Exception {
 
-		return mUserMapper.boardDetail(bno);
+	public void userSignUpService(UserVO user) throws Exception {
+
+		mUserDAO.userInsert(user);
 	}
-
-	public int userSignUpService(UserVO user) throws Exception {
-
-		return mUserMapper.userInsert(user);
-	}
-
-	public int boardUpdateService(UserVO board) throws Exception {
-
-		return mUserMapper.boardUpdate(board);
-	}
-
-	public int boardDeleteService(int bno) throws Exception {
-
-		return mUserMapper.boardDelete(bno);
-	}
-
 
 }
