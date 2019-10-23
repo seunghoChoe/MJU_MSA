@@ -15,7 +15,7 @@
 	<select id="selectAllUser" resultMap="User">
 	<![CDATA[
 		SELECT *
-		FROM User
+		FROM user
 	]]>
 	</select>
 	
