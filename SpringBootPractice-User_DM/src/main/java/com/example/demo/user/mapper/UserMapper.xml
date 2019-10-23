@@ -5,6 +5,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 
 <mapper namespace="com.example.demo.user.mapper.UserMapper">
 
+	
 	<select id="userLogin" parameterType="String"
 		resultType="com.example.demo.user.model.UserVO">
 		<![CDATA[
