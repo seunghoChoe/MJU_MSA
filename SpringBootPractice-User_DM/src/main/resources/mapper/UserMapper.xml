@@ -4,6 +4,12 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 
 <mapper namespace="mapper.UserMapper">
+	<resultMap type="UserVO" id="UserVO">
+		<result property="user_id" column="user_id" javaType="java.lang.String" jdbcType="VARCHAR"/>
+		<result property="user_password" column="user_password" javaType="java.lang.String" jdbcType="VARCHAR"/>
+		<result property="user_name" column="user_name" javaType="java.lang.String" jdbcType="VARCHAR"/>
+		<result property="user_email" column="user_email" javaType="java.lang.String" jdbcType="VARCHAR"/>
+	</resultMap>
 	
 	<select id="userLogin" parameterType="String"
 		resultType="com.example.demo.user.model.UserVO">
@@ -31,9 +37,13 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	</select>
 
 	<insert id="userInsert"
-		parameterType="com.example.demo.user.model.UserVO">
-		INSERT INTO user('user_id', 'user_password', 'user_name', 'user_email')
-		VALUES(#{user_id}, #{user_password}, #{user_name}, #{user_email})
+		parameterType="UserVO">
+		<![CDATA[
+		INSERT INTO `User_MSA`.`user`
+		(`user_id`, `user_password`, `user_name`, `user_email`) 
+		VALUES
+		(#{user_id}, #{user_password}, #{user_name}, #{user_email});
+		]]>
 	</insert>
 
 	<!-- 이하 쓰이지 않는 코드(분석 목적으로 삭제 및 주석 처리하지 않음) -->
