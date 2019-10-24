@@ -11,7 +11,7 @@
 	<groupId>com.springboot.demo</groupId>
 	<artifactId>web-service</artifactId>
 	<version>0.1</version>
-	<packaging>jar</packaging>
+	<packaging>war</packaging>
 	<name>SpringBootPractice-Web</name>
 	<description>Demo project for Spring Boot</description>
 
@@ -36,6 +36,12 @@
 		<dependency>
 			<groupId>org.apache.tomcat.embed</groupId>
 			<artifactId>tomcat-embed-jasper</artifactId>
+			<exclusions>
+				<exclusion>
+					<groupId>org.eclipse.jdt</groupId>
+				    <artifactId>ecj</artifactId>
+				</exclusion>
+			</exclusions>
 		</dependency>
 		
 		<!-- 
@@ -47,7 +53,6 @@
 		    <groupId>org.eclipse.jdt.core.compiler</groupId>
 		    <artifactId>ecj</artifactId>
 		    <version>4.6.1</version>
-		    <scope>provided</scope>
 		</dependency>
 
 		
