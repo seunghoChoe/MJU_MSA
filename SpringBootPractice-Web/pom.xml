@@ -37,6 +37,20 @@
 			<groupId>org.apache.tomcat.embed</groupId>
 			<artifactId>tomcat-embed-jasper</artifactId>
 		</dependency>
+		
+		<!-- 
+			에러 발생시 추가 : java.lang.ClassNotFoundException : org/eclipse/jdt/internal/compiler/env/INameEnvironment
+			원인 : tomcat-embed-jasper 내에 있는 특정 컴파일러가 작동하지 않는 경우 
+			스택오버플로우 : https://stackoverflow.com/questions/55597988/there-was-an-unexpected-error-type-internal-server-error-status-500-org-ecli
+		 -->
+		<dependency>
+		    <groupId>org.eclipse.jdt.core.compiler</groupId>
+		    <artifactId>ecj</artifactId>
+		    <version>4.6.1</version>
+		    <scope>provided</scope>
+		</dependency>
+
+		
 		<dependency>
 			<groupId>org.apache.tiles</groupId>
 			<artifactId>tiles-core</artifactId>
