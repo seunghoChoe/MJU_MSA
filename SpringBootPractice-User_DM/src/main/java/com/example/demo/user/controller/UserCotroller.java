@@ -58,6 +58,10 @@ public class UserCotroller {
 	private ResponseEntity<UserVO> userSignUpProc(RequestEntity<UserVO> request) throws Exception {
 		
 		UserVO user = (UserVO)request.getBody();
+		System.out.println(user.getUser_id());
+		System.out.println(user.getUser_password());
+		System.out.println(user.getUser_email());
+		System.out.println(user.getUser_name());
 		
 		mUserService.userSignUpService(user);
 		ResponseEntity<UserVO> reponseEntity = new ResponseEntity<UserVO>(HttpStatus.OK);
