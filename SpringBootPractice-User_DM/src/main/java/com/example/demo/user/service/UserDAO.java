@@ -26,7 +26,7 @@ public class UserDAO {
 	}
 	
 	public void userInsert(UserVO user) {
-		sqlsession.selectList(MAPPER_NAME_SPACE + "userInsert", user);
+		sqlsession.insert(MAPPER_NAME_SPACE + "userInsert", user);
 	}
 
 	public List<UserVO> userList() {
