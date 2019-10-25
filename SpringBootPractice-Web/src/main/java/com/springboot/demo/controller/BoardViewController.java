@@ -37,7 +37,7 @@ public class BoardViewController {
         List<Post> postList = response.getBody();
 
         mv.addObject("postList", postList);
-        mv.setViewName("/board/posts");
+        mv.setViewName("/board/boards_test");
         return mv;
     }
 }

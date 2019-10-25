@@ -6,7 +6,7 @@
 
 <body>
 <div>
-    <p>${posts}</p>
+    <p>${postList}</p>
 </div>
 
 </body>
