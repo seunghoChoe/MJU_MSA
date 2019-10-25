@@ -50,10 +50,11 @@ public class UserCotroller {
 		
 	}
 	
-	//로그아웃 - 웹과 테스트필요
+	//로그아웃 - 웹과 테스트필요..
 	@RequestMapping(value = "/logout", method = RequestMethod.GET)
 	public void logout(HttpSession session) throws Exception {
 		session.invalidate();
+//		
 	}
 	
 	//회원가입
