@@ -13,6 +13,8 @@ import org.springframework.web.client.RestTemplate;
 import org.springframework.web.servlet.ModelAndView;
 import com.springboot.demo.model.User;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
+
+import javax.servlet.http.HttpServletRequest;
 import javax.validation.Valid;
 import static com.springboot.demo.global.Constants.SERVER_MESSAGE;
 import static com.springboot.demo.global.Constants.createBaseURI;
@@ -58,7 +60,7 @@ public class UserViewController {
 			mv.addObject(SERVER_MESSAGE, "계정 등록 정보를 확인해주세요.");
 			mv.setViewName("users/join");
 		} else {
-			String uri = baseURI + "/restSignUpProc";
+			String uri = baseURI + "/user";
 			System.out.println(uri);
 			ResponseEntity<User> response = restTemplate.postForEntity(uri, user, User.class);
 			if (response.getStatusCode().is2xxSuccessful()) {
@@ -88,9 +90,15 @@ public class UserViewController {
 	 * @Method: 계정 로그인
 	 */
 	@RequestMapping(value = "/users/login", method = RequestMethod.POST)
-	public void postLogin() {
+	public ModelAndView postLogin(User user, HttpServletRequest request, ModelAndView mv) {
 		logger.info("postLogin()");
-
+		String uri = baseURI + "/login";
+		ResponseEntity<User> response = restTemplate.postForEntity(uri, user, User.class);
+		// if(response.getStatusCode())
+		
+		request.getSession().setAttribute("loggedUser", response.getBody());
+		mv.setViewName("redirect:/");
+		return mv;
 	}
 	
 	 /**
