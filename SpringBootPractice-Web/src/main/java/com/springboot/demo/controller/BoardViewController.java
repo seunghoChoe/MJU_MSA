@@ -35,6 +35,15 @@ public class BoardViewController {
 
         ResponseEntity<List<Post>> response = restTemplate.exchange(baseURI + "/posts", HttpMethod.GET, null, new ParameterizedTypeReference<List<Post>>() {});
         List<Post> postList = response.getBody();
+        
+       for(Post post : postList) {
+    	   		System.out.println(post.getPost_id());
+    	   		System.out.println(post.getPost_content());
+    	   		System.out.println(post.getPost_title());
+    	   		System.out.println(post.getPost_user_id());
+    	   		System.out.println(post.getPost_created_date());
+    	   		System.out.println(post.getPost_updated_date());
+       }
 
         mv.addObject("postList", postList);
         mv.setViewName("/board/boards_test");
