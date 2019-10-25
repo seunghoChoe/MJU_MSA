@@ -36,14 +36,17 @@ public class UserCotroller {
 
 	// 로그인
 	@RequestMapping(value = "/login", method = RequestMethod.POST)
-	public boolean login(RequestEntity<UserVO> request)
+	public ResponseEntity<UserVO> login(RequestEntity<UserVO> request)
 			throws Exception {
 		
 		UserVO user = (UserVO)request.getBody();
 		UserVO member = mUserService.login(user);
 
-		if(member!=null) return true;
-		 else return false;
+		if(member!=null) {
+			ResponseEntity<UserVO> reponseEntity = new ResponseEntity<UserVO>(HttpStatus.OK);
+		
+		return reponseEntity;}
+		 else return null;
 		
 	}
 	
