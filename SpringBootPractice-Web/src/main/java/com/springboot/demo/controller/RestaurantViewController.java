@@ -38,31 +38,31 @@ public class RestaurantViewController {
     public ModelAndView getRestaurants(ModelAndView mv, Model model) {
         logger.info("getRestaurants()");
 
-//        String url = baseURI + "/restaurants";
-//        ResponseEntity<List<Restaurant>> response = restTemplate.exchange(url, HttpMethod.GET, null, new ParameterizedTypeReference<List<Restaurant>>() {});
-//        List<Restaurant> restaurantList = response.getBody();
+        String url = baseURI + "/restaurants";
+        ResponseEntity<List<Restaurant>> response = restTemplate.exchange(url, HttpMethod.GET, null, new ParameterizedTypeReference<List<Restaurant>>() {});
+        List<Restaurant> restaurantList = response.getBody();
 
-		List<Menu> menuList1 = new ArrayList<>();
-		menuList1.add(new Menu(1, "밥1", 10000));
-		menuList1.add(new Menu(2, "밥2", 10000));
-		List<Menu> menuList2 = new ArrayList<>();
-		menuList2.add(new Menu(3, "밥3", 10000));
-		menuList2.add(new Menu(4, "밥4", 10000));
-		List<Menu> menuList3 = new ArrayList<>();
-		menuList3.add(new Menu(5, "밥5", 10000));
-		menuList3.add(new Menu(6, "밥6", 10000));
-		List<Menu> menuList4 = new ArrayList<>();
-		menuList4.add(new Menu(7, "밥7", 10000));
-		menuList4.add(new Menu(8, "밥8", 10000));
-
-		List<Restaurant> restaurantList = new ArrayList<>();
-		restaurantList.add(new Restaurant(1, "A식당", "한식", 1, menuList1, 10));
-		restaurantList.add(new Restaurant(2, "B식당", "중식", 1, menuList2, 10));
-		restaurantList.add(new Restaurant(3, "C식당", "양식", 1, menuList3, 10));
-		restaurantList.add(new Restaurant(4, "D식당", "분식", 1, menuList4, 10));
-		logger.info(restaurantList.get(1).getRes_name());
-		logger.info(restaurantList.get(1).getRes_category());
-		logger.info(restaurantList.get(1).getRes_menus().get(1).getMenu_name());
+//		List<Menu> menuList1 = new ArrayList<>();
+//		menuList1.add(new Menu(1, "밥1", 10000));
+//		menuList1.add(new Menu(2, "밥2", 10000));
+//		List<Menu> menuList2 = new ArrayList<>();
+//		menuList2.add(new Menu(3, "밥3", 10000));
+//		menuList2.add(new Menu(4, "밥4", 10000));
+//		List<Menu> menuList3 = new ArrayList<>();
+//		menuList3.add(new Menu(5, "밥5", 10000));
+//		menuList3.add(new Menu(6, "밥6", 10000));
+//		List<Menu> menuList4 = new ArrayList<>();
+//		menuList4.add(new Menu(7, "밥7", 10000));
+//		menuList4.add(new Menu(8, "밥8", 10000));
+//
+//		List<Restaurant> restaurantList = new ArrayList<>();
+//		restaurantList.add(new Restaurant(1, "A식당", "한식", 1, menuList1, 10));
+//		restaurantList.add(new Restaurant(2, "B식당", "중식", 1, menuList2, 10));
+//		restaurantList.add(new Restaurant(3, "C식당", "양식", 1, menuList3, 10));
+//		restaurantList.add(new Restaurant(4, "D식당", "분식", 1, menuList4, 10));
+//		logger.info(restaurantList.get(1).getRes_name());
+//		logger.info(restaurantList.get(1).getRes_category());
+//		logger.info(restaurantList.get(1).getRes_menus().get(1).getMenu_name());
         mv.addObject("restaurantList", restaurantList);
         mv.setViewName("restaurants/list");
         return mv;

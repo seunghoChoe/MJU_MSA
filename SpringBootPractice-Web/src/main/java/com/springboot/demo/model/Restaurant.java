@@ -18,6 +18,5 @@ public class Restaurant implements Serializable {
 	private String res_name;
 	private String res_category;
 	private int res_grade;
-	private List<Menu> res_menus; // res_menues -> res_menus
 	private int res_expected_minutes;
 }

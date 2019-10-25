@@ -12,6 +12,7 @@
     <spring:url var="loginUrl" value="/users/login"/>
     <spring:url var="joinUrl" value="/users/join"/>
     <spring:url var="usersUrl" value="/users"/>
+    <spring:url var="boardsUrl" value="/board/posts"/>
     <spring:url var="restaurantListUrl" value="/restaurants"/>
 
     <%-- Header 로고 --%>
@@ -37,6 +38,9 @@
             </li>
              <li class="nav-item">
                 <a class="nav-link" href=${usersUrl}>계정 조회(test) </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href=${boardsUrl}>게시 조회(test) </a>
             </li>
             <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="https://designrevision.com" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
