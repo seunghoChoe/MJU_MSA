@@ -54,7 +54,7 @@ public class UserCotroller {
 	}
 	
 	//회원가입
-	@RequestMapping(value="/restSignUpProc", method=RequestMethod.POST)
+	@RequestMapping(value="/user", method=RequestMethod.POST)
 	private ResponseEntity<UserVO> userSignUpProc(RequestEntity<UserVO> request) throws Exception {
 		
 		UserVO user = (UserVO)request.getBody();
