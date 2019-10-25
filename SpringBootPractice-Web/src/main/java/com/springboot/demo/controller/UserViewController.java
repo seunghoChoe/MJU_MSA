@@ -94,10 +94,14 @@ public class UserViewController {
 		logger.info("postLogin()");
 		String uri = baseURI + "/login";
 		ResponseEntity<User> response = restTemplate.postForEntity(uri, user, User.class);
-		// if(response.getStatusCode())
-		
-		request.getSession().setAttribute("loggedUser", response.getBody());
-		mv.setViewName("redirect:/");
+		 if(response.getStatusCode().is2xxSuccessful()) {
+			 request.getSession().setAttribute("loggedUser", response.getBody());
+			 mv.addObject(SERVER_MESSAGE, "success");
+			 mv.setViewName("redirect:/");
+		 }else {
+			 mv.addObject(SERVER_MESSAGE, "failed");
+			 mv.setViewName("redirect:/");
+		 }
 		return mv;
 	}
 	
