@@ -10,9 +10,6 @@
     <p>${zz}</p>
 
     <c:forEach var="restaurant" items="${restaurantList}">
-        <c:forEach var="menu" items="${restaurant.res_menus}">
-            <p>${menu.menu_name}</p>
-        </c:forEach>
 
         <p>${restaurant.res_index}</p>
         <p>${restaurant.res_name}</p>
