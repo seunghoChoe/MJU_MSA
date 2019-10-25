@@ -21,7 +21,7 @@ import static com.springboot.demo.global.Constants.createBaseURI;
 @RestController
 public class BoardViewController {
     private static final Logger logger = LoggerFactory.getLogger(WebViewController.class);
-    private String baseURI = createBaseURI("post-service");
+    private String baseURI = createBaseURI("board-service");
 
 	@Autowired
     private RestTemplate restTemplate;
