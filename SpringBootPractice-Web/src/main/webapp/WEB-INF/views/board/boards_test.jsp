@@ -24,6 +24,8 @@
 			<p>title : <c:out value="${post.post_title}" /></p>
 			<p>userid : <c:out value="${post.post_user_id}" /></p>
 			<p>content : <c:out value="${post.post_content}" /></p>
+			<p>createddate : <c:out value="${post.post_created_date}" /></p>
+			<p>updated date : <c:out value="${post.post_updated_date}" /></p>
 			<hr>
 		</c:forEach>
 
