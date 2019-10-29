@@ -1,0 +1,58 @@
+/* Wrapper 영역 공통 속성 */
+#layoutWrapper {
+    margin: 0 auto;
+    /*background-color: lightcyan;*/
+}
+
+/* A 태그 밑줄 삭제 */
+#layoutWrapper a {
+    text-decoration: none;
+}
+
+/* 글자 색/크기 지정 */
+#layoutWrapper a,
+#layoutWrapper p,
+#layoutWrapper span {
+    color: #000000;
+    font-size: 0.95rem;
+}
+
+/* 캐로우셀 그림자 효과 삭제 */
+#layoutWrapper .carousel {
+    box-shadow: none;
+}
+
+/* 카드 그림자 효과 삭제 */
+#layoutWrapper .card {
+    box-shadow: none;
+    border: 1px solid #E5E5E5;
+}
+
+/* 드롭다운 메뉴 그림자 효과 삭제 */
+#layoutWrapper .dropdown-menu {
+    box-shadow: none;
+    border: 1px solid #E5E5E5;
+}
+
+/* Content 영역 공통 속성 */
+#layoutContent {
+    margin-top: 100px;
+}
+
+/* 커스텀 스크롤바 */
+::-webkit-scrollbar {
+    width: 10px;
+    background-color: #FFFFFF;
+}
+::-webkit-scrollbar-thumb {
+    border-radius: 5px;
+    box-shadow: inset 0 0 1px white;
+    background-color: #000000;
+}
+
+/* 650px 미만 시 */
+@media screen and (max-width: 650px) {
+    #layoutContent {
+        margin-top: 50px;
+    }
+}
