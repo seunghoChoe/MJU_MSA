@@ -25,6 +25,8 @@ import org.springframework.web.servlet.ModelAndView;
 import com.example.demo.user.model.UserVO;
 import com.example.demo.user.service.UserServiceImpl;
 
+
+
 @RestController
 public class UserCotroller {
 	private static final Logger logger = LoggerFactory.getLogger(UserCotroller.class);
@@ -34,69 +36,58 @@ public class UserCotroller {
 
 	// 로그인
 	@RequestMapping(value = "/login", method = RequestMethod.POST)
-	public ResponseEntity<UserVO> login(RequestEntity<UserVO> request) throws Exception {
-
-		UserVO user = (UserVO) request.getBody();
+	public ResponseEntity<UserVO> login(RequestEntity<UserVO> request)
+			throws Exception {
+		
+		UserVO user = (UserVO)request.getBody();
 		UserVO member = mUserService.login(user);
 
-		if (member != null) {
+		if(member!=null) {
 			ResponseEntity<UserVO> reponseEntity = new ResponseEntity<UserVO>(HttpStatus.OK);
-			System.out.println(reponseEntity);
-			return reponseEntity;
-		} else {
-			ResponseEntity<UserVO> reponseEntity = new ResponseEntity<UserVO>(HttpStatus.NOT_ACCEPTABLE);
-			System.out.println(reponseEntity);
-			return reponseEntity;
-		}
+		
+		return reponseEntity;}
+		 else return null;
+		
 	}
-
-	// 회원가입
-	@RequestMapping(value = "/user", method = RequestMethod.POST)
+	
+	//로그아웃 - 웹과 테스트필요..
+	@RequestMapping(value = "/logout", method = RequestMethod.GET)
+	public void logout(HttpSession session) throws Exception {
+		session.invalidate();
+//		
+	}
+	
+	//회원가입
+	@RequestMapping(value="/user", method=RequestMethod.POST)
 	private ResponseEntity<UserVO> userSignUpProc(RequestEntity<UserVO> request) throws Exception {
-
-		UserVO user = (UserVO) request.getBody();
+		
+		UserVO user = (UserVO)request.getBody();
 		System.out.println(user.getUser_id());
 		System.out.println(user.getUser_password());
 		System.out.println(user.getUser_email());
 		System.out.println(user.getUser_name());
-
-		if (mUserService.check_id(user.getUser_id()) == 0) {
-			mUserService.userSignUpService(user);
-			ResponseEntity<UserVO> reponseEntity = new ResponseEntity<UserVO>(HttpStatus.OK);
-			System.out.println(reponseEntity);
-			return reponseEntity;
-		}else if(mUserService.check_id(user.getUser_id()) == 1) {
-			ResponseEntity<UserVO> reponseEntity = new ResponseEntity<UserVO>(HttpStatus.NOT_ACCEPTABLE);
-			System.out.println(reponseEntity);
-			return reponseEntity;
-		}else {
-			ResponseEntity<UserVO> reponseEntity = new ResponseEntity<UserVO>(HttpStatus.NOT_IMPLEMENTED);
-			System.out.println(reponseEntity);
-			return reponseEntity;
-		}
 		
+		mUserService.userSignUpService(user);
+		ResponseEntity<UserVO> reponseEntity = new ResponseEntity<UserVO>(HttpStatus.OK);
+		
+		return reponseEntity;
 	}
-
-	// 회원목록
-	@RequestMapping(value = "/users", method = RequestMethod.GET)
+	
+	//회원목록
+	@RequestMapping(value="/users", method=RequestMethod.GET)
 	public ResponseEntity<List<UserVO>> selectAllUser() throws Exception {
 		logger.info("selectAllUser()");
 		List<UserVO> userList = mUserService.userListService();
 		ResponseEntity<List<UserVO>> reponseEntity = new ResponseEntity<List<UserVO>>(userList, HttpStatus.OK);
 		return reponseEntity;
 	}
-
-	/**
-	 * 
-	 * Do not Delete For Studying code
-	 * 
-	 * @throws Exception
-	 *
-	 */
-	// 로그아웃 - 웹서비스에서 제어하므로 삭제
-//	@RequestMapping(value = "/logout", method = RequestMethod.GET)
-//	public void logout(HttpSession session) throws Exception {
-//		session.invalidate();
-//		
-//	}
+	
+/**
+ * 
+ * Do not Delete
+ * For Studying code
+ * 
+ * @throws Exception 
+ *
+ */
 }

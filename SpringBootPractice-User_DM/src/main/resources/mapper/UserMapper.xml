@@ -46,8 +46,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		]]>
 	</insert>
 
-	<!-- Dead code (분석 목적) -->
-	<!-- 	
+	<!-- 이하 쓰이지 않는 코드(분석 목적으로 삭제 및 주석 처리하지 않음) -->
 	<select id="boardDetail" parameterType="int"
 		resultType="com.example.demo.user.model.UserVO">
 		SELECT *
@@ -74,5 +73,5 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		WHERE
 		BNO = #{bno}
 	</delete>
- 	-->
+
 </mapper>

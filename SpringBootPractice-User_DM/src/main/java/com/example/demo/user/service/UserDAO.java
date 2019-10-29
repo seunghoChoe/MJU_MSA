@@ -17,7 +17,7 @@ public class UserDAO {
 	
 	// 아이디 중복 검사
 	public int check_id(String user_id) throws Exception{
-		return sqlsession.selectOne(MAPPER_NAME_SPACE + "check_id", user_id);
+		return sqlsession.selectOne("check_id", user_id);
 	}
 
 	//로그인 검사
@@ -25,12 +25,10 @@ public class UserDAO {
 		return sqlsession.selectOne("userLogin", user_id);
 	}
 	
-	//회원 가입
 	public void userInsert(UserVO user) {
 		sqlsession.insert(MAPPER_NAME_SPACE + "userInsert", user);
 	}
-	
-	//회원 목록
+
 	public List<UserVO> userList() {
 		return sqlsession.selectList(MAPPER_NAME_SPACE + "userList");
 	}
