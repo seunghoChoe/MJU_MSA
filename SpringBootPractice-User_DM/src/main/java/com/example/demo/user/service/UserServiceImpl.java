@@ -35,21 +35,8 @@ public class UserServiceImpl implements UserService{
 	}
 	
 	@Override
-	public void check_id(String id, HttpServletResponse response) throws Exception {
-		PrintWriter out = response.getWriter();
-		out.println(mUserDAO.check_id(id));
-		out.close();
-	}
-	
-	@Override
-	public void logout(HttpServletResponse response) throws Exception{
-		response.setContentType("text/html;charset=utf-8");
-		PrintWriter out = response.getWriter();
-		out.println("<script>");
-		out.println("location.href=document.referrer;");
-		out.println("</script>");
-		out.close();
-		
+	public int check_id(String user_id) throws Exception {
+		return mUserDAO.check_id(user_id);
 	}
 	
 	public List<UserVO> userListService() throws Exception {
@@ -62,5 +49,4 @@ public class UserServiceImpl implements UserService{
 
 		mUserDAO.userInsert(user);
 	}
-
 }
