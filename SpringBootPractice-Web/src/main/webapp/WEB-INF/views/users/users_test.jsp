@@ -10,9 +10,9 @@
 </head>
 
 <div id="join" class="container">
-    <spring:url var="joinUrl" value="/users/join"/>
-    <spring:url var="loginUrl" value="/users/login"/>
-    <spring:url var="homeUrl" value="/"/>
+    <spring:url var="joinUri" value="/users/join"/>
+    <spring:url var="loginUri" value="/users/login"/>
+    <spring:url var="homeUri" value="/"/>
 
     <div class="container">
         <h3>MJ Ribbon</h3>

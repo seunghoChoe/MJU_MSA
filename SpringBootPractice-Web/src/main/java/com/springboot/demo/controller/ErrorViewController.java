@@ -15,8 +15,8 @@ import java.util.Date;
  * @Class: 에러 뷰 컨트롤러 클래스
  */
 @RestController
-public class CustomErrorController implements ErrorController {
-    private static final Logger logger = LoggerFactory.getLogger(CustomErrorController.class);
+public class ErrorViewController implements ErrorController {
+    private static final Logger logger = LoggerFactory.getLogger(ErrorViewController.class);
     private static final String ERROR_URI = "/error";
 
     @Override

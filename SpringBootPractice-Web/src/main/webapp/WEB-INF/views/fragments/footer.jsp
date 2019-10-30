@@ -8,10 +8,10 @@
 </head>
 
 <footer class="container">
-    <spring:url var="homeUrl" value="/"/>
+    <spring:url var="homeUri" value="/"/>
 
     <div class="container text-center">
         <p id="footerTitle">명지리본: 명지대학교 맛집 검색</p>
-        <a id="footerCopyright" href="${homeUrl}">Copyright © MJ Ribbon. All rights reserved.</a>
+        <a id="footerCopyright" href="${homeUri}">Copyright © MJ Ribbon. All rights reserved.</a>
     </div>
 </footer>
