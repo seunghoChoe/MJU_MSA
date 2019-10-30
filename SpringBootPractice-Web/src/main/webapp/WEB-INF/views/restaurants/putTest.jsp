@@ -1,5 +1,6 @@
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib uri="http://www.springframework.org/tags/form" prefix="form" %>
 
 <head>
     <title>맛집 목록</title>
@@ -9,7 +10,7 @@
 <div>
     <h1>식당 추가</h1>
 
-    <form method="post" action="/restaurant">
+    <form method="post" action="/modifyRestaurant">
    			 <div class="form-group">
                     <label for="user_id" class="col-form-label">식당연번</label>
                     <div class="input-group input-group-seamless">
@@ -55,6 +56,9 @@
                         <input type="text" class="form-control" id="res_expected_minutes" name="res_expected_minutes" placeholder="res_expected_minutes"/>
                     </div>
                 </div>
+
+				<!-- put호출을 위한 컴포넌트 -->
+				<input type="hidden" name="_method" value="put"/>
 
                 <div id="buttonGroup">
                     <button id="loginButton" type="submit" class="btn btn-dark btn-block">

@@ -17,6 +17,8 @@
     <spring:url var="userListUri" value="/users"/>
     <spring:url var="postListUri" value="/board/posts"/>
     <spring:url var="restaurantListUri" value="/restaurants"/>
+    <spring:url var="restaurantPostUri" value="/restaurantAddView"/>
+    <spring:url var="restaurantPutUri" value="/restaurantModifyView"/>
 
     <%-- Header 로고 --%>
     <img src="/resources/img/shards-logo-black.svg" alt="Example Navbar 1" class="mr-2" height="30">
@@ -54,6 +56,8 @@
                     <a class="nav-link" href=${userListUri}>전체 계정 조회</a>
                     <a class="nav-link" href=${postListUri}>전체 게시글 조회</a>
                     <a class="nav-link" href=${restaurantListUri}>전체 맛집 조회</a>
+                    <a class="nav-link" href=${restaurantPostUri}>식당 추가</a>
+                    <a class="nav-link" href=${restaurantPutUri}>식당 수정</a>
                 </div>
             </li>
             <li class="nav-item dropdown">
