@@ -5,6 +5,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.boot.web.servlet.error.ErrorController;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.ModelAndView;
 import javax.servlet.RequestDispatcher;
@@ -24,7 +25,7 @@ public class ErrorViewController implements ErrorController {
         return ERROR_URI;
     }
 
-    @RequestMapping(value = "/error")
+    @RequestMapping(value = "/error", method = RequestMethod.GET)
     public ModelAndView handleError(HttpServletRequest request, ModelAndView mv) {
         Object status = request.getAttribute(RequestDispatcher.ERROR_STATUS_CODE);
         HttpStatus httpStatus = HttpStatus.valueOf(Integer.parseInt(status.toString()));
