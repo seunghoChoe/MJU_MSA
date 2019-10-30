@@ -25,8 +25,10 @@ import org.springframework.web.servlet.ModelAndView;
 import com.example.demo.user.model.UserVO;
 import com.example.demo.user.service.UserServiceImpl;
 
+import io.swagger.annotations.Api;
 
 
+@Api(tags = { "2. User" })
 @RestController
 public class UserCotroller {
 	private static final Logger logger = LoggerFactory.getLogger(UserCotroller.class);
