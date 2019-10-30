@@ -5,11 +5,8 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.boot.web.servlet.support.SpringBootServletInitializer;
 
-
-
 @SpringBootApplication
 public class SpringBootPracticeWebApplication extends SpringBootServletInitializer {
-
 
 	public static void main(String[] args) {
 		SpringApplication.run(SpringBootPracticeWebApplication.class, args);
@@ -18,7 +15,5 @@ public class SpringBootPracticeWebApplication extends SpringBootServletInitializ
 	@Override
 	protected SpringApplicationBuilder configure(SpringApplicationBuilder builder) {
 		return builder.sources(SpringBootPracticeWebApplication.class);
-		}
-
-
+	}
 }
