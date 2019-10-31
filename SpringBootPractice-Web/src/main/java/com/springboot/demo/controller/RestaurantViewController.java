@@ -31,8 +31,7 @@ import static com.springboot.demo.global.Constants.createBaseURI;
 @RestController
 public class RestaurantViewController {
     private static final Logger logger = LoggerFactory.getLogger(WebViewController.class);
-//    private String baseURI = createBaseURI("restaurant-service");
-    private String baseURI = "http://localhost:8888";
+    private String baseURI = createBaseURI("restaurant-service");
     
     @Autowired
     private RestTemplate restTemplate;
