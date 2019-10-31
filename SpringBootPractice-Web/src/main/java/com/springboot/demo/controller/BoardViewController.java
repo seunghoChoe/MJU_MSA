@@ -52,7 +52,7 @@ public class BoardViewController {
         System.out.println(post.getPost_title());
         System.out.println(post.getPost_content());
 
-        String uri = baseURI + "/post-new";
+        String uri = baseURI + "/post";
         ResponseEntity<Post> response = restTemplate.postForEntity(uri, post, Post.class);
 
         mv.setViewName("board/posts/post"); // 게시글 등록 후, 해당 게시글 번호로 뷰를 지정해야 한다.
