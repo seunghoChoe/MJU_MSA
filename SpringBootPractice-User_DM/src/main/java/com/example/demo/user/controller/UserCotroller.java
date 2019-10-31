@@ -89,7 +89,6 @@ public class UserCotroller {
 	public ResponseEntity<UserVO> selectUserById(
 			@ApiParam(value = "유저 아이디", required = true) @PathVariable String user_id) throws Exception {
 		UserVO user = mUserService.userSelectService(user_id);
-		System.out.println(user_id);
 		ResponseEntity<UserVO> reponseEntity = new ResponseEntity<UserVO>(user, HttpStatus.OK);
 		return reponseEntity;
 	}
