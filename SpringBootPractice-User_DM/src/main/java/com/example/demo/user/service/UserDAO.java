@@ -32,4 +32,14 @@ public class UserDAO {
 	public List<UserVO> userList() {
 		return sqlsession.selectList(MAPPER_NAME_SPACE + "userList");
 	}
+	
+	//한명의 회원정보조회
+	public UserVO userSelect(String user_id) {
+		return sqlsession.selectOne(MAPPER_NAME_SPACE + "selectUserById", user_id);
+	}
+	
+	//회원정보수정
+	public void userModify(UserVO user) {
+		sqlsession.update(MAPPER_NAME_SPACE + "userModify", user);
+	}
 }

@@ -63,4 +63,14 @@ public class UserServiceImpl implements UserService{
 		mUserDAO.userInsert(user);
 	}
 
+	public UserVO userSelectService(String user_id) {
+
+		return mUserDAO.userSelect(user_id);
+	}
+
+	public void userModifyService(UserVO member) {
+
+		mUserDAO.userModify(member);;
+	}
+	
 }

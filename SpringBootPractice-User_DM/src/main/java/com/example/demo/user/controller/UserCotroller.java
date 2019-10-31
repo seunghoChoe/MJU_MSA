@@ -3,8 +3,6 @@ package com.example.demo.user.controller;
 import java.util.List;
 
 import javax.annotation.Resource;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import org.slf4j.Logger;
@@ -12,20 +10,18 @@ import org.slf4j.LoggerFactory;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.RequestEntity;
 import org.springframework.http.ResponseEntity;
-import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
-import org.springframework.web.servlet.ModelAndView;
 
 import com.example.demo.user.model.UserVO;
 import com.example.demo.user.service.UserServiceImpl;
 
 import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiOperation;
+import io.swagger.annotations.ApiParam;
 
 
 @Api(tags = { "2. User" })
@@ -37,6 +33,7 @@ public class UserCotroller {
 	UserServiceImpl mUserService;
 
 	// 로그인
+	@ApiOperation(value = "로그인", notes = "로그인을 한다.")
 	@RequestMapping(value = "/login", method = RequestMethod.POST)
 	public ResponseEntity<UserVO> login(RequestEntity<UserVO> request)
 			throws Exception {
@@ -60,6 +57,7 @@ public class UserCotroller {
 	}
 	
 	//회원가입
+	@ApiOperation(value = "회원가입", notes = "회원가입을 한다.")
 	@RequestMapping(value="/user", method=RequestMethod.POST)
 	private ResponseEntity<UserVO> userSignUpProc(RequestEntity<UserVO> request) throws Exception {
 		
@@ -76,11 +74,34 @@ public class UserCotroller {
 	}
 	
 	//회원목록
+	@ApiOperation(value = "회원목록", notes = "회원목록을 보여준다.")
 	@RequestMapping(value="/users", method=RequestMethod.GET)
 	public ResponseEntity<List<UserVO>> selectAllUser() throws Exception {
 		logger.info("selectAllUser()");
 		List<UserVO> userList = mUserService.userListService();
 		ResponseEntity<List<UserVO>> reponseEntity = new ResponseEntity<List<UserVO>>(userList, HttpStatus.OK);
+		return reponseEntity;
+	}
+	
+	//회원 한명 조회
+	@ApiOperation(value = "회원조회", notes = "회원 정보를 보여준다.")
+	@RequestMapping(value="/userinfo/{user_id}", method=RequestMethod.GET)
+	public ResponseEntity<UserVO> selectUserById(
+			@ApiParam(value = "유저 아이디", required = true) @PathVariable String user_id) throws Exception {
+		UserVO user = mUserService.userSelectService(user_id);
+		System.out.println(user_id);
+		ResponseEntity<UserVO> reponseEntity = new ResponseEntity<UserVO>(user, HttpStatus.OK);
+		return reponseEntity;
+	}
+	
+	//회원 정보 수정
+	@ApiOperation(value = "정보수정", notes = "회원정보를 수정한다.")
+	@RequestMapping(value="/userinfo-edit", method=RequestMethod.PUT)
+	public ResponseEntity<UserVO> userModify(RequestEntity<UserVO> request) throws Exception {
+		logger.info("userModify()");
+		UserVO user = (UserVO)request.getBody();
+		mUserService.userModifyService(user);
+		ResponseEntity<UserVO> reponseEntity = new ResponseEntity<UserVO>(HttpStatus.OK);
 		return reponseEntity;
 	}
 	
