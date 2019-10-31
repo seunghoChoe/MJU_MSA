@@ -7,11 +7,14 @@ import com.example.demo.user.model.UserVO;
 
 public interface UserService {
 	
-	public void check_id(String id, HttpServletResponse response) throws Exception;
+	int check_id(String user_id) throws Exception;
 
 
 	public void logout(HttpServletResponse response) throws Exception;
 
 	public UserVO login(UserVO member) throws Exception;
+
+
+	
 
 }

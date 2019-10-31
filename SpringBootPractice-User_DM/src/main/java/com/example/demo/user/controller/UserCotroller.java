@@ -33,45 +33,49 @@ public class UserCotroller {
 	UserServiceImpl mUserService;
 
 	// 로그인
-	@ApiOperation(value = "로그인", notes = "로그인을 한다.")
-	@RequestMapping(value = "/login", method = RequestMethod.POST)
-	public ResponseEntity<UserVO> login(RequestEntity<UserVO> request)
-			throws Exception {
-		
-		UserVO user = (UserVO)request.getBody();
-		UserVO member = mUserService.login(user);
+	   @RequestMapping(value = "/login", method = RequestMethod.POST)
+	   public ResponseEntity<UserVO> login(RequestEntity<UserVO> request) throws Exception {
 
-		if(member!=null) {
-			ResponseEntity<UserVO> reponseEntity = new ResponseEntity<UserVO>(HttpStatus.OK);
-		
-		return reponseEntity;}
-		 else return null;
-		
-	}
-	
-	//로그아웃 - 웹과 테스트필요..
-	@RequestMapping(value = "/logout", method = RequestMethod.GET)
-	public void logout(HttpSession session) throws Exception {
-		session.invalidate();
-//		
-	}
-	
-	//회원가입
-	@ApiOperation(value = "회원가입", notes = "회원가입을 한다.")
-	@RequestMapping(value="/user", method=RequestMethod.POST)
-	private ResponseEntity<UserVO> userSignUpProc(RequestEntity<UserVO> request) throws Exception {
-		
-		UserVO user = (UserVO)request.getBody();
-		System.out.println(user.getUser_id());
-		System.out.println(user.getUser_password());
-		System.out.println(user.getUser_email());
-		System.out.println(user.getUser_name());
-		
-		mUserService.userSignUpService(user);
-		ResponseEntity<UserVO> reponseEntity = new ResponseEntity<UserVO>(HttpStatus.OK);
-		
-		return reponseEntity;
-	}
+	      UserVO user = (UserVO) request.getBody();
+	      UserVO member = mUserService.login(user);
+	      ResponseEntity<UserVO> reponseEntity = null;
+	      if (member != null) {
+	         reponseEntity = new ResponseEntity(member.getUser_id(), HttpStatus.OK);
+	         System.out.println(reponseEntity);
+	         return reponseEntity;
+	      } else {
+	         reponseEntity = new ResponseEntity<UserVO>(HttpStatus.NOT_ACCEPTABLE);
+	         System.out.println(reponseEntity);
+	         return reponseEntity;
+	      }
+	   }
+
+	   // 회원가입
+	   @RequestMapping(value = "/user", method = RequestMethod.POST)
+	   private ResponseEntity<UserVO> userSignUpProc(RequestEntity<UserVO> request) throws Exception {
+
+	      UserVO user = (UserVO) request.getBody();
+	      System.out.println(user.getUser_id());
+	      System.out.println(user.getUser_password());
+	      System.out.println(user.getUser_email());
+	      System.out.println(user.getUser_name());
+
+	      if (mUserService.check_id(user.getUser_id()) == 0) {
+	         mUserService.userSignUpService(user);
+	         ResponseEntity<UserVO> reponseEntity = new ResponseEntity<UserVO>(HttpStatus.OK);
+	         System.out.println(reponseEntity);
+	         return reponseEntity;
+	      }else if(mUserService.check_id(user.getUser_id()) == 1) {
+	         ResponseEntity<UserVO> reponseEntity = new ResponseEntity<UserVO>(HttpStatus.NOT_ACCEPTABLE);
+	         System.out.println(reponseEntity);
+	         return reponseEntity;
+	      }else {
+	         ResponseEntity<UserVO> reponseEntity = new ResponseEntity<UserVO>(HttpStatus.NOT_IMPLEMENTED);
+	         System.out.println(reponseEntity);
+	         return reponseEntity;
+	      }
+	      
+	   }
 	
 	//회원목록
 	@ApiOperation(value = "회원목록", notes = "회원목록을 보여준다.")
