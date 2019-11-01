@@ -10,9 +10,4 @@
     <jsp:include page="/WEB-INF/views/fragments/homeCarousel.jsp"/>
 </div>
 
-<c:if test="${serverMessage ne null}">
-    <script>
-        var message = "${serverMessage}";
-        alert(message)
-    </script>
-</c:if>
+<jsp:include page="/WEB-INF/views/fragments/serverMessage.jsp"/>

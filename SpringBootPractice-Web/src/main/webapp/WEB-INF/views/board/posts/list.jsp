@@ -99,3 +99,5 @@
     <%--        </div>--%>
     <%--    </c:forEach>--%>
 </div>
+
+<jsp:include page="/WEB-INF/views/fragments/serverMessage.jsp"/>

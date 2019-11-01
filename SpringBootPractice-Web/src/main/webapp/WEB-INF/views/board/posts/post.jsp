@@ -46,8 +46,8 @@
             </div>
             <div id="postItemHeaderButton" class="container ml-auto">
                 <button id="postItemUri" type="button" class="btn btn-sm btn-outline-dark">URL 복사</button>
-                <button id="postItemEdit" type="button" class="btn btn-sm btn-outline-dark"><i class="fas fa-edit"></i> 수정</button>
-                <button id="postItemDelete" type="button" class="btn btn-sm btn-outline-dark"><i class="fas fa-eraser"></i> 삭제</button>
+                <button id="postItemEdit" type="button" class="btn btn-sm btn-outline-dark" onclick="editPost(${post.post_id})"><i class="fas fa-edit"></i> 수정</button>
+                <button id="postItemDelete" type="button" class="btn btn-sm btn-outline-dark" onclick="deletePost(${post.post_id})"><i class="fas fa-eraser"></i> 삭제</button>
             </div>
         </div>
         <hr/>
@@ -71,3 +71,5 @@
         </div>
     </div>
 </div>
+
+<jsp:include page="/WEB-INF/views/fragments/serverMessage.jsp"/>

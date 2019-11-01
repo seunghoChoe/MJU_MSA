@@ -32,14 +32,6 @@ public class UserViewController {
     private RestTemplate restTemplate;
 
     /**
-     * @Method: ID 중복 검사
-     */
-
-    /**
-     * @Method: 이메일 중복 검사
-     */
-
-    /**
      * @Method: 계정 등록 폼
      */
     @RequestMapping(value = "/users/join", method = RequestMethod.GET)
@@ -74,16 +66,6 @@ public class UserViewController {
                 mv.addObject(SERVER_MESSAGE, "계정 등록 중, 문제가 발생하였습니다.");
                 mv.setViewName("users/join");
             }
-
-//            User response = restTemplate.postForObject(uri, user, User.class);
-//
-//            if (response != null) {
-//                rttr.addFlashAttribute(SERVER_MESSAGE, "계정 등록이 완료되었습니다.");
-//                mv.setViewName("redirect:/");
-//            } else {
-//                mv.addObject(SERVER_MESSAGE, "계정 등록 중, 문제가 발생하였습니다.");
-//                mv.setViewName("users/join");
-//            }
         }
         return mv;
     }
@@ -118,18 +100,6 @@ public class UserViewController {
 			mv.addObject(SERVER_MESSAGE, "ID 또는 비밀번호를 확인해주세요.");
             mv.setViewName("users/login");
         }
-
-//        User response = restTemplate.postForObject(uri, user, User.class);
-//
-//        if (response != null) {
-//            setUserSession(request, response);
-//
-//            rttr.addFlashAttribute(SERVER_MESSAGE, response.getUser_id() + "님, 로그인되었습니다.");
-//            mv.setViewName("redirect:/");
-//        } else {
-//            mv.addObject(SERVER_MESSAGE, "ID 또는 비밀번호를 확인해주세요.");
-//            mv.setViewName("users/login");
-//        }
         return mv;
     }
 
