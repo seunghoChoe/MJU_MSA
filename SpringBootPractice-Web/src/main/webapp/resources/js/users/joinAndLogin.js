@@ -5,7 +5,7 @@ function checkUserId() {
 
     $.ajax({
         type: 'GET',
-        url: 'http://52.78.148.181:8080/check-id/' + userId,
+        url: 'http://52.78.148.181:8080/user-service/check-id/' + userId,
         data: {user_id: userId},
 
         success: function (result) {
