@@ -12,11 +12,11 @@
 <img width="900" alt="스크린샷 2019-11-02 오후 2 38 17" src="https://user-images.githubusercontent.com/55579896/68066633-80325680-fd7e-11e9-95a2-717116d5313a.png">
 <br>
 
- * 컴포넌트 뷰
+ * 서비스 뷰
 <img width="900" alt="스크린샷 2019-11-02 오후 2 49 35" src="https://user-images.githubusercontent.com/55579896/68066732-0b601c00-fd80-11e9-9861-3d9f5bc3ffdb.png">
 <br>
 
- * 구현 서비스 구성
+ * 컴포넌트 
 <img width="800" alt="스크린샷 2019-11-02 오후 4 07 15" src="https://user-images.githubusercontent.com/55579896/68067506-db6a4600-fd8a-11e9-86a2-be78999ebbc8.png">
 <br>
 
