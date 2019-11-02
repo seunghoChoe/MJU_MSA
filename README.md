@@ -1,6 +1,6 @@
-<h2 id="1"> 1. 식당정보 제공 서비스 구현 프로젝트</h2> 
+<h2 id="1"> 식당정보 제공 서비스 구현 프로젝트</h2> 
 
-### 프로젝트 개요(학교 - 팀프로젝트)
+### 프로젝트 개요(팀프로젝트)
 - 기간 : 19.9 ~ 진행중
 - 분류 : 웹 어플리케이션
 - 사용 기술 및 도구 : Springboot, SrpingCloud, MyBatis, JPA, JSP, Jenkins   
@@ -16,7 +16,7 @@
 <img width="900" alt="스크린샷 2019-11-02 오후 2 49 35" src="https://user-images.githubusercontent.com/55579896/68066732-0b601c00-fd80-11e9-9861-3d9f5bc3ffdb.png">
 <br>
 
- * 서비스 뷰
+ * 구현 서비스 구성
 <img width="800" alt="스크린샷 2019-11-02 오후 4 07 15" src="https://user-images.githubusercontent.com/55579896/68067506-db6a4600-fd8a-11e9-86a2-be78999ebbc8.png">
 <br>
 
