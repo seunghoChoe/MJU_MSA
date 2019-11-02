@@ -16,6 +16,5 @@
 <img width="900" alt="스크린샷 2019-11-02 오후 2 49 35" src="https://user-images.githubusercontent.com/55579896/68066732-0b601c00-fd80-11e9-9861-3d9f5bc3ffdb.png">
 <br>
 
-### 아키텍처
- * 개발도구
+### 프로젝트 도구
 <img width="601" alt="스크린샷 2019-11-02 오후 2 52 08" src="https://user-images.githubusercontent.com/55579896/68066758-61cd5a80-fd80-11e9-8f19-7b180ee8ca28.png">
