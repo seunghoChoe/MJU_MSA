@@ -13,14 +13,13 @@ import com.springboot.demo.model.Post;
 import com.springboot.demo.service.BoardService;
 
 @RestController
-@RequestMapping(value="/board")
 public class BoardController {
     private static final Logger logger = LoggerFactory.getLogger(BoardController.class);
 
 	@Autowired
 	private BoardService boardService;
 	
-	@RequestMapping(value="/postList", method=RequestMethod.GET)
+	@RequestMapping(value="/posts", method=RequestMethod.GET)
 	private List<Post> selectAllPost() {
 		logger.info("selectAllPost()");
 		return boardService.selectAllPost();
