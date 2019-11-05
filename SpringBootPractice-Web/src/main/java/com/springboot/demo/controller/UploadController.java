@@ -53,6 +53,8 @@ public class UploadController {
         String webRootPath = request.getSession().getServletContext().getRealPath("/"); // 웹 서버 경로
         String attachPath = File.separator + "resources" + File.separator + "upload" + File.separator + year + "" + monthStr; // 업로드 경로
         String fileUploadPath = webRootPath + attachPath; // 최종 경로
+        
+        logger.info(fileUploadPath);
 
         try {
             String filename = "";
