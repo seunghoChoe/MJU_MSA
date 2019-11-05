@@ -9,6 +9,7 @@ import org.springframework.web.client.ResponseErrorHandler;
 import org.springframework.web.client.RestTemplate;
 
 import org.springframework.web.filter.HiddenHttpMethodFilter;
+import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 import org.springframework.web.servlet.config.annotation.InterceptorRegistry;
 import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry;
 import org.springframework.web.servlet.config.annotation.ViewResolverRegistry;
@@ -23,6 +24,7 @@ import java.util.Collections;
  * @Class: 웹 MVC 설정 클래스
  */
 @Configuration
+@EnableWebMvc
 public class WebMvcConfig implements WebMvcConfigurer {
 
 	// 에러 페이지 참고 (https://frontdev.tistory.com/entry/SpringSpring-Boot-Tiles)
@@ -40,10 +42,10 @@ public class WebMvcConfig implements WebMvcConfigurer {
 	 */
 	@Override
 	public void addResourceHandlers(ResourceHandlerRegistry registry) {
-		registry.addResourceHandler("/resources/")
-				.addResourceLocations("/resources/**");
-		registry.addResourceHandler("/upload/")
-        		.addResourceLocations("file:///" + "/home/ubuntu/resources/upload/**");
+		registry.addResourceHandler("/resources/**")
+				.addResourceLocations("/resources/");
+		registry.addResourceHandler("/upload/**")
+        		.addResourceLocations("file:///home/ubuntu/resources/upload/");
 	}
 
 	/**

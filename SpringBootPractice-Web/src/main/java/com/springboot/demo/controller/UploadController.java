@@ -50,11 +50,11 @@ public class UploadController {
         if (month < 10) monthStr = "0" + month;
         else monthStr = "" + month;
 
-        // String webRootPath = request.getSession().getServletContext().getRealPath("/"); // 웹 서버 경로
-        String webRootPath = File.separator + "home" + File.separator + "ubuntu"; // 웹 서버 경로
-        String attachPath = File.separator + "resources" + File.separator + "upload" + File.separator + year + "" + monthStr; // 업로드 경로
-        String fileUploadPath = webRootPath + attachPath; // 최종 경로
-        logger.info(webRootPath);
+        String resourceRootPath = File.separator + "home" + File.separator + "ubuntu"; // 웹 서버 리소스 경로
+        String attachPath = File.separator + "upload" + File.separator + year + "" + monthStr; // 업로드 경로
+        String fileUploadPath = resourceRootPath + attachPath; // 최종 경로
+        
+        logger.info(resourceRootPath);
         logger.info(attachPath);
         logger.info(fileUploadPath);
         
