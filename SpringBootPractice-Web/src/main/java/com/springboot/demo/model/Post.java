@@ -23,6 +23,8 @@ public class Post implements Serializable {
 	@Size(min = 1, max = 1000, message = "게시글 내용은 1~1000자 이내로 작성해야 합니다.") // 태그가 사용될 경우 상세한 필터링 필요
 	private String post_content;
 
+	private String post_image; // 썸네일 이미지
+
 	private LocalDateTime post_created_date;
 	private LocalDateTime post_updated_date;
 }

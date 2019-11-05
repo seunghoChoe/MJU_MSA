@@ -1,6 +1,6 @@
 #join,
 #login {
-    margin-top: 50px;
+    margin-top: 25px;
     margin-bottom: 100px;
     max-width: 500px;
     text-align: center;
@@ -55,22 +55,4 @@
 #join #userNameError,
 #join #userEmailError {
     color: #FF3636;
-}
-
-/* 650px 미만 시 */
-@media screen and (max-width: 650px) {
-    #join,
-    #login {
-        margin-bottom: 50px;
-    }
-    #join p,
-    #login p {
-        font-size: 0.8rem;
-    }
-    #join a,
-    #login a {
-        font-size: 0.7rem;
-        margin-left: 5px;
-        margin-right: 5px;
-    }
 }

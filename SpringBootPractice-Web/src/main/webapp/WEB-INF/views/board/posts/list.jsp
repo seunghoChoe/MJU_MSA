@@ -10,7 +10,7 @@
 </head>
 
 <div id="postList" class="container">
-    <spring:url var="postNewUri" value="/board/posts/new"/>
+    <spring:url var="newPostUri" value="/board/posts/new"/>
 
     <%-- 게시글 목록 헤더 영역 --%>
     <div class="container headerLine">
@@ -20,7 +20,7 @@
         <p>&colon; 명지리본 에디터가 선택한 맛집 매거진!</p>
 
         <div id="postItemHeaderButton" class="container">
-            <button id="postItemNew" type="button" class="btn btn-sm btn-outline-dark" onclick="location.href='${postNewUri}'">
+            <button id="postItemNew" type="button" class="btn btn-sm btn-outline-dark" onclick="location.href='${newPostUri}'">
                 <i class="fas fa-pen-square"></i> 등록
             </button>
         </div>
@@ -37,7 +37,7 @@
                 <c:if test="${i % j == 0}">
                     <div class="col-md-6">
                         <div class="card" onclick="getPost(${post.post_id})">
-                            <img class="card-img" src="http://via.placeholder.com/350x150">
+                            <img class="card-img" src="<c:url value="${post.post_image}"/>">
                             <div class="card-img-header">
                                 <h4 class="card-img-text">${post.post_title}</h4>
                                 <div class="container headerWhiteLine">
@@ -47,7 +47,7 @@
                             <%-- <div class="card-profile-img">--%>
                             <%-- </div>--%>
                             <div class="card-content">
-                                <p>${post.post_content}</p>
+                                <%--<p>${post.post_content}</p>--%>
                             </div>
                         </div>
                     </div>
@@ -55,7 +55,7 @@
                 <c:if test="${i % j == j - 1}">
                     <div class="col-md-6">
                         <div class="card" onclick="getPost(${post.post_id})">
-                            <img class="card-img" src="http://via.placeholder.com/350x150">
+                            <img class="card-img" src="<c:url value="${post.post_image}"/>">
                             <div class="card-img-header">
                                 <h4 class="card-img-text">${post.post_title}</h4>
                                 <div class="container headerWhiteLine">
@@ -65,7 +65,7 @@
                             <%-- <div class="card-profile-img">--%>
                             <%-- </div>--%>
                             <div class="card-content">
-                                <p>${post.post_content}</p>
+                                <%--<p>${post.post_content}</p>--%>
                             </div>
                         </div>
                     </div>

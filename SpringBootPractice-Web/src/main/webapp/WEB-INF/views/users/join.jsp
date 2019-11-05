@@ -31,19 +31,19 @@
                     <span id="userIdMessage" class="checkMessage"></span>
                 </div>
                 <div class="form-group">
-                    <label for="user_id" class="col-form-label">계정 비밀번호</label>
+                    <label for="user_password" class="col-form-label">계정 비밀번호</label>
                     <form:input path="user_password" type="password" class="form-control" id="user_password" name="user_password" placeholder="Password" onblur="checkUserPassword()"/>
                     <form:errors path="user_password" id="userPasswordError" class="checkMessage"/>
                     <span id="userPasswordMessage" class="checkMessage"></span>
                 </div>
                 <div class="form-group">
-                    <label for="user_id" class="col-form-label">사용자 이름</label>
+                    <label for="user_name" class="col-form-label">사용자 이름</label>
                     <form:input path="user_name" type="text" class="form-control" id="user_name" name="user_name" placeholder="Name" onblur="checkUserName()"/>
                     <form:errors path="user_name" id="userNameError" class="checkMessage"/>
                     <span id="userNameMessage" class="checkMessage"></span>
                 </div>
                 <div class="form-group">
-                    <label for="user_id" class="col-form-label">사용자 이메일</label>
+                    <label for="user_email" class="col-form-label">사용자 이메일</label>
                     <form:input path="user_email" type="text" class="form-control" id="user_email" name="user_email" placeholder="Email" onblur="checkUserEmail()"/>
                     <form:errors path="user_email" id="userEmailError" class="checkMessage"/>
                     <span id="userEmailMessage" class="checkMessage"></span>

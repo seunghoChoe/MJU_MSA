@@ -28,15 +28,15 @@
             <label for="post_title" class="col-form-label">게시물 제목 <span id="titleLengthCounter">(0 / 100자)</span></label>
             <form:input path="post_title" type="text" class="form-control" id="post_title" name="post_title" placeholder="제목은 1~100자 이내로 작성할 수 있습니다."
                         maxlength="100" onKeyup="checkTitle()"/>
-            <form:errors path="post_title" id="checkMessage"/>
-            <span id="postTitleMessage">(0 / 100자)</span>
+            <form:errors path="post_title" class="checkMessage"/>
+            <span id="postTitleMessage"></span>
         </div>
 
         <div class="form-group" class="col-form-label">
             <label for="post_content" class="col-form-label">게시물 내용 <span id="contentLengthCounter">(0 / 1000자)</span></label>
             <form:textarea path="post_content" class="form-control" id="post_content" name="post_content" cols="10" placeholder="내용은 1~1000자 이내로 작성할 수 있습니다."
                            maxlength="1000" onKeyup="checkContent()"/>
-            <form:errors path="post_content" id="checkMessage"/>
+            <form:errors path="post_content" class="checkMessage"/>
         </div>
 
         <%-- 게시글 등록 푸터 영역 --%>

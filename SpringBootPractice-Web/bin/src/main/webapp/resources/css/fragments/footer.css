@@ -1,7 +1,12 @@
+#layoutFooter {
+    margin-top: 100px;
+    margin-bottom: 25px;
+}
+
 #layoutFooter #footerTitle,
 #layoutFooter #footerCopyright {
     margin: 5px;
-    font-size: 0.9rem;
+    font-size: 0.8rem;
 }
 
 #layoutFooter #footerTitle {
