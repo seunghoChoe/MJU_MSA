@@ -27,6 +27,7 @@ public class BoardViewController {
     private static final Logger logger = LoggerFactory.getLogger(BoardViewController.class);
     private String baseURI = createBaseURI("board-service");
 
+
     @Autowired
     private RestTemplate restTemplate;
 

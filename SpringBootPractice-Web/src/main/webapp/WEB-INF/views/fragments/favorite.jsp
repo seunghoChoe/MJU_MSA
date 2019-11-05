@@ -6,12 +6,14 @@
 </head>
 
 <div>
-    <c:forEach var="favorite" items="${favoriteList}">
-        <p>${favorite.index}</p>
-        <p>${favorite.user_id}</p>
-        <p>${favorite.res_name}</p>
-        <p>${favorite.res_category}</p>
-        <p>${favorite.res_grade}</p>
-        <p>${favorite.res_expected_minutes}</p>
-    </c:forEach>
+	<div class="card" style="width:40%; margin: auto;">
+	    <c:forEach var="favorite" items="${favoriteList}">
+	        <p>${favorite.index}<br>
+	        ${favorite.user_id}<br>
+	        ${favorite.res_name}<br>
+	        ${favorite.res_category}<br>
+	        ${favorite.res_grade}<br>
+	        ${favorite.res_expected_minutes}</p>
+	    </c:forEach>
+    </div>
 </div>

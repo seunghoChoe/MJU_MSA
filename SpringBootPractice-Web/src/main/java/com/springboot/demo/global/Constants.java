@@ -25,13 +25,13 @@ public class Constants {
 	public static final String API_GATEWAY_IP_ADDRESS = "52.78.148.181";
 	public static final String API_GATEWAY_PORT_NUMBER = "8080";
 
-	public static String createBaseURI(String serviceName) {
-		return "http://" + Constants.API_GATEWAY_IP_ADDRESS
-				         + ":"
-				         + Constants.API_GATEWAY_PORT_NUMBER
-				         + "/"
-				         + serviceName;
-	}
+//	public static String createBaseURI(String serviceName) {
+//		return "http://" + Constants.API_GATEWAY_IP_ADDRESS
+//				         + ":"
+//				         + Constants.API_GATEWAY_PORT_NUMBER
+//				         + "/"
+//				         + serviceName;
+//	}
 
 	/**
 	 * @Memo: 로컬 테스트
@@ -43,23 +43,23 @@ public class Constants {
 	private static final String BOARD_API_PORT = "8082"; // 게시판 서비스 포트
 	private static final String RESTAURANT_API_PORT = "8083"; // 맛집 서비스 포트
 
-//	public static String createBaseURI(String serviceName) {
-//		String apiPort = "";
-//		switch (serviceName) {
-//			case "user-service":
-//				apiPort = USER_API_PORT;
-//				break;
-//			case "board-service":
-//				apiPort = BOARD_API_PORT;
-//				break;
-//			case "restaurant-service":
-//				apiPort = RESTAURANT_API_PORT;
-//				break;
-//		}
-//		return "http://" + COMMON_IP_ADDRESS
-//				+ ":"
-//				+ apiPort;
-//	}
+	public static String createBaseURI(String serviceName) {
+		String apiPort = "";
+		switch (serviceName) {
+			case "user-service":
+				apiPort = USER_API_PORT;
+				break;
+			case "board-service":
+				apiPort = BOARD_API_PORT;
+				break;
+			case "restaurant-service":
+				apiPort = RESTAURANT_API_PORT;
+				break;
+		}
+		return "http://" + COMMON_IP_ADDRESS
+				+ ":"
+				+ apiPort;
+	}
 
 	/**
 	 * @Method: IMG 태그의 SRC 리스트 추출
