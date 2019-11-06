@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+
+</style>
+</head>
+<body>
+	Hello SpringBoot!!!!!!!!!
+	I m index
+	<hr>
+		<a href="/restaurant/restaurantList">식당 목록 </a><br>
+		<a href="/restaurant/menuList">음식 목록 </a><br>
+		
+	<hr>
+		<a href="/user/userList">회원 목록 </a><br>
+		<a href="/user/userJoin">회원 가입 </a><br>
+	<hr>
+		<a href="/board/postList">게시글 목록 </a><br>
+	
+	<hr>
+	<h1 th:text=${message}></h1>
+	
+</body>
+</html>

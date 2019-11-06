@@ -15,7 +15,7 @@
 	<select id="selectAllPost" resultMap="Post">
 	<![CDATA[
 		SELECT *
-		FROM post
+		FROM Post
 	]]>
 	</select>
 	
