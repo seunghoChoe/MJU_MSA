@@ -36,6 +36,7 @@
             <c:forEach var="restaurant" items="${restaurantList}" varStatus="loop">
                 <c:if test="${i % j == 0}">
                     <div class="col-md-6">
+                    <span style="margin-left:200px" onclick="addFavorite(${restaurant.res_index})">즐겨찾기추가</span>
                         <div class="card" onclick="getRestaurant(${restaurant.res_index})">
                             <img class="card-img" src="http://via.placeholder.com/350x150">
                             <div class="card-img-header">
@@ -55,6 +56,7 @@
                 </c:if>
                 <c:if test="${i % j == j - 1}">
                     <div class="col-md-6">
+                    <span style="margin-left:200px" onclick="addFavorite(${restaurant.res_index})">즐겨찾기추가</span>
                         <div class="card" onclick="getRestaurant(${restaurant.res_index})">
                             <img class="card-img" src="http://via.placeholder.com/350x150">
                             <div class="card-img-header">

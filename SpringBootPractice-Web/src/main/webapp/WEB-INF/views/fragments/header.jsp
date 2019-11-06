@@ -20,6 +20,8 @@
     <%-- 게시판 --%>
     <spring:url var="postListUri" value="/board/posts"/>
     <spring:url var="newPostUri" value="/board/posts/new"/>
+    <spring:url var="questionListUri" value="/board/questions"/>
+    <spring:url var="questionPostUri" value="/board/questions/new"/>
     <%-- 식당 --%>
     <spring:url var="restaurantListUri" value="/restaurants"/>
     <spring:url var="myRestaurantListUri" value="/favorites"/>
@@ -72,6 +74,8 @@
                 <div class="dropdown-menu" aria-labelledby="navbarDropdownBoardMenuLink">
                     <a class="dropdown-item" href="${postListUri}">게시글 목록</a>
                     <a class="dropdown-item" href="${newPostUri}">게시글 등록</a>
+                    <a class="dropdown-item" href="${questionListUri}">문의사항 조회</a>
+					<a class="dropdown-item" href="${questionPostUri}">문의사항 작성</a>
                 </div>
             </li>
             <li class="nav-item dropdown">
