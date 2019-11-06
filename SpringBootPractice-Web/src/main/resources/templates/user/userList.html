@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<h1>UserList</h1>
+		<div th:each="user : ${userList}" th:object="${user}" th:attr="data-menuIndex=*{user_id}">
+			<span th:text="*{user_id}"></span>
+			<span th:text="*{user_name}"></span>
+			<span th:text="*{user_email}"></span>
+		</div>
+</body>
+</html>

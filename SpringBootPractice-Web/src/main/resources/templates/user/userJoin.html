@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<form action="/user/userJoin" method="post">
+		<h3> ID : <input name="user_id" type="text"></h3>
+		<h3> PASSWORD : <input name="user_password" type="password"></h3>
+		<h3> NAME : <input name="user_name" type="text"></h3>
+		<h3> EMAIL : <input name="user_email" type="text"></h3>
+		<input type="submit" value="가입하기">
+		<input type="button" value="취소" onclick="window.location='/index'">
+	</form>
+</body>
+</html>
