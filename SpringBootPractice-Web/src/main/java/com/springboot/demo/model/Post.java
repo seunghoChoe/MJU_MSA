@@ -1,36 +1,30 @@
 package com.springboot.demo.model;
 
+import lombok.*;
+
+import javax.validation.constraints.Size;
+import java.io.Serializable;
 import java.time.LocalDateTime;
 
-public class Post {
-	private int post_index;
+@Builder
+@Getter
+@Setter
+@NoArgsConstructor
+@AllArgsConstructor
+public class Post implements Serializable {
+	private static final long serialVersionUID = 1L;
+
+	private int post_id;
+	private String post_user_id;
+
+	@Size(min = 1, max = 100, message = "게시글 제목은 1~100자 이내로 작성해야 합니다.") // 특수문자 등 필터링 필요 시, @Pattern 사용
 	private String post_title;
+
+	@Size(min = 1, max = 1000, message = "게시글 내용은 1~1000자 이내로 작성해야 합니다.") // 태그가 사용될 경우 상세한 필터링 필요
 	private String post_content;
+
+	private String post_image; // 썸네일 이미지
+
 	private LocalDateTime post_created_date;
-	public int getPost_index() {
-		return post_index;
-	}
-	public void setPost_index(int post_index) {
-		this.post_index = post_index;
-	}
-	public String getPost_title() {
-		return post_title;
-	}
-	public void setPost_title(String post_title) {
-		this.post_title = post_title;
-	}
-	public String getPost_content() {
-		return post_content;
-	}
-	public void setPost_content(String post_content) {
-		this.post_content = post_content;
-	}
-	public LocalDateTime getPost_created_date() {
-		return post_created_date;
-	}
-	public void setPost_created_date(LocalDateTime post_created_date) {
-		this.post_created_date = post_created_date;
-	}
-	
-	
+	private LocalDateTime post_updated_date;
 }

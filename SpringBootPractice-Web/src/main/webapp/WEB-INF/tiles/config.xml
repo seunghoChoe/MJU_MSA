@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE tiles-definitions PUBLIC
+        "-//Apache Software Foundation//DTD Tiles Configuration 3.0//EN"
+        "http://tiles.apache.org/dtds/tiles-config_3_0.dtd">
+
+<tiles-definitions>
+
+    <!-- 기본 페이지 레이아웃 -->
+    <definition name="defaultLayout" template="/WEB-INF/tiles/layout.jsp">
+        <put-attribute name="header" value="/WEB-INF/views/fragments/header.jsp"/>
+        <put-attribute name="menu" value="/WEB-INF/views/fragments/menu.jsp"/>
+        <put-attribute name="content" value=""/>
+        <put-attribute name="footer" value="/WEB-INF/views/fragments/footer.jsp"/>
+    </definition>
+
+    <!-- 계정 등록/로그인 페이지 레이아웃 -->
+    <definition name="joinAndLoginLayout" template="/WEB-INF/tiles/layout.jsp">
+        <put-attribute name="content" value=""/>
+    </definition>
+
+    <!-- 에러 페이지 레이아웃 -->
+    <definition name="errorLayout" template="/WEB-INF/tiles/layout.jsp">
+        <put-attribute name="header" value="/WEB-INF/views/fragments/header.jsp"/>
+        <put-attribute name="content" value=""/>
+    </definition>
+
+    <!-- 계정 등록/로그인/수정 페이지 패턴 정의 -->
+    <definition name="users/join" extends="joinAndLoginLayout">
+        <put-attribute name="content" value="/WEB-INF/views/users/join.jsp"/>
+    </definition>
+    <definition name="users/login" extends="joinAndLoginLayout">
+        <put-attribute name="content" value="/WEB-INF/views/users/login.jsp"/>
+    </definition>
+    <definition name="users/edit" extends="joinAndLoginLayout">
+        <put-attribute name="content" value="/WEB-INF/views/users/edit.jsp"/>
+    </definition>
+    <definition name="users/delete" extends="joinAndLoginLayout">
+        <put-attribute name="content" value="/WEB-INF/views/users/delete.jsp"/>
+    </definition>
+
+    <!-- 에러 페이지 패턴 정의 -->
+    <definition name="error" extends="errorLayout">
+        <put-attribute name="header" value="/WEB-INF/views/fragments/header.jsp"/>
+        <put-attribute name="content" value="/WEB-INF/views/error.jsp"/>
+    </definition>
+
+    <!-- 기본 페이지 패턴 정의 -->
+    <definition name="*" extends="defaultLayout">
+        <put-attribute name="content" value="/WEB-INF/views/{1}.jsp"/>
+    </definition>
+    <definition name="*/*" extends="defaultLayout">
+        <put-attribute name="content" value="/WEB-INF/views/{1}/{2}.jsp"/>
+    </definition>
+    <definition name="*/*/*" extends="defaultLayout">
+        <put-attribute name="content" value="/WEB-INF/views/{1}/{2}/{3}.jsp"/>
+    </definition>
+
+</tiles-definitions>

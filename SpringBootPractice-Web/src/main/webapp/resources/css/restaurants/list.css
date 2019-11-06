@@ -1,0 +1,39 @@
+/* 식당 목록 헤더 영역 */
+#restaurantItemHeaderButton {
+    padding-right: 0;
+    text-align: right;
+}
+#restaurantItemHeaderButton #restaurantItemNew {
+    border: none;
+}
+
+/* 식당 목록 카드 영역 */
+#restaurantListContent .card {
+    cursor: pointer;
+    padding: 15px;
+    margin-top: 30px;
+    margin-bottom: 50px;
+    /*box-shadow: 0 0 16px 1px rgba(0, 0, 0, 0.1);*/
+}
+#restaurantListContent .card img {
+    width: 100%;
+    /*object-fit: cover;*/
+    border-radius: .625rem;
+    background: rgba(0, 0, 0, 0.1);
+    opacity: 1;
+    /*box-shadow: 0 3px 20px 11px rgba(0, 0, 0, 0.09);*/
+}
+#restaurantListContent .card .card-img {
+    margin-top: -30px;
+    margin-bottom: 15px;
+}
+#restaurantListContent .card-img-header {
+    position: absolute;
+    top: 28%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+#restaurantListContent .card-img-header .card-img-text {
+    color: #FFFFFF;
+}

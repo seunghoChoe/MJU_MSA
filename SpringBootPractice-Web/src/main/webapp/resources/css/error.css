@@ -1,0 +1,62 @@
+#error {
+    text-align: center;
+    line-height: 1.4;
+    padding: 15px;
+}
+
+#error h1 {
+    margin-top: 150px;
+    letter-spacing: 0.7rem;
+    font-size: 10rem;
+    font-weight: 300;
+}
+
+#error h2 {
+    margin-top: 75px;
+    margin-bottom: 50px;
+    letter-spacing: 0.15rem;
+    text-transform: uppercase;
+    font-size: 2rem;
+    font-weight: 300;
+}
+
+#error span {
+    line-height: 0;
+    font-size: 0.9rem;
+}
+
+#error #homeHref {
+    color: #FF6F68;
+    border-bottom: 1px dashed #FF6F68;
+    border-radius: 2px;
+}
+
+#error footer {
+    margin-top: 250px;
+    font-size: 0.8rem;
+}
+
+#error .container {
+    margin-bottom: 5px;
+}
+
+#error footer a {
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
+/* 650px 미만 시 */
+@media screen and (max-width: 650px) {
+    #error h1 {
+        margin-top: 0;
+        letter-spacing: 0;
+        font-size: 5rem;
+    }
+    #error h2 {
+        margin-top: 50px;
+        margin-bottom: 25px;
+    }
+    #error footer {
+        margin-top: 150px;
+    }
+}

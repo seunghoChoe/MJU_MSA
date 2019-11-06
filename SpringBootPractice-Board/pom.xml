@@ -9,8 +9,8 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.springboot.demo</groupId>
-	<artifactId>SpringBootPractice-Board</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
+	<artifactId>board-service</artifactId>
+	<version>0.1</version>
 	<packaging>jar</packaging>
 	<name>SpringBootPractice-Board</name>
 	<description>Demo project for Spring Boot</description>

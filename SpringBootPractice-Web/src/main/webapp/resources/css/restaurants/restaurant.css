@@ -1,0 +1,37 @@
+/* 식당 헤더 영역 */
+#restaurantItemHeaderGroup {
+    margin-top: 50px;
+}
+#restaurantItemHeaderInfo {
+    /*padding-left: 0;*/
+    text-align: left;
+}
+#restaurantItemHeaderInfo #restaurantItemCategory {
+    margin-left: 10px;
+    color: #999999;
+}
+#restaurantItemHeaderButton {
+    /*padding-right: 0;*/
+    text-align: right;
+}
+#restaurantItemHeaderButton #restaurantItemUri,
+#restaurantItemHeaderButton #restaurantItemEdit,
+#restaurantItemHeaderButton #restaurantItemDelete {
+    border: none;
+}
+
+/* 식당 푸터 영역 */
+#restaurantItemFooterPostButton {
+    padding-left: 0;
+    text-align: left;
+}
+#restaurantItemFooterListButton {
+    padding-right: 0;
+    text-align: right;
+}
+#restaurantItemFooterPostButton #restaurantItemView,
+#restaurantItemFooterPostButton #restaurantItemLike,
+#restaurantItemFooterPostButton #restaurantItemComment,
+#restaurantItemFooterListButton #restaurantItemList {
+    border: none;
+}
