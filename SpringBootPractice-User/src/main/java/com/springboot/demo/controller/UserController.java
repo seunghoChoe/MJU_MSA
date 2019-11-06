@@ -27,6 +27,7 @@ public class UserController {
 	@RequestMapping(value="/users", method=RequestMethod.GET)
 	public ResponseEntity<List<User>> selectAllUser() {
 		logger.info("selectAllUser()");
+		System.out.println("merge-test");
 		List<User> userList = userService.selectAllUser();
 		ResponseEntity<List<User>> reponseEntity = new ResponseEntity<List<User>>(userList, HttpStatus.OK);
 		return reponseEntity;
