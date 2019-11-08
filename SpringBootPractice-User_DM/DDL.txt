@@ -1,0 +1,43 @@
+CREATE DATABASE `User_MSA` /*!40100 DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci */;
+
+CREATE TABLE `user` (
+  `user_id` varchar(45) NOT NULL,
+  `user_password` varchar(45) DEFAULT NULL,
+  `user_name` varchar(45) DEFAULT NULL,
+  `user_email` varchar(45) DEFAULT NULL,
+  PRIMARY KEY (`user_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+INSERT INTO `User_MSA`.`user`
+(`user_id`,`user_password`,`user_name`,`user_email`)
+VALUES('admin', 'admin', '손재하', 'jaeha@naver.com');
+
+INSERT INTO `User_MSA`.`user`
+(`user_id`,`user_password`,`user_name`,`user_email`)
+VALUES('seungho', 'seungho', '최승호', 'seungho93@naver.com');
+
+INSERT INTO `User_MSA`.`user`
+(`user_id`,`user_password`,`user_name`,`user_email`)
+VALUES('doming', 'dmongmin', '김동민', 'dongminrotc@naver.com');
+
+/////////////////////////////////////////////////////////////////////////////////
+
+CREATE TABLE `myrestaurant` (
+  `user_id` varchar(45) NOT NULL,
+  `res_index` int(11) NOT NULL,
+  CONSTRAINT `myres_pk` PRIMARY KEY (`user_id`,`res_index`),
+  CONSTRAINT `myres_fk` FOREIGN KEY (`user_id`) REFERENCES `user` (`user_id`) ON DELETE CASCADE ON UPDATE CASCADE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+INSERT INTO `User_MSA`.`myrestaurant`
+(`user_id`,`res_index`)
+VALUES('seungho',1);
+
+INSERT INTO `User_MSA`.`myrestaurant`
+(`user_id`,`res_index`)
+VALUES('seungho',2);
+
+INSERT INTO `User_MSA`.`myrestaurant`
+(`user_id`,`res_index`)
+VALUES('doming',2);
+
