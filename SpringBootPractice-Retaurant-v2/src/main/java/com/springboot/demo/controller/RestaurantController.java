@@ -2,7 +2,6 @@ package com.springboot.demo.controller;
 
 import java.io.UnsupportedEncodingException;
 import java.util.List;
-import java.util.Optional;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -13,13 +12,11 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.google.gson.Gson;
+import com.springboot.demo.entity.Menu;
 import com.springboot.demo.entity.Restaurant;
-import com.springboot.demo.model.response.CommonResult;
-import com.springboot.demo.model.response.SingleResult;
+import com.springboot.demo.repo.MenuJpaRepo;
 import com.springboot.demo.repo.RestaurantJpaRepo;
 import com.springboot.demo.service.ResponseService;
 
@@ -28,12 +25,13 @@ import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.ApiParam;
 import lombok.RequiredArgsConstructor;
 
-@Api(tags = { "1. Restaurant" })
+@Api(tags = { "1-1. Restaurant" })
 @RequiredArgsConstructor
 @RestController // 결과값을 JSON으로 출력합니다.
 @RequestMapping(value = "/")
 public class RestaurantController {
 	private final RestaurantJpaRepo restaurantJpaRepo;
+	private final MenuJpaRepo menuJpaRepo;
 	private final ResponseService responseService; // 결과를 처리할 Service
 
 	@ApiOperation(value = "식당 조회", notes = "모든 식당을 조회한다")
@@ -49,18 +47,18 @@ public class RestaurantController {
 	}
 	
 
-//	@ApiOperation(value = "식당 하나 조회", notes = "res_index로 식당을 조회한다")
+	@ApiOperation(value = "식당 하나 조회", notes = "res_index로 식당을 조회한다")
 	@GetMapping(value = "/restaurant/{res_index}")
-//	public ResponseEntity<Restaurant> findUserById(
-//			@ApiParam(value = "식당ID", required = true) @PathVariable int res_index) {
+	public ResponseEntity<Restaurant> findUserById(
+			@ApiParam(value = "식당ID", required = true) @PathVariable int res_index) {
 		// 결과데이터가 단일건인경우 getBasicResult를 이용해서 결과를 출력한다.
 //		SingleResult<Restaurant> singleResult = responseService.getSingleResult(restaurantJpaRepo.findById(res_index).orElse(null));
 //		Gson gson = new Gson(); // Gson 사용
 //	    return gson.toJson(singleResult); // json으로 변환 후, 리턴
 		
-//		Restaurant restaurant = restaurantJpaRepo.findById(res_index);
-//		return new ResponseEntity<Restaurant>(restaurant, HttpStatus.OK);
-//	}
+		Restaurant restaurant = restaurantJpaRepo.getOne(res_index);
+		return new ResponseEntity<Restaurant>(restaurant, HttpStatus.OK);
+	}
 	
 	@ApiOperation(value = "식당 입력", notes = "식당을 입력한다.")
 	@PostMapping(value = "/restaurant")
@@ -80,12 +78,18 @@ public class RestaurantController {
 		
 //		return responseService.getSingleResult(restaurantJpaRepo.save(restaurant));
 		Restaurant newRestaurant = restaurantJpaRepo.save(restaurant);
+		int res_index = newRestaurant.getRes_index();
+		for (Menu m: newRestaurant.getRes_menues()) {
+			m.setRestaurant(newRestaurant);
+		}
+		menuJpaRepo.saveAll(restaurant.getRes_menues());
+		
 		return new ResponseEntity<Restaurant>(newRestaurant, HttpStatus.OK);
 	}
 	
 	@ApiOperation(value = "식당 수정", notes = "식당 정보를 수정한다")
     @PutMapping(value = "/restaurant/{res_index}")
-    public ResponseEntity<Restaurant> modify(
+    public ResponseEntity<Restaurant> modify(@ApiParam(value = "식당 아이디", required = true) @PathVariable int res_index, 
 //    		@ApiParam(value = "식당 이름", required = true) @RequestParam String res_name,
 //			@ApiParam(value = "식당 종류", required = true) @RequestParam String res_category,
 //			@ApiParam(value = "식당 별점", required = false) @RequestParam Integer res_grade,
@@ -99,15 +103,24 @@ public class RestaurantController {
 //				.build();
 		
 //		return responseService.getSingleResult(restaurantJpaRepo.save(restaurant));
-		Restaurant modifiedRestaurant = restaurantJpaRepo.save(restaurant);
+		Restaurant modifiedRestaurant = restaurantJpaRepo.getOne(res_index);
+		modifiedRestaurant.setRes_name(restaurant.getRes_name());
+		modifiedRestaurant.setRes_category(restaurant.getRes_category());
+		modifiedRestaurant.setRes_grade(restaurant.getRes_grade());
+		modifiedRestaurant.setRes_expected_minutes(restaurant.getRes_expected_minutes());
+		modifiedRestaurant.setRes_menues(restaurant.getRes_menues());
+		modifiedRestaurant.setRes_content(restaurant.getRes_content());
+		modifiedRestaurant.setRes_image(restaurant.getRes_image());
+		restaurantJpaRepo.save(modifiedRestaurant);
+		
 		return new ResponseEntity<Restaurant>(modifiedRestaurant, HttpStatus.OK);
     }
 	
 	@ApiOperation(value = "식당 삭제", notes = "res_index로 식당 정보를 삭제한다")
 	@DeleteMapping(value = "/restaurant/{res_index}")
-	public CommonResult delete(@ApiParam(value = "식당 아이디", required = true) @PathVariable int res_index) {
+	public void delete(@ApiParam(value = "식당 아이디", required = true) @PathVariable int res_index) {
 		restaurantJpaRepo.deleteById(res_index);
 		// 성공 결과 정보만 필요한경우 getSuccessResult()를 이용하여 결과를 출력한다.
-		return responseService.getSuccessResult();
+//		return responseService.getSuccessResult();
 	}
 }
