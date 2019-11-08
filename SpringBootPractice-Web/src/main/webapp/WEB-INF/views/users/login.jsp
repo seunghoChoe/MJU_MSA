@@ -3,15 +3,15 @@
 <%@ taglib uri="http://www.springframework.org/tags" prefix="spring" %>
 
 <head>
-    <link href="/resources/css/users/joinAndLogin.css" rel="stylesheet">
+    <link href="/resources/css/users/joinAndLogin.css?v=<%=System.currentTimeMillis() %>" rel="stylesheet">
     <script src="/resources/js/users/joinAndLogin.js?v=<%=System.currentTimeMillis() %>" type="text/javascript"></script>
-    <title>계정 로그인</title>
+    <title>명지리본: 계정 로그인</title>
 </head>
 
 <div id="login" class="container">
-    <spring:url var="joinUrl" value="/users/join"/>
-    <spring:url var="loginUrl" value="/users/login"/>
-    <spring:url var="homeUrl" value="/"/>
+    <spring:url var="joinUri" value="/users/join"/>
+    <spring:url var="loginUri" value="/users/login"/>
+    <spring:url var="homeUri" value="/"/>
 
     <div class="container">
         <h3>MJ Ribbon</h3>
@@ -22,7 +22,7 @@
             <p><strong>계정 정보를 입력하여 로그인하세요!</strong></p>
             <hr/>
 
-            <form method="post" action="${loginUrl}">
+            <form method="post" action="${loginUri}">
                 <div class="form-group">
                     <label for="user_id" class="col-form-label">계정 ID</label>
                     <div class="input-group input-group-seamless">
@@ -50,7 +50,7 @@
                     <button id="loginButton" type="submit" class="btn btn-dark btn-block">
                         <strong>계정 로그인</strong>
                     </button>
-                    <button id="loginCancelButton" type="button" class="btn btn-default btn-block" data-toggle="tooltip" data-placement="bottom" title="홈 화면으로 가기" onclick="location.href='${homeUrl}'">
+                    <button id="loginCancelButton" type="button" class="btn btn-default btn-block" data-toggle="tooltip" data-placement="bottom" title="홈 화면으로 가기" onclick="location.href='${homeUri}'">
                         <strong>취소</strong>
                     </button>
                 </div>
@@ -58,7 +58,7 @@
                 <div class="container">
                     <a href="#">ID 찾기</a>
                     <a href="#">비밀번호 찾기</a>
-                    <a href="${joinUrl}">계정 등록</a>
+                    <a href="${joinUri}">계정 등록</a>
                 </div>
             </form>
         </div>
@@ -70,14 +70,9 @@
                 <a href="#">고객센터</a>
                 <a href="#">공지사항</a>
             </div>
-            <a href="${homeUrl}">Copyright © MJ Ribbon. All rights reserved.</a>
+            <a href="${homeUri}">Copyright © MJ Ribbon. All rights reserved.</a>
         </footer>
     </div>
 </div>
 
-<c:if test="${serverMessage != null}">
-    <script>
-        var message = "${serverMessage}";
-        alert(message)
-    </script>
-</c:if>
+<jsp:include page="/WEB-INF/views/fragments/serverMessage.jsp"/>

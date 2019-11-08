@@ -3,11 +3,12 @@
 <%@ taglib uri="http://www.springframework.org/tags" prefix="spring" %>
 
 <head>
-    <link href="/resources/css/error.css" rel="stylesheet">
+    <link href="/resources/css/error.css?v=<%=System.currentTimeMillis() %>" rel="stylesheet">
+    <title>명지리본: 페이지 오류</title>
 </head>
 
 <div id="error" class="container">
-    <spring:url var="homeUrl" value="/"/>
+    <spring:url var="homeUri" value="/"/>
 
     <div class="container">
         <h1>${errorCode}</h1>
@@ -16,7 +17,7 @@
         <br/>
         <span>관련하여 문의사항이 있으시면 고객센터를 통해 관리자에게 문의해 주시기 바랍니다.</span>
         <br/><br/>
-        <span><a id="homeHref" href="${homeUrl}">Return to Homepage</a></span>
+        <span><a id="homeHref" href="${homeUri}">Return to Homepage</a></span>
     </div>
 
     <footer class="container">
@@ -25,6 +26,6 @@
             <a href="#">고객센터</a>
             <a href="#">공지사항</a>
         </div>
-        <a href="${homeUrl}">Copyright © MJ Ribbon. All rights reserved.</a>
+        <a href="${homeUri}">Copyright © MJ Ribbon. All rights reserved.</a>
     </footer>
 </div>

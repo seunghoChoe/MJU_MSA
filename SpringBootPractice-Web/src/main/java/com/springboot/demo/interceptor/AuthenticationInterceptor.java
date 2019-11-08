@@ -9,6 +9,9 @@ import org.springframework.lang.Nullable;
 import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.handler.HandlerInterceptorAdapter;
 
+/**
+ * @Class: 테스트 인터셉터
+ */
 public class AuthenticationInterceptor extends HandlerInterceptorAdapter{
 	private static final Logger logger = LoggerFactory.getLogger(AuthenticationInterceptor.class);
 

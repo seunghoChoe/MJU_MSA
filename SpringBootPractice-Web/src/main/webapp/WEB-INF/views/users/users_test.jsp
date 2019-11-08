@@ -4,15 +4,15 @@
 <%@ taglib uri="http://www.springframework.org/tags/form" prefix="form" %>
 
 <head>
-    <link href="/resources/css/users/joinAndLogin.css" rel="stylesheet">
+    <link href="/resources/css/users/joinAndLogin.css?v=<%=System.currentTimeMillis() %>" rel="stylesheet">
     <script src="/resources/js/users/joinAndLogin.js?v=<%=System.currentTimeMillis() %>" type="text/javascript"></script>
     <title>계정 등록</title>
 </head>
 
 <div id="join" class="container">
-    <spring:url var="joinUrl" value="/users/join"/>
-    <spring:url var="loginUrl" value="/users/login"/>
-    <spring:url var="homeUrl" value="/"/>
+    <spring:url var="joinUri" value="/users/join"/>
+    <spring:url var="loginUri" value="/users/login"/>
+    <spring:url var="homeUri" value="/"/>
 
     <div class="container">
         <h3>MJ Ribbon</h3>
