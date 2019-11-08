@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+		PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+		"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="mapper.QuestionMapper">
+	<resultMap type="Question" id="Question">
+		<result property="qna_id" column="qna_id" javaType="java.lang.Integer" jdbcType="INTEGER"/>
+		<result property="qna_user_id" column="qna_user_id" javaType="java.lang.String" jdbcType="VARCHAR"/>
+		<result property="qna_manager" column="qna_manager" javaType="java.lang.String" jdbcType="VARCHAR"/>
+		<result property="qna_category" column="qna_category" javaType="java.lang.String" jdbcType="VARCHAR"/>
+		<result property="qna_question" column="qna_question" javaType="java.lang.String" jdbcType="VARCHAR"/>
+		<result property="qna_answer" column="qna_answer" javaType="java.lang.String" jdbcType="VARCHAR"/>
+	</resultMap>
+	<!-- 문의사항 작성 -->
+	<insert id="question" parameterType="Question">
+	<![CDATA[
+		INSERT INTO question(qna_user_id, qna_category, qna_question)VALUES (#{qna_user_id},#{qna_category},#{qna_question});
+	]]>
+	</insert>
+	
+	<!-- 전체 문의사항 조회 -->
+	<select id="selectAllQuestion" resultMap="Question">
+	<![CDATA[
+		SELECT *
+		FROM question
+	]]>
+	</select>
+	
+	<!-- 문의사항 자세히 보기 -->
+	<select id="selectOneQuestion" resultType="Question" parameterType = "Integer" >
+	<![CDATA[
+	   	SELECT * FROM question WHERE qna_id = #{qna_id};
+	]]>
+	</select>
+	<!-- 답변페이지 --> 
+	<update id="answer" parameterType = "Question" > 
+	<![CDATA[
+      UPDATE question SET qna_manager = #{qna_manager},qna_answer=#{qna_answer} WHERE qna_id = #{qna_id}
+ 	  ]]>
+	</update>
+	</mapper>

@@ -1,0 +1,19 @@
+/* Header 영역 공통 속성 */
+#layoutHeader {
+    font-size: 1.0rem;
+}
+
+#layoutHeader .navbar-brand {
+    font-size: 1.5rem;
+}
+
+#layoutHeader li {
+    margin-right: 10px;
+}
+
+/* 650px 미만 시 */
+@media screen and (max-width: 650px) {
+    #layoutHeader {
+        font-size: 0.8rem;
+    }
+}
