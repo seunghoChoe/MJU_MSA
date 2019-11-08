@@ -1,22 +1,20 @@
-1. SpringBootPractice-WEB
-- 화면
-- 인증, 권한
+<h2 id="1"> 1. 식당정보 제공 서비스 구현 프로젝트</h2> 
 
-2. SpringBootPractice-User
-- 사용자 관련
+### 프로젝트 개요(학교 - 팀프로젝트)
+- 기간 : 19.9 ~ 진행중
+- 분류 : 웹 어플리케이션
+- 사용 기술 및 도구 : Springboot, SrpingCloud, MyBatis, JPA, JSP, Jenkins   
+- 아키텍처 : MSA(Micro Service Architecture)
+<br><br>  
+  
+### 아키텍처
+ * 런타임 뷰
+<img width="900" alt="스크린샷 2019-11-02 오후 2 38 17" src="https://user-images.githubusercontent.com/55579896/68066633-80325680-fd7e-11e9-95a2-717116d5313a.png">
+<br>
 
-3. SpringBootPractice-Restaurant
-- 식당 정보 관련
+ * 컴포넌트 뷰
+<img width="900" alt="스크린샷 2019-11-02 오후 2 49 35" src="https://user-images.githubusercontent.com/55579896/68066732-0b601c00-fd80-11e9-9861-3d9f5bc3ffdb.png">
+<br>
 
-4. SpringBootPractice-Board
-- 게시판 관련
-
-5. SpringBootPractice-Eureka-Server
-- 접속가능한 API 서버의 주소를 관리하는 유레카 서비스
-
-6. SpringBootPractice-API-Gateway
-- Zuul을 호스팅하는 서비스
-- 요청된 URI를 판별하여 적합한 API서비스로 요청을 전달하는 역할
-
-
-<img width="804" alt="스크린샷 2019-10-11 오후 7 36 47" src="https://user-images.githubusercontent.com/55579896/66645603-dff58000-ec5e-11e9-9e60-cf3856ef161e.png">
+### 프로젝트 도구
+<img width="601" alt="스크린샷 2019-11-02 오후 2 52 08" src="https://user-images.githubusercontent.com/55579896/68066758-61cd5a80-fd80-11e9-8f19-7b180ee8ca28.png">
