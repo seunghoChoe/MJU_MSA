@@ -1,16 +1,30 @@
-// ID 검사
+// ID 검사 (AJAX 호출 추가)
 function checkUserId() {
     var userId = $('#user_id').val();
     var regexp = /^[a-z0-9][a-z0-9_\-]{4,16}$/;
 
-    if (regexp.test(userId)) {
-        $('#userIdMessage').html("사용 가능한 ID 입니다.").css('color', '#0098F7');
-    } else if (! regexp.test(userId)) {
-        $('#userIdMessage').html("5~15자의 영문 소문자, 숫자와 특수기호(_),(-)만 사용 가능합니다.").css('color', '#FF3636');
-    } else {
-        $('#userIdMessage').html("사용할 수 없는 ID 입니다.").css('color', '#FF3636');
-    }
-    $('#userIdError').hide();
+    $.ajax({
+        type: 'GET',
+        // url: 'http://localhost:8081/check-id?user_id=' + userId,
+        url: 'http://52.78.148.181:8080/user-service/check-id?user_id=' + userId,
+        // data: {user_id: userId}, // 잘못된 값 전달이므로 삭제 (API 서버에 checkId(): asd,asd 형식으로 전달됨)
+        data: userId,
+
+        success: function (result) {
+            console.log(result);
+            if (regexp.test(userId) && result === 0) {
+                $('#userIdMessage').html("사용 가능한 ID 입니다.").css('color', '#0098F7');
+            } else if (! regexp.test(userId)) {
+                $('#userIdMessage').html("5~15자의 영문 소문자, 숫자와 특수기호(_),(-)만 사용 가능합니다.").css('color', '#FF3636');
+            } else {
+                $('#userIdMessage').html("사용할 수 없는 ID 입니다.").css('color', '#FF3636');
+            }
+            $('#userIdError').hide();
+        },
+        error: function () {
+            alert("오류가 발생하였습니다.");
+        }
+    });
 }
 
 // 비밀번호 검사
