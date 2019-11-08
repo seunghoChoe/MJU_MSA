@@ -19,4 +19,24 @@ public class BoardDAO {
 	}
 
 
+	public void createPost(Post newPost) {
+		sqlSessionTemplate.insert(MAPPER_NAME_SPACE + "createPost", newPost);
+	}
+
+
+	public Post selectOnePost(Integer id) {
+		return sqlSessionTemplate.selectOne(MAPPER_NAME_SPACE + "selectOnePost", id);
+	}
+
+
+	public void postUpdate(Post postUpdate) {
+		sqlSessionTemplate.update(MAPPER_NAME_SPACE + "updatePost",postUpdate);
+	}
+
+
+	public void deletePost(Integer id) {
+		 sqlSessionTemplate.delete(MAPPER_NAME_SPACE + "deletePost", id) ;
+	}
+
+
 }

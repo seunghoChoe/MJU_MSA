@@ -5,13 +5,16 @@
 		
 <mapper namespace="mapper.BoardMapper">
 	<resultMap type="Post" id="Post">
-		<result property="post_index" column="post_index" javaType="java.lang.Integer" jdbcType="INTEGER"/>
+		<result property="post_id" column="post_id" javaType="java.lang.Integer" jdbcType="INTEGER"/>
+		<result property="post_user_id" column="post_user_id" javaType="java.lang.String" jdbcType="VARCHAR"/>
 		<result property="post_title" column="post_title" javaType="java.lang.String" jdbcType="VARCHAR"/>
 		<result property="post_content" column="post_content" javaType="java.lang.String" jdbcType="VARCHAR"/>
+		<result property="post_image" column="post_image" javaType="java.lang.String" jdbcType="VARCHAR"/>
 		<result property="post_created_date" column="post_created_date" javaType="java.time.LocalDateTime" jdbcType="TIMESTAMP"/>
+		<result property="post_uptated_date" column="post_uptated_date" javaType="java.time.LocalDateTime" jdbcType="TIMESTAMP"/>
 	</resultMap>
 	
-	<!-- 전체 메모 조회 -->
+	<!-- 전체 게시물 조회 -->
 	<select id="selectAllPost" resultMap="Post">
 	<![CDATA[
 		SELECT *
@@ -19,5 +22,36 @@
 	]]>
 	</select>
 	
+	<!-- 게시글 작성 -->
+	<insert id="createPost" parameterType="Post">
+	<![CDATA[
+		INSERT INTO post(post_user_id,post_title,post_content,post_image)VALUES (#{post_user_id},#{post_title},#{post_content},#{post_image});
+	 	SET @CNT = 0; 
+	 	UPDATE post SET post.post_id = @CNT:=@CNT+1;
+	]]>
+	</insert>
 	
+	<!-- 게시글 자세히 보기 -->
+	<select id="selectOnePost" resultType="Post" parameterType = "Integer" >
+	<![CDATA[
+	   	SELECT * FROM post WHERE post_id = #{post_id};
+	]]>
+	</select>
+	
+	<!-- 게시글 수정 --> 
+	<update id="updatePost" parameterType = "Post" > 
+	<![CDATA[
+      UPDATE post
+      SET post_id = #{post_id},post_user_id = #{post_user_id}, post_title = #{post_title},post_content=#{post_content},post_image=#{post_image},
+      post_updated_date= now()
+      WHERE post_id = #{post_id}
+ 	  ]]>
+	</update>
+	
+	<!-- 게시글 삭제 -->
+	<delete id = "deletePost" parameterType = "Integer">
+	 DELETE FROM post WHERE post_id = #{post_id};
+	 SET @CNT = 0; 
+	 UPDATE post SET post.post_id = @CNT:=@CNT+1;
+	</delete>
 </mapper>
