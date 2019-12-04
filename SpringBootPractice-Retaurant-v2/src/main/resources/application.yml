@@ -13,6 +13,13 @@ spring:
     url: jdbc:mysql://database-1.cd6kxidf399v.ap-northeast-2.rds.amazonaws.com:3306/Restaurant_MSA?useUnicode=yes&characterEncoding=utf8&useSSL=false&serverTimezone=Asia/Seoul
     username: admin
     password: xlavmfhwprxm123!
+ #zipkin
+  zipkin:
+    base-url: http://52.78.141.63:9411/
+  sleuth:
+    sampler:
+      probability: 1
+    
 # h2
 #    url: jdbc:h2:tcp://localhost/~/test
 #    driver-class-name: org.h2.Driver
@@ -37,6 +44,7 @@ eureka:
   instance:
     prefer-ip-address: true
     ip-address: 13.209.77.33
+
     
 
 # h2  
