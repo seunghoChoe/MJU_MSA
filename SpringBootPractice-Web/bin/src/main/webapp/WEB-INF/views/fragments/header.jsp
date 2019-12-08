@@ -3,7 +3,7 @@
 <%@ taglib uri="http://www.springframework.org/tags" prefix="spring" %>
 
 <head>
-    <link href="/resources/css/fragments/header.css" rel="stylesheet">
+    <link href="/resources/css/fragments/header.css?v=<%=System.currentTimeMillis() %>" rel="stylesheet">
 <%--    <script src="/resources/js/fragments/header.js?v=<%=System.currentTimeMillis() %>" type="text/javascript"></script>--%>
 </head>
 
@@ -13,12 +13,19 @@
     <spring:url var="logoutUri" value="/users/logout"/>
     <spring:url var="joinUri" value="/users/join"/>
 
-    <%-- 테스트 URI --%>
+    <%-- 계정 관리 --%>
     <spring:url var="userListUri" value="/users"/>
+    <spring:url var="editUserUri" value="/users/edit"/>
+    <spring:url var="deleteUserUri" value="/users/delete"/>
+    <%-- 게시판 --%>
     <spring:url var="postListUri" value="/board/posts"/>
+    <spring:url var="newPostUri" value="/board/posts/new"/>
+    <spring:url var="questionListUri" value="/board/questions"/>
+    <spring:url var="questionPostUri" value="/board/questions/new"/>
+    <%-- 식당 --%>
     <spring:url var="restaurantListUri" value="/restaurants"/>
-    <spring:url var="restaurantPostUri" value="/restaurantAddView"/>
-    <spring:url var="restaurantPutUri" value="/restaurantModifyView"/>
+    <spring:url var="myRestaurantListUri" value="/favorites"/>
+    <spring:url var="newRestaurantUri" value="/restaurants/new"/>
 
     <%-- Header 로고 --%>
     <img src="/resources/img/shards-logo-black.svg" alt="Example Navbar 1" class="mr-2" height="30">
@@ -42,33 +49,43 @@
                 <li class="nav-item">
                     <a class="nav-link" href=${joinUri}>계정 등록</a>
                 </li>
+                <li class="nav-item">
+                    <a class="nav-link" href=${userListUri}>전체 계정 조회</a>
+                </li>
             </c:if>
             <c:if test="${not empty sessionScope.loggedUser}">
                 <li class="nav-item">
                     <a class="nav-link" href=${logoutUri}>로그아웃</a>
                 </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownUserMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        계정 관리
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdownUserMenuLink">
+                        <a class="nav-link" href=${editUserUri}>계정 수정</a>
+                        <a class="nav-link" href=${deleteUserUri}>계정 탈퇴</a>
+                    </div>
+                </li>
             </c:if>
             <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownTestMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    테스트
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownBoardMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    맛집 매거진
                 </a>
-                <div class="dropdown-menu" aria-labelledby="navbarDropdownTestMenuLink">
-                    <a class="nav-link" href=${userListUri}>전체 계정 조회</a>
-                    <a class="nav-link" href=${postListUri}>전체 게시글 조회</a>
-                    <a class="nav-link" href=${restaurantListUri}>전체 맛집 조회</a>
-                    <a class="nav-link" href=${restaurantPostUri}>식당 추가</a>
-                    <a class="nav-link" href=${restaurantPutUri}>식당 수정</a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdownBoardMenuLink">
+                    <a class="dropdown-item" href="${postListUri}">게시글 목록</a>
+                    <a class="dropdown-item" href="${newPostUri}">게시글 등록</a>
+                    <a class="dropdown-item" href="${questionListUri}">문의사항 조회</a>
+					<a class="dropdown-item" href="${questionPostUri}">문의사항 작성</a>
                 </div>
             </li>
             <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownListMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    맛집 검색
-                </a>
-                <div class="dropdown-menu" aria-labelledby="navbarDropdownListMenuLink">
-                    <a class="dropdown-item" href="#">전체 목록</a>
-                    <a class="dropdown-item" href="#">이름별 검색</a>
-                    <a class="dropdown-item" href="#">평점별 검색</a>
-                    <a class="dropdown-item" href="#">거리별 검색</a>
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownRestaurantMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    맛집 스토리
+               </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdownRestaurantMenuLink">
+                    <a class="dropdown-item" href="${myRestaurantListUri}">내 식당 목록</a>
+                    <a class="dropdown-item" href="${restaurantListUri}">식당 목록</a>
+                    <a class="dropdown-item" href="${newRestaurantUri}">식당 등록</a>
                 </div>
             </li>
         </ul>

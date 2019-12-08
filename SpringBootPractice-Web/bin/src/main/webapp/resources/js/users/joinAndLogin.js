@@ -5,8 +5,10 @@ function checkUserId() {
 
     $.ajax({
         type: 'GET',
-        url: 'http://52.78.148.181:8080/user-service/check-id/' + userId,
-        data: {user_id: userId},
+        // url: 'http://localhost:8081/check-id?user_id=' + userId,
+        url: 'http://52.78.148.181:8080/user-service/check-id?user_id=' + userId,
+        // data: {user_id: userId}, // 잘못된 값 전달이므로 삭제 (API 서버에 checkId(): asd,asd 형식으로 전달됨)
+        data: userId,
 
         success: function (result) {
             console.log(result);

@@ -4,13 +4,13 @@
 <%@ taglib uri="http://www.springframework.org/tags" prefix="spring" %>
 
 <head>
-    <link href="/resources/css/board/posts/list.css" rel="stylesheet">
+    <link href="/resources/css/board/posts/list.css?v=<%=System.currentTimeMillis() %>" rel="stylesheet">
     <script src="/resources/js/board/posts/list.js?v=<%=System.currentTimeMillis() %>" type="text/javascript"></script>
     <title>명지리본: 맛집 매거진</title>
 </head>
 
 <div id="postList" class="container">
-    <spring:url var="postNewUri" value="/board/posts/new"/>
+    <spring:url var="newPostUri" value="/board/posts/new"/>
 
     <%-- 게시글 목록 헤더 영역 --%>
     <div class="container headerLine">
@@ -20,7 +20,7 @@
         <p>&colon; 명지리본 에디터가 선택한 맛집 매거진!</p>
 
         <div id="postItemHeaderButton" class="container">
-            <button id="postItemNew" type="button" class="btn btn-sm btn-outline-dark" onclick="location.href='${postNewUri}'">
+            <button id="postItemNew" type="button" class="btn btn-sm btn-outline-dark" onclick="location.href='${newPostUri}'">
                 <i class="fas fa-pen-square"></i> 등록
             </button>
         </div>
@@ -33,11 +33,11 @@
             <c:set var="i" value="0"/>
             <c:set var="j" value="2"/>
 
-            <c:forEach var="post" items="${postList}" varStatus="loop">
+            <c:forEach var="post" items="${postList}">
                 <c:if test="${i % j == 0}">
                     <div class="col-md-6">
                         <div class="card" onclick="getPost(${post.post_id})">
-                            <img class="card-img" src="http://via.placeholder.com/350x150">
+                            <img class="card-img" src="<c:url value="${post.post_image}"/>">
                             <div class="card-img-header">
                                 <h4 class="card-img-text">${post.post_title}</h4>
                                 <div class="container headerWhiteLine">
@@ -47,7 +47,7 @@
                             <%-- <div class="card-profile-img">--%>
                             <%-- </div>--%>
                             <div class="card-content">
-                                <p>${post.post_content}</p>
+                                <%--<p>${post.post_content}</p>--%>
                             </div>
                         </div>
                     </div>
@@ -55,7 +55,7 @@
                 <c:if test="${i % j == j - 1}">
                     <div class="col-md-6">
                         <div class="card" onclick="getPost(${post.post_id})">
-                            <img class="card-img" src="http://via.placeholder.com/350x150">
+                            <img class="card-img" src="<c:url value="${post.post_image}"/>">
                             <div class="card-img-header">
                                 <h4 class="card-img-text">${post.post_title}</h4>
                                 <div class="container headerWhiteLine">
@@ -65,7 +65,7 @@
                             <%-- <div class="card-profile-img">--%>
                             <%-- </div>--%>
                             <div class="card-content">
-                                <p>${post.post_content}</p>
+                                <%--<p>${post.post_content}</p>--%>
                             </div>
                         </div>
                     </div>
@@ -80,24 +80,6 @@
     <div class="container">
         <hr/>
     </div>
-
-    <%-- 카드 예시: https://m.blog.naver.com/PostView.nhn?blogId=pjh445&logNo=221159714850&proxyReferer=https%3A%2F%2Fwww.google.com%2F --%>
-    <%--    <c:forEach var="post" items="${postList}">--%>
-    <%--        <div class="postListItem container">--%>
-    <%--            <div class="card" onclick="getPost(${post.post_id})">--%>
-    <%--                <img id="cardThumbnail" class="card-img-top" src="https://mdbootstrap.com/img/Photos/Horizontal/Nature/4-col/img%20(34).jpg" alt="Card image cap">--%>
-    <%--                <div class="card-img-overlay">--%>
-    <%--                    <h5 class="card-title">${post.post_title}</h5>--%>
-    <%--                </div>--%>
-    <%--                <div class="card-body">--%>
-    <%--                    <p class="card-text">${post.post_content}</p>--%>
-    <%--                </div>--%>
-    <%--                <div class="card-footer">--%>
-    <%--                    <p class="card-text">${post.post_user_id}</p>--%>
-    <%--                </div>--%>
-    <%--            </div>--%>
-    <%--        </div>--%>
-    <%--    </c:forEach>--%>
 </div>
 
 <jsp:include page="/WEB-INF/views/fragments/serverMessage.jsp"/>

@@ -3,7 +3,7 @@
 <%@ taglib uri="http://www.springframework.org/tags" prefix="spring" %>
 
 <head>
-    <link href="/resources/css/fragments/menu.css" rel="stylesheet">
+    <link href="/resources/css/fragments/menu.css?v=<%=System.currentTimeMillis() %>" rel="stylesheet">
 <%--    <script src="/resources/js/fragments/menu.js?v=<%=System.currentTimeMillis() %>" type="text/javascript"></script>--%>
 </head>
 

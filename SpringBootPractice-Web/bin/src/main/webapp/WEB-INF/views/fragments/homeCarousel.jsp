@@ -1,7 +1,7 @@
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 
 <head>
-    <link href="/resources/css/fragments/homeCarousel.css" rel="stylesheet">
+    <link href="/resources/css/fragments/homeCarousel.css?v=<%=System.currentTimeMillis() %>" rel="stylesheet">
     <title>명지리본: 명지대학교 맛집 검색</title>
 </head>
 

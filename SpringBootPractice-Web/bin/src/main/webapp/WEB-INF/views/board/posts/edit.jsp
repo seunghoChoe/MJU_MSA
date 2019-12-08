@@ -4,7 +4,7 @@
 <%@ taglib uri="http://www.springframework.org/tags/form" prefix="form" %>
 
 <head>
-    <link href="/resources/css/board/posts/newAndEdit.css" rel="stylesheet">
+    <link href="/resources/css/board/posts/newAndEdit.css?v=<%=System.currentTimeMillis() %>" rel="stylesheet">
     <script src="/resources/js/board/posts/newAndEdit.js?v=<%=System.currentTimeMillis() %>" type="text/javascript"></script>
     <title>명지리본: 맛집 매거진</title>
 </head>

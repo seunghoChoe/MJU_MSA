@@ -3,7 +3,7 @@
 <%@ taglib uri="http://www.springframework.org/tags" prefix="spring" %>
 
 <head>
-    <link href="/resources/css/error.css" rel="stylesheet">
+    <link href="/resources/css/error.css?v=<%=System.currentTimeMillis() %>" rel="stylesheet">
     <title>명지리본: 페이지 오류</title>
 </head>
 
