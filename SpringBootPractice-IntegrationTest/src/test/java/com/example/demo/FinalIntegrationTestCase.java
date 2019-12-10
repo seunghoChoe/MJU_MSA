@@ -250,6 +250,7 @@ public class FinalIntegrationTestCase {
 		driver.get(driveurl);
 		fw.write(format.format(new Date()) + ": 게시글 수정 테스트 성공 케이스 실시 .\r\n");
 		
+		//로그인 요청
 		driver.findElement(By.linkText("로그인")).click();
 		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 
