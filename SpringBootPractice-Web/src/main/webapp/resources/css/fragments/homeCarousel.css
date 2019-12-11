@@ -1,4 +1,4 @@
-/* homeCarousel 영역 속성 */
+/* homeCarousel �쁺�뿭 �냽�꽦 */
 #homeCarousel {
     text-align: center;
 }
@@ -22,6 +22,18 @@
     border: 1px solid #E5E5E5;
 }
 
+#homeCarousel .card img {
+    border-radius: .625rem;
+    -webkit-filter: blur(0.01rem) brightness(0.8);  /* Chrome, Safari, Opera */
+    filter: blur(0.01rem) brightness(0.9);
+}
+#homeCarousel .card .card-img {
+    margin-top: -30px;
+    margin-bottom: 15px;
+    width: 100%;
+    height: 200px
+}
+
 #homeCarousel .card-title {
     margin-bottom: 10px;
     font-size: 1.2rem;
@@ -34,7 +46,7 @@
     font-size: 0.8rem;
 }
 
-/* 긴 텍스트는 말줄임 표시 */
+/* 湲� �뀓�뒪�듃�뒗 留먯쨪�엫 �몴�떆 */
 #homeCarousel .card-text {
     text-overflow: ellipsis;
     overflow: hidden;
@@ -69,7 +81,7 @@
 .ribbonEffect {
     position: relative;
     display: inline-block;
-    overflow: hidden; /* 불필요한 부분 가리기 */
+    overflow: hidden; /* 遺덊븘�슂�븳 遺�遺� 媛�由ш린 */
 }
 
 .ribbonEffect:after {
@@ -78,7 +90,7 @@
     width: 100px;
     height: auto;
     background: #0098F7;
-    content: "new";  /* 보여주는 텍스트 */
+    content: "new";  /* 蹂댁뿬二쇰뒗 �뀓�뒪�듃 */
     text-align: center;
     color: #FFFFFF;
     font-size: 0.8rem;

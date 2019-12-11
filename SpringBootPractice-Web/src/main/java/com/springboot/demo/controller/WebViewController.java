@@ -51,13 +51,7 @@ public class WebViewController {
 
     /**
      * 파비콘
-     *
-     * @return     :
      */
-//    @RequestMapping("**/favicon.ico")
-//    public String favicon() {
-//        logger.info("favicon()");
-//
-//        return "forward:/resources/img/favicon.ico";
-//    }
+    @RequestMapping("/favicon.ico")
+    public void favicon() {}
 }
