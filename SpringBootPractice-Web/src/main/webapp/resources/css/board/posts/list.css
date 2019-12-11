@@ -1,4 +1,11 @@
-/* ê²Œì‹œê¸€ ëª©ë¡ í—¤ë” ì˜ì—­ */
+/* °Ô½Ã±Û ¸ñ·Ï Çì´õ ¿µ¿ª */
+#postList .postView,
+#postList .postReview {
+    margin-top: 10px;
+    margin-bottom: 0;
+    font-size: 0.5rem;
+}
+
 #postItemHeaderButton {
     padding-right: 0;
     text-align: right;
@@ -7,7 +14,7 @@
     border: none;
 }
 
-/* ê²Œì‹œê¸€ ëª©ë¡ ì¹´ë“œ ì˜ì—­ */
+/* °Ô½Ã±Û ¸ñ·Ï Ä«µå ¿µ¿ª */
 #postListContent .card {
     cursor: pointer;
     padding: 15px;
@@ -34,7 +41,7 @@
 }
 #postListContent .card-img-header {
     position: absolute;
-    top: 33%;
+    top: 39%;
     left: 50%;
     transform: translate(-50%, -50%);
     text-align: center;
@@ -57,8 +64,7 @@
 }
 
 #postListContent .card-content {
-    margin-top: 15px;
-    margin-bottom: 75px;
+    /* margin-top: 15px; */
 }
 
 #postListContent .card-footer {

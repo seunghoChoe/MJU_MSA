@@ -29,7 +29,7 @@
 
     <%-- Header 로고 --%>
     <img src="/resources/img/MJ.png" alt="MJ Ribbon" class="navbar_logo_40 mr-2">
-    <a class="navbar-brand" href=${homeUri}><strong>명지리본</strong></a>
+    <a class="navbar-brand" href=${homeUri}><strong class="boldText logoFont">명지리본</strong></a>
 
     <%-- Header 메뉴 버튼 --%>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">

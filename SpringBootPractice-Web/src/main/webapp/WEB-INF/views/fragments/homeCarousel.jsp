@@ -32,7 +32,7 @@
                         </div>
                         <%-- 슬라이드1 - 카드2 --%>
                         <div class="col-md-4">
-                            <div class="card mb-2 ribbonEffect">
+                            <div class="card ribbonEffect">
                                 <img class="card-img-top" src="${restaurantList[1].res_image}" alt="Card image cap">
                                 <div class="card-img-text">
                                     <p class="card-title">${restaurantList[1].res_name} <span class="card-category">${restaurantList[1].res_category}</span></p>
@@ -47,7 +47,7 @@
                         </div>
                         <%-- 슬라이드1 - 카드3 --%>
                         <div class="col-md-4">
-                            <div class="card mb-2 ribbonEffect">
+                            <div class="card ribbonEffect">
                                 <img class="card-img-top" src="${restaurantList[2].res_image}" alt="Card image cap">
                                 <div class="card-img-text">
                                     <p class="card-title">${restaurantList[2].res_name} <span class="card-category">${restaurantList[2].res_category}</span></p>
@@ -68,7 +68,7 @@
                     <div class="row">
                         <%-- 슬라이드2 - 카드1 --%>
                         <div class="col-md-4">
-                            <div class="card mb-2 ribbonEffect">
+                            <div class="card ribbonEffect">
                                 <img class="card-img-top" src="${restaurantList[3].res_image}" alt="Card image cap">
                                 <div class="card-img-text">
                                     <p class="card-title">${restaurantList[3].res_name} <span class="card-category">${restaurantList[3].res_category}</span></p>
@@ -83,7 +83,7 @@
                         </div>
                         <%-- 슬라이드2 - 카드2 --%>
                         <div class="col-md-4">
-                            <div class="card mb-2 ribbonEffect">
+                            <div class="card ribbonEffect">
                                 <img class="card-img-top" src="${restaurantList[4].res_image}" alt="Card image cap">
                                 <div class="card-img-text">
                                     <p class="card-title">${restaurantList[4].res_name} <span class="card-category">${restaurantList[4].res_category}</span></p>
@@ -98,7 +98,7 @@
                         </div>
                         <%-- 슬라이드2 - 카드3 --%>
                         <div class="col-md-4">
-                            <div class="card mb-2 ribbonEffect">
+                            <div class="card ribbonEffect">
                                 <img class="card-img-top" src="${restaurantList[5].res_image}" alt="Card image cap">
                                 <div class="card-img-text">
                                     <p class="card-title">${restaurantList[5].res_name} <span class="card-category">${restaurantList[5].res_category}</span></p>

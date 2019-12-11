@@ -1,4 +1,4 @@
-/* í°íŠ¸ ì†ì„± (ê°œë°œì ë„êµ¬ì—ì„œë„ í…ŒìŠ¤íŠ¸ ê°€ëŠ¥) */
+/* ÆùÆ® ¼Ó¼º (°³¹ßÀÚ µµ±¸¿¡¼­µµ Å×½ºÆ® °¡´É) */
 .h1, .h2, .h3, .h4, .h5, .h6,
 h1, h2, h3, h4, h5, h6,
 p, a, legend, span, label, strong {
@@ -10,7 +10,7 @@ p, a, legend, span, label, strong {
     font-weight: 400;
 }
 
-/* í—¤ë”ë¼ì¸ */
+/* Çì´õ¶óÀÎ */
 .headerLine {
     width: 20px;
     border-top: 1px solid #000000;
@@ -31,14 +31,17 @@ p, a, legend, span, label, strong {
 .blueText {
     color: #0098F7;
 }
+.boldText {
+    font-weight: bold;
+}
 
-/* Wrapper ì˜ì—­ ê³µí†µ ì†ì„± */
+/* Wrapper ¿µ¿ª °øÅë ¼Ó¼º */
 #layoutWrapper {
     margin: 0 auto;
     /*background-color: lightcyan;*/
 }
 
-/* ë¡œê³  ë° íƒ€ì´í‹€ */
+/* ·Î°í ¹× Å¸ÀÌÆ² */
 #layoutWrapper .navbar_logo_40 {
     height: 40px;
 }
@@ -55,12 +58,12 @@ p, a, legend, span, label, strong {
     font-size: 1.5rem;
 }
 
-/* A íƒœê·¸ ë°‘ì¤„ ì‚­ì œ */
+/* A ÅÂ±× ¹ØÁÙ »èÁ¦ */
 #layoutWrapper a {
     text-decoration: none;
 }
 
-/* ê¸€ì ìƒ‰/í¬ê¸° ì§€ì • */
+/* ±ÛÀÚ »ö/Å©±â ÁöÁ¤ */
 #layoutWrapper a,
 #layoutWrapper p,
 #layoutWrapper span {
@@ -68,41 +71,41 @@ p, a, legend, span, label, strong {
     font-size: 0.95rem;
 }
 
-/* ìºë¡œìš°ì…€ ê·¸ë¦¼ì íš¨ê³¼ ì‚­ì œ */
+/* Ä³·Î¿ì¼¿ ±×¸²ÀÚ È¿°ú »èÁ¦ */
 #layoutWrapper .carousel {
     box-shadow: none;
 }
 
-/* ì¹´ë“œ ê·¸ë¦¼ì íš¨ê³¼ ì‚­ì œ */
+/* Ä«µå ±×¸²ÀÚ È¿°ú »èÁ¦ */
 #layoutWrapper .card {
     box-shadow: none;
     border: 1px solid #E5E5E5;
 }
 
-/* ì¹´ë“œ ì˜¤ë²„ë ˆì´ ìƒ‰ìƒ ìˆ˜ì • */
+/* Ä«µå ¿À¹ö·¹ÀÌ »ö»ó ¼öÁ¤ */
 #layoutWrapper .card-img-overlay {
     background: rgba(0,0,0,0.2);
 }
 
-/* ë“œë¡­ë‹¤ìš´ ë©”ë‰´ ê·¸ë¦¼ì íš¨ê³¼ ì‚­ì œ */
+/* µå·Ó´Ù¿î ¸Ş´º ±×¸²ÀÚ È¿°ú »èÁ¦ */
 #layoutWrapper .dropdown-menu {
     box-shadow: none;
     border: 1px solid #E5E5E5;
 }
 
-/* Content ì˜ì—­ ê³µí†µ ì†ì„± */
+/* Content ¿µ¿ª °øÅë ¼Ó¼º */
 #layoutContent {
     margin-top: 125px;
     margin-bottom: 125px;
     font-size: 1.0rem;
 }
 
-/* ë“±ë¡/ì·¨ì†Œ ë²„íŠ¼ ê°€ìš´ë° ì •ë ¬*/
+/* µî·Ï/Ãë¼Ò ¹öÆ° °¡¿îµ¥ Á¤·Ä*/
 .centerButtonGroup {
     text-align: center;
 }
 
-/* ì»¤ìŠ¤í…€ ìŠ¤í¬ë¡¤ë°” */
+/* Ä¿½ºÅÒ ½ºÅ©·Ñ¹Ù */
 ::-webkit-scrollbar {
     width: 10px;
     background-color: #FFFFFF;
@@ -113,18 +116,18 @@ p, a, legend, span, label, strong {
     background-color: #000000;
 }
 
-/* ê°€ë¡œ 576px ì´ìƒ */
+/* °¡·Î 576px ÀÌ»ó */
 @media screen and (min-width: 576px) {
 }
 
-/* ê°€ë¡œ 768px ì´ìƒ */
+/* °¡·Î 768px ÀÌ»ó */
 @media screen and (min-width: 768px) {
 }
 
-/* ê°€ë¡œ 992px ì´ìƒ */
+/* °¡·Î 992px ÀÌ»ó */
 @media screen and (min-width: 992px) {
 }
 
-/* ê°€ë¡œ 1200px ì´ìƒ */
+/* °¡·Î 1200px ÀÌ»ó */
 @media screen and (min-width: 1200px) {
 }

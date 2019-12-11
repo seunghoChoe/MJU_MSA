@@ -1,4 +1,4 @@
-/* Menu ì˜ì—­ ê³µí†µ ì†ì„± */
+/* Menu ¿µ¿ª °øÅë ¼Ó¼º */
 #layoutMenu {
     font-size: 1.0rem;
 }
@@ -22,7 +22,7 @@
     color: #0098F7;
 }
 
-/* 650px ë¯¸ë§Œ ì‹œ */
+/* 650px ¹Ì¸¸ ½Ã */
 @media screen and (max-width: 650px) {
     #layoutMenu .container {
         max-width: 350px;

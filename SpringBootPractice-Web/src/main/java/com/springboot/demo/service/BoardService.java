@@ -1,6 +1,8 @@
 package com.springboot.demo.service;
 
 import com.springboot.demo.model.Post;
+import com.springboot.demo.model.Restaurant;
+
 import lombok.RequiredArgsConstructor;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -10,6 +12,9 @@ import org.springframework.http.HttpMethod;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
+
+import static com.springboot.demo.global.Constants.removeTag;
+
 import java.util.List;
 
 /**
@@ -37,6 +42,25 @@ public class BoardService {
     public ResponseEntity<List<Post>> getPosts(String uri) {
         return restTemplate.exchange(uri, HttpMethod.GET, null, new ParameterizedTypeReference<List<Post>>(){});
     }
+    
+//    /**
+//     * 게시글 목록 API 호출
+//     * @param uri
+//     *  Board Service API
+//     * @return ResponseEntity<List<Post>>
+//     *  JSON 타입 응답 객체
+//     * @throws Exception
+//     */
+//    public List<Post> getMinimizedPosts(String uri) throws Exception {
+//        List<Post> postList = restTemplate.exchange(uri, HttpMethod.GET, null, new ParameterizedTypeReference<List<Post>>(){}).getBody();
+//
+//        for (Post post: postList) {
+//            String tempStr = post.getPost_content();
+//            post.setPost_content(removeTag(tempStr));
+//        }
+//
+//        return postList;
+//    }
 
     /**
      * 게시글 상세 API 호출

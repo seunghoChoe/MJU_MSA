@@ -12,6 +12,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 import java.util.List;
+import static com.springboot.demo.global.Constants.removeTag;
 
 /**
  * Copyright(c) 2019 All rights reserved by MJU-Team in 19-2 Teamproject2-Class
@@ -45,11 +46,17 @@ public class RestaurantService {
      *  Restaurant Service API
      * @return List<Restaurant>
      *  Collection 타입의 리스트 객체
+     * @throws Exception 
      */
-    public List<Restaurant> getSixRestaurants(String uri) {
+    public List<Restaurant> getSixRestaurants(String uri) throws Exception {
         // 식당 6개가 필요함!
         List<Restaurant> restaurantList = restTemplate.exchange(uri, HttpMethod.GET, null, new ParameterizedTypeReference<List<Restaurant>>(){}).getBody();
         List<Restaurant> subRestaurantList = restaurantList.subList(restaurantList.size() - 6, restaurantList.size());
+
+        for (Restaurant restaurant: subRestaurantList) {
+            String tempStr = restaurant.getRes_content();
+            restaurant.setRes_content(removeTag(tempStr));
+        }
 
         return subRestaurantList;
     }

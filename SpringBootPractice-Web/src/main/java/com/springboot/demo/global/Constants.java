@@ -124,6 +124,18 @@ public class Constants {
             return result.get(0);
         }
     }
+    
+    /**
+     * 게시글 또는 식당 내용에서 태그 제거
+     * @param str
+     *  게시글 또는 식당 내용
+     * @return String
+     *  태그가 제거된 내용
+     * @throws Exception
+     */
+    public static String removeTag(String str) throws Exception {
+    	return str.replaceAll("<(/)?([a-zA-Z]*)(\\s[a-zA-Z]*=[^>]*)?(\\s)*(/)?>", "");
+    }
 
 	/**
 	 * Alert 스크립트

@@ -1,4 +1,4 @@
-/* ì‹ë‹¹ ëª©ë¡ í—¤ë” ì˜ì—­ */
+/* ½Ä´ç ¸ñ·Ï Çì´õ ¿µ¿ª */
 #restaurantItemHeaderButton {
     padding-right: 0;
     text-align: right;
@@ -7,7 +7,7 @@
     border: none;
 }
 
-/* ì‹ë‹¹ ëª©ë¡ ì¹´ë“œ ì˜ì—­ */
+/* ½Ä´ç ¸ñ·Ï Ä«µå ¿µ¿ª */
 #restaurantListContent .card {
     cursor: pointer;
     padding: 15px;
@@ -36,7 +36,7 @@
     left: 3%;
 }
 
-/* ì‹ë‹¹ ì´ë¦„, í‰ì  */
+/* ½Ä´ç ÀÌ¸§, ÆòÁ¡ */
 #restaurantListContent .restaurantName,
 #restaurantListContent .restaurantGrade {
     margin-bottom: 10px;

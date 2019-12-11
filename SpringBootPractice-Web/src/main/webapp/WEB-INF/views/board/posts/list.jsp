@@ -48,6 +48,7 @@
                             <%-- </div>--%>
                             <div class="card-content">
                             <%-- <p>${post.post_content}</p>--%>
+                                <p class="postView"><i class="fas fa-eye"></i> 1,000 &middot; <i class="fas fa-comment-dots"></i><span class="postReview"> 1,000</span></p>
                             </div>
                         </div>
                     </div>
@@ -66,6 +67,7 @@
                             <%-- </div>--%>
                             <div class="card-content">
                             <%--<p>${post.post_content}</p>--%>
+                                <p class="postView"><i class="fas fa-eye"></i> 1,000 &middot; <i class="fas fa-comment-dots"></i><span class="postReview"> 1,000</span></p>
                             </div>
                         </div>
                     </div>

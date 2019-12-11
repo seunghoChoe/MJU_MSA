@@ -1,4 +1,4 @@
-/* Header ì˜ì—­ ê³µí†µ ì†ì„± */
+/* Header ¿µ¿ª °øÅë ¼Ó¼º */
 #layoutHeader {
     font-size: 1.0rem;
 }
@@ -7,7 +7,15 @@
     margin-right: 10px;
 }
 
-/* 650px ë¯¸ë§Œ ì‹œ */
+#layoutHeader .nav-link {
+    font-size: 0.9rem;
+}
+
+#layoutHeader .logoFont {
+
+}
+
+/* 650px ¹Ì¸¸ ½Ã */
 @media screen and (max-width: 650px) {
     #layoutHeader {
         font-size: 0.8rem;

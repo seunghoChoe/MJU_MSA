@@ -37,9 +37,10 @@ public class WebViewController {
      *  ModelAndView 객체
      * @return ModelAndView
      *  식당 목록 모델과 JSP 페이지 반환
+     * @throws Exception 
      */
     @RequestMapping(value = "/", method = RequestMethod.GET)
-    public ModelAndView home(ModelAndView mv) {
+    public ModelAndView home(ModelAndView mv) throws Exception {
         logger.info("home()");
 
         // 식당 6개가 필요함!
