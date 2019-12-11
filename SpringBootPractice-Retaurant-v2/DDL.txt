@@ -14,7 +14,6 @@ CREATE TABLE `restaurant` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 //ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
-//
 alter table restaurant add res_content varchar(500) DEFAULT NULL;
 alter table restaurant add res_image varchar(200) DEFAULT NULL;
 

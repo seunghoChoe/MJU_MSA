@@ -1,3 +1,6 @@
+/**
+ * Copyright(c) 2019 All rights reserved by MJU-Team in 19-2 Teamproject2-Class
+ */
 package com.springboot.demo.config;
 
 import org.springframework.context.annotation.Bean;
@@ -10,6 +13,14 @@ import springfox.documentation.service.ApiInfo;
 import springfox.documentation.spi.DocumentationType;
 import springfox.documentation.spring.web.plugins.Docket;
 import springfox.documentation.swagger2.annotations.EnableSwagger2;
+
+/**
+ * @author Hwamoc Kim
+ * @date 2019-12-13
+ * @version 0.9
+ * @description 
+ * 스프링 REST API의 문서를 생성해주는 스웨거2 설정 클래스 
+ */
 
 @Configuration
 @EnableSwagger2
