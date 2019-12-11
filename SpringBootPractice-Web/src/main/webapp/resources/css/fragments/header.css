@@ -7,7 +7,8 @@
     margin-right: 10px;
 }
 
-#layoutHeader .nav-link {
+#layoutHeader .nav-link,
+#layoutHeader .dropdown-item {
     font-size: 0.9rem;
 }
 
