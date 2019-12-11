@@ -81,7 +81,7 @@ public class RestaurantViewController {
 
         } else {
             restaurant.setRes_image(getImaSrc(restaurant.getRes_content())); // 썸네일 이미지 세팅
-            ResponseEntity<Restaurant> response = restaurantService.postRestaurantNew(restaurantServiceApi + "/restaurant", restaurant);
+            ResponseEntity<Restaurant> response = restaurantService.postRestaurantNew(restaurantServiceApi + "/restaurants", restaurant);
 
             if (response.getStatusCode().is2xxSuccessful()) {
                 rttr.addFlashAttribute(SERVER_MESSAGE, "식당 등록이 완료되었습니다.");
@@ -127,7 +127,7 @@ public class RestaurantViewController {
     public ModelAndView getRestaurant(ModelAndView mv, @PathVariable int res_index) {
         logger.info("getRestaurant()");
 
-        ResponseEntity<Restaurant> response = restaurantService.getRestaurant(restaurantServiceApi + "/restaurant/" + res_index);
+        ResponseEntity<Restaurant> response = restaurantService.getRestaurant(restaurantServiceApi + "/restaurants/" + res_index);
         mv.addObject("grade", new Grade()); // 평점 등록 폼
         mv.addObject("restaurant", response.getBody());
         mv.setViewName("restaurants/restaurant");
@@ -149,7 +149,7 @@ public class RestaurantViewController {
     public ModelAndView getRestaurantEdit(@PathVariable("res_index") int res_index, ModelAndView mv) {
         logger.info("getRestaurantEdit()");
 
-        ResponseEntity<Restaurant> response = restaurantService.getRestaurant(restaurantServiceApi + "/restaurant/" + res_index);
+        ResponseEntity<Restaurant> response = restaurantService.getRestaurant(restaurantServiceApi + "/restaurants/" + res_index);
         mv.addObject("restaurant", response.getBody());
         mv.setViewName("restaurants/edit");
 
@@ -187,7 +187,7 @@ public class RestaurantViewController {
 
         } else {
             restaurant.setRes_image(getImaSrc(restaurant.getRes_content())); // 썸네일 이미지 세팅
-            ResponseEntity<Restaurant> response = restaurantService.putEditRestaurant(restaurantServiceApi + "/restaurant/" + res_index, new HttpEntity<>(restaurant));
+            ResponseEntity<Restaurant> response = restaurantService.putEditRestaurant(restaurantServiceApi + "/restaurants/" + res_index, new HttpEntity<>(restaurant));
 
             if (response.getStatusCode().is2xxSuccessful()) {
                 rttr.addFlashAttribute(SERVER_MESSAGE, "식당 수정이 완료되었습니다.");
@@ -216,7 +216,7 @@ public class RestaurantViewController {
         logger.info("deleteRestaurant()");
 
         Restaurant restaurant = Restaurant.builder().res_index(res_index).build();
-        ResponseEntity<Restaurant> response = restaurantService.deleteRestaurant(restaurantServiceApi + "/restaurant/" + res_index, new HttpEntity<>(restaurant));
+        ResponseEntity<Restaurant> response = restaurantService.deleteRestaurant(restaurantServiceApi + "/restaurants/" + res_index, new HttpEntity<>(restaurant));
 
         if (response.getStatusCode().is2xxSuccessful()) {
             return 1;
@@ -258,7 +258,7 @@ public class RestaurantViewController {
 
         } else {
             grade.setUser_id(getUserSession(request).getUser_id()); // 로그인 계정의 ID 세팅
-            ResponseEntity<Grade> response = restaurantService.postGradeNew(restaurantServiceApi + "/restaurant/" + res_index + "/grade", grade);
+            ResponseEntity<Grade> response = restaurantService.postGradeNew(restaurantServiceApi + "/restaurants/" + res_index + "/grade", grade);
 
             if (response.getStatusCode().is2xxSuccessful()) {
                 rttr.addFlashAttribute(SERVER_MESSAGE, "평점이 등록되었습니다.");

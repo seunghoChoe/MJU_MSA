@@ -51,6 +51,11 @@ public class RestaurantService {
     public List<Restaurant> getSixRestaurants(String uri) throws Exception {
         // 식당 6개가 필요함!
         List<Restaurant> restaurantList = restTemplate.exchange(uri, HttpMethod.GET, null, new ParameterizedTypeReference<List<Restaurant>>(){}).getBody();
+        
+        if (restaurantList.size() < 6) {
+            return restaurantList;
+        }
+        
         List<Restaurant> subRestaurantList = restaurantList.subList(restaurantList.size() - 6, restaurantList.size());
 
         for (Restaurant restaurant: subRestaurantList) {

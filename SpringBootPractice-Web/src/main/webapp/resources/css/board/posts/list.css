@@ -64,7 +64,8 @@
 }
 
 #postListContent .card-content {
-    /* margin-top: 15px; */
+    margin-top: 10px;
+    /*margin-bottom: 50px;*/
 }
 
 #postListContent .card-footer {

@@ -118,7 +118,7 @@
 //        Restaurant requestRestaurant = new Restaurant(1, "테스트 식당", "테스트 카테고리", 5, 10, "테스트 소개", "http://via.placeholder.com/350x150", createMenuList());
 //        Restaurant responseRestaurant = new Restaurant(1, "테스트 식당", "테스트 카테고리", 5, 10, "테스트 소개", "http://via.placeholder.com/350x150", createMenuList());
 //
-//        mockRestaurantServer.expect(requestTo(RESTAURANT_URI + "/restaurant"))
+//        mockRestaurantServer.expect(requestTo(RESTAURANT_URI + "/restaurants"))
 //                            .andExpect(method(HttpMethod.POST))
 //                            .andExpect(content().string(mapper.writeValueAsString(requestRestaurant)))
 //                            .andRespond(withStatus(HttpStatus.OK)
@@ -188,7 +188,7 @@
 //        Restaurant responseRestaurant = new Restaurant(1, "테스트 식당", "테스트 카테고리", 5, 10, "테스트 소개", "http://via.placeholder.com/350x150", createMenuList());
 //
 //        // 없을 경우, java.lang.AssertionError: No further requests expected: HTTP POST http://localhost:8083/restaurant 0 request(s) executed.
-//        mockRestaurantServer.expect(requestTo(RESTAURANT_URI + "/restaurant"))
+//        mockRestaurantServer.expect(requestTo(RESTAURANT_URI + "/restaurants"))
 //                            .andExpect(method(HttpMethod.POST))
 //                            .andExpect(content().string(mapper.writeValueAsString(requestRestaurant)))
 //                            .andRespond(withStatus(HttpStatus.NOT_ACCEPTABLE) // 406 코드를 지정하여 응답 코드 실패 케이스를 유도한다.
@@ -264,7 +264,7 @@
 //        // 식당
 //        Restaurant responseRestaurant = new Restaurant(1, "테스트 식당", "테스트 카테고리", 5, 10, "테스트 소개", "http://via.placeholder.com/350x150", createMenuList());
 //
-//        mockRestaurantServer.expect(requestTo(RESTAURANT_URI + "/restaurant/" + 1))
+//        mockRestaurantServer.expect(requestTo(RESTAURANT_URI + "/restaurants/" + 1))
 //                            .andExpect(method(HttpMethod.GET))
 //                            .andRespond(withStatus(HttpStatus.OK)
 //                            .contentType(MediaType.APPLICATION_JSON_UTF8)
@@ -315,7 +315,7 @@
 //        // 식당
 //        Restaurant responseRestaurant = new Restaurant(1, "테스트 식당", "테스트 카테고리", 5, 10, "테스트 소개", "http://via.placeholder.com/350x150", createMenuList());
 //
-//        mockRestaurantServer.expect(requestTo(RESTAURANT_URI + "/restaurant/" + 1))
+//        mockRestaurantServer.expect(requestTo(RESTAURANT_URI + "/restaurants/" + 1))
 //                            .andExpect(method(HttpMethod.GET))
 //                            .andRespond(withStatus(HttpStatus.OK)
 //                            .contentType(MediaType.APPLICATION_JSON_UTF8)
@@ -349,7 +349,7 @@
 //        Restaurant requestRestaurant = new Restaurant(1, "수정된 테스트 식당", "테스트 카테고리", 5, 10, "테스트 소개", "http://via.placeholder.com/350x150", createMenuList());
 //        Restaurant responseRestaurant = new Restaurant(1, "수정된 테스트 식당", "테스트 카테고리", 5, 10, "테스트 소개", "http://via.placeholder.com/350x150", createMenuList());
 //
-//        mockRestaurantServer.expect(requestTo(RESTAURANT_URI + "/restaurant/" + 1))
+//        mockRestaurantServer.expect(requestTo(RESTAURANT_URI + "/restaurants/" + 1))
 //                            .andExpect(method(HttpMethod.PUT))
 //                            .andExpect(content().string(mapper.writeValueAsString(requestRestaurant)))
 //                            .andRespond(withStatus(HttpStatus.OK)
@@ -418,7 +418,7 @@
 //        Restaurant requestRestaurant = new Restaurant(1, "수정된 테스트 식당", "테스트 카테고리", 5, 10, "테스트 소개", "http://via.placeholder.com/350x150", createMenuList());
 //        Restaurant responseRestaurant = new Restaurant(1, "테스트 식당", "테스트 카테고리", 5, 10, "테스트 소개", "http://via.placeholder.com/350x150", createMenuList());
 //
-//        mockRestaurantServer.expect(requestTo(RESTAURANT_URI + "/restaurant/" + 1))
+//        mockRestaurantServer.expect(requestTo(RESTAURANT_URI + "/restaurants/" + 1))
 //                            .andExpect(method(HttpMethod.PUT))
 //                            .andExpect(content().string(mapper.writeValueAsString(requestRestaurant)))
 //                            .andRespond(withStatus(HttpStatus.NOT_ACCEPTABLE) // 406 코드를 지정하여 응답 코드 실패 케이스를 유도한다.
@@ -458,7 +458,7 @@
 //        // 로그인 계정 세션 등록
 //        mockSession.setAttribute(LOGGED_USER, createUser());
 //
-//        mockRestaurantServer.expect(requestTo(RESTAURANT_URI + "/restaurant/" + 1))
+//        mockRestaurantServer.expect(requestTo(RESTAURANT_URI + "/restaurants/" + 1))
 //                            .andExpect(method(HttpMethod.DELETE))
 //                            .andRespond(withStatus(HttpStatus.OK));
 //
@@ -486,7 +486,7 @@
 //        // 로그인 계정 세션 등록
 //        mockSession.setAttribute(LOGGED_USER, createUser());
 //
-//        mockRestaurantServer.expect(requestTo(RESTAURANT_URI + "/restaurant/" + 1))
+//        mockRestaurantServer.expect(requestTo(RESTAURANT_URI + "/restaurants/" + 1))
 //                            .andExpect(method(HttpMethod.DELETE))
 //                            .andRespond(withStatus(HttpStatus.NOT_ACCEPTABLE));
 //
@@ -518,7 +518,7 @@
 //        // 로그인 계정 세션 등록
 //        mockSession.setAttribute(LOGGED_USER, createUser());
 //
-//        mockRestaurantServer.expect(requestTo(RESTAURANT_URI + "/restaurant/" + 1 + "/grade"))
+//        mockRestaurantServer.expect(requestTo(RESTAURANT_URI + "/restaurants/" + 1 + "/grade"))
 //                            .andExpect(method(HttpMethod.POST))
 //                            .andExpect(content().string(mapper.writeValueAsString(requestGrade)))
 //                            .andRespond(withStatus(HttpStatus.OK)
@@ -583,7 +583,7 @@
 //        mockSession.setAttribute(LOGGED_USER, createUser());
 //
 //        /* When */
-//        mockRestaurantServer.expect(requestTo(RESTAURANT_URI + "/restaurant/" + 1 + "/grade"))
+//        mockRestaurantServer.expect(requestTo(RESTAURANT_URI + "/restaurants/" + 1 + "/grade"))
 //                .andExpect(method(HttpMethod.POST))
 //                .andExpect(content().string(mapper.writeValueAsString(requestGrade)))
 //                .andRespond(withStatus(HttpStatus.NOT_ACCEPTABLE)
@@ -621,7 +621,7 @@
 //        mockSession.setAttribute(LOGGED_USER, createUser());
 //
 //        /* When */
-//        mockRestaurantServer.expect(requestTo(RESTAURANT_URI + "/restaurant/" + 1 + "/grade"))
+//        mockRestaurantServer.expect(requestTo(RESTAURANT_URI + "/restaurants/" + 1 + "/grade"))
 //                            .andExpect(method(HttpMethod.POST))
 //                            .andExpect(content().string(mapper.writeValueAsString(requestGrade)))
 //                            .andRespond(withStatus(HttpStatus.NOT_ACCEPTABLE)
