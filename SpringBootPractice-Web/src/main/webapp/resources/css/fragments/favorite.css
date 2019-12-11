@@ -1,0 +1,79 @@
+.emptyFavoriteList {
+    text-align: center;
+    margin: 150px auto;
+}
+
+.emptyFavoriteList h5 {
+    font-weight: 400;
+    margin-bottom: 50px;
+}
+
+#restaurantListHref {
+    color: #0098F7 !important;
+    border-bottom: 1px dashed #0098F7;
+    border-radius: 2px;
+}
+
+/* 식당 목록 헤더 영역 */
+#restaurantListHeaderButton {
+    padding-right: 0;
+    text-align: right;
+}
+#restaurantListHeaderButton #restaurantListManage {
+    border: none;
+}
+
+/* 식당 목록 카드 영역 */
+#restaurantListContent .card {
+    cursor: pointer;
+    padding: 15px;
+    margin-top: 30px;
+    margin-bottom: 50px;
+    /*box-shadow: 0 0 16px 1px rgba(0, 0, 0, 0.1);*/
+}
+#restaurantListContent .card img {
+    border-radius: .625rem;
+    -webkit-filter: blur(0.01rem) brightness(0.8);  /* Chrome, Safari, Opera */
+    filter: blur(0.01rem) brightness(0.9);
+}
+#restaurantListContent .card .card-img {
+    margin-top: -30px;
+    margin-bottom: 15px;
+    width: 100%;
+    height: 200px
+}
+
+#restaurantListContent .restaurantMedal {
+    z-index: 1;
+    color: #0098F7;
+    text-shadow: 0 0 3px rgba(0,152,247,0.8);
+    position: absolute;
+    top: -7%;
+    left: 3%;
+}
+
+/* 식당 이름, 평점 */
+#restaurantListContent .restaurantName,
+#restaurantListContent .restaurantGrade {
+    margin-bottom: 10px;
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+#restaurantListContent .restaurantGrade {
+    margin-left: 5px;
+    color: #0098F7;
+}
+#restaurantListContent .restaurantCategory,
+#restaurantListContent .restaurantTime {
+    margin-bottom: 5px;
+    font-size: 0.9rem;
+}
+#restaurantListContent .restaurantTime {
+    margin-left: 3px;
+    color: #0098F7;
+}
+#restaurantListContent .restaurantView,
+#restaurantListContent .restaurantReview {
+    margin-bottom: 0;
+    font-size: 0.5rem;
+}

@@ -11,9 +11,15 @@
 }
 
 #layoutMenu form legend {
+    text-align: center;
     font-size: 1.5rem;
-    font-weight: 300;
     margin-bottom: 25px;
+    color: #000000;
+}
+
+#layoutMenu .colorText {
+    font-size: 1.5rem;
+    color: #0098F7;
 }
 
 /* 650px 미만 시 */

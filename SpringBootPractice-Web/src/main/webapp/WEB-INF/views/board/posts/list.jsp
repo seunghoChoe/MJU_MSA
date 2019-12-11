@@ -47,7 +47,7 @@
                             <%-- <div class="card-profile-img">--%>
                             <%-- </div>--%>
                             <div class="card-content">
-                                <%--<p>${post.post_content}</p>--%>
+                            <%-- <p>${post.post_content}</p>--%>
                             </div>
                         </div>
                     </div>
@@ -65,7 +65,7 @@
                             <%-- <div class="card-profile-img">--%>
                             <%-- </div>--%>
                             <div class="card-content">
-                                <%--<p>${post.post_content}</p>--%>
+                            <%--<p>${post.post_content}</p>--%>
                             </div>
                         </div>
                     </div>

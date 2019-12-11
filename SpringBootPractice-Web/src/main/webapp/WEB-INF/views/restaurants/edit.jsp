@@ -63,8 +63,10 @@
         </div>
 
         <%-- 식당 수정 푸터 영역 --%>
-        <button id="editRestaurantButton" type="submit" class="btn btn-dark">수정</button>
-        <button id="editRestaurantCancelButton" type="button" class="btn btn-default" onclick="location.href='${restaurantListUri}'">취소</button>
+        <div class="centerButtonGroup">
+            <button id="editRestaurantButton" type="submit" class="btn btn-dark">수정</button>
+            <button id="editRestaurantCancelButton" type="button" class="btn btn-default" onclick="location.href='${restaurantListUri}'">취소</button>
+        </div>
     </form:form>
 </div>
 

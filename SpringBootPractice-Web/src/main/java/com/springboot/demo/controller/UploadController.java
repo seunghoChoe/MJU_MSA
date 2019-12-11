@@ -1,10 +1,12 @@
 package com.springboot.demo.controller;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.springboot.demo.interceptor.LoginCheck;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
 import javax.servlet.http.HttpServletRequest;
@@ -18,8 +20,14 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
- * @Class: : CKEditor 업로드 컨트롤러 클래스 (GET/POST 메소드만 사용한다.)
- * @Memo: CKEditor 를 통해 웹 서버에 이미지를 업로드한다. 그 결과, 해당 게시글/행사에 IMG 태그와 업로드 한 이미지의 경로가 생성되어 출력된다.
+ * Copyright(c) 2019 All rights reserved by MJU-Team in 19-2 Teamproject2-Class
+ *
+ * @author Jaeha Son
+ * @date 2019-12-13
+ * @version 0.9
+ * @description
+ * CKEditor 업로드 뷰와 관련된 Controller 클래스
+ * (CKEditor 를 통해 웹 서버에 이미지를 업로드한다. 그 결과, 해당 게시글/행사에 IMG 태그와 업로드 한 이미지의 경로가 생성되어 출력된다.)
  */
 @Controller
 public class UploadController {
@@ -29,10 +37,17 @@ public class UploadController {
     private final String[] BAD_EXTENSION = { "php", "php3", "asp", "aspx", "htm", "html", "phtml", "jsp", "com", "bat", "exe", "inc", "js", "ph", "cgi", "pl", "sh" };
 
     /**
-     * @Method: CKEditor 업로드 (AWS S3 버킷 사용 시, 서비스 클래스 추가)
-     * @Memo: MultipartFile (다중 업로드)
+     * CKEditor 업로드
+     * @param upload
+     *  업로드 파일
+     * @param request
+     *  HttpServletRequest 객체
+     * @param response
+     *  HttpServletResponse 객체
+     * @throws IOException
      */
-    @PostMapping("/image-upload")
+    @LoginCheck(type = LoginCheck.Type.TRUE)
+    @RequestMapping(value = "/image-upload", method = RequestMethod.POST)
     public void imageUpload(@RequestParam MultipartFile upload, HttpServletRequest request, HttpServletResponse response) throws IOException {
         OutputStream out = null;
         PrintWriter printWriter = null;
@@ -50,15 +65,16 @@ public class UploadController {
         if (month < 10) monthStr = "0" + month;
         else monthStr = "" + month;
 
-//        String resourceRootPath = "C:/Users/amelon"; // 로컬 서버 리소스 경로
+        // 로컬 업로드 디렉토리 지정 (username 에 본인의 PC 계정 이름 입력)
+        // String resourceRootPath = "C:/Users/{username}";
         String resourceRootPath = File.separator + "home" + File.separator + "ubuntu"; // 실서버 리소스 경로
         String attachPath = File.separator + "upload" + File.separator + year + "" + monthStr; // 업로드 경로
         String fileUploadPath = resourceRootPath + attachPath; // 최종 경로
-        
+
         logger.info(resourceRootPath);
         logger.info(attachPath);
         logger.info(fileUploadPath);
-        
+
         try {
             String filename = "";
             String filenameExt = "";

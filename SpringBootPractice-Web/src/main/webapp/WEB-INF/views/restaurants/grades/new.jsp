@@ -5,7 +5,6 @@
 
 <head>
     <link href="/resources/css/restaurants/grades/newAndEdit.css?v=<%=System.currentTimeMillis() %>" rel="stylesheet">
-    <script src="/resources/js/restaurants/grades/newAndEdit.js?v=<%=System.currentTimeMillis() %>" type="text/javascript"></script>
     <title>명지리본: 맛집 스토리</title>
 </head>
 

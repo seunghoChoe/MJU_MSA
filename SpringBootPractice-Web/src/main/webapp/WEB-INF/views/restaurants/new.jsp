@@ -94,8 +94,10 @@
         </div>
 
         <%-- 식당 등록 푸터 영역 --%>
-        <button id="newRestaurantButton" type="submit" class="btn btn-dark">등록</button>
-        <button id="newRestaurantCancelButton" type="button" class="btn btn-default" onclick="location.href='${restaurantListUri}'">취소</button>
+        <div class="centerButtonGroup">
+            <button id="newRestaurantButton" type="submit" class="btn btn-dark">등록</button>
+            <button id="newRestaurantCancelButton" type="button" class="btn btn-default" onclick="location.href='${restaurantListUri}'">취소</button>
+        </div>
     </form:form>
 </div>
 

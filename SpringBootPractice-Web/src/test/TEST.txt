@@ -1,0 +1,107 @@
++----------------------------------------------------------------------------------------------------------------------+
+* 단위 테스트 환경
+- OS: Windows 10 64 bit
+- IDEA: IntelliJ IDEA 2019.2.4 (Ultimate Edition)
+- IDEA 내장 VM: OpenJDK 64-Bit Server VM by JetBrains s.r.o)
+
+* User-service (User + Favorite) 테스트 케이스
+- 성공 테스트 케이스: 12개
+- 실패 테스트 케이스: 7개
+
+* Board-service 테스트 케이스
+- 성공 테스트 케이스: 4개
+- 실패 테스트 케이스: 2개
+
+* Restaurant-service 테스트 케이스
+- 성공 테스트 케이스: 8개
+- 실패 테스트 케이스: 8개
+
+* 전체 단위 테스트 케이스: 41개
++----------------------------------------------------------------------------------------------------------------------+
+
++----------------------------------------------------------------------------------------------------------------------+
+* All Tests
+- 테스트 종류: All in package
+- 테스트 실행 클래스: com.springboot.demo.unit.*
+- 코드 커버리지 클래스: 전체 클래스
+
+* 테스팅 대상 서비스
+- User-service
+- Board-service
+- Restaurant-service
+
+* 결과
+- UserViewController.class: 100% methods, 100% lines covered
+- FavoriteViewController.class: 100% methods, 100% lines covered
+- BoardViewController.class: 66% methods, 45% lines covered
+- RestaurantViewController.class: 100% methods, 100% lines covered
+
+- UserService.class: 100% methods, 100% lines covered
+- BoardService.class: 71% methods, 71% lines covered
+- RestaurantService.class: 100% methods, 100% lines covered
++----------------------------------------------------------------------------------------------------------------------+
+
++----------------------------------------------------------------------------------------------------------------------+
+* User-service >> UserViewControllerTests 테스트 클래스
+- 테스트 실행 클래스: com.springboot.demo.unit.user.UserViewControllerTests
+- 코드 커버리지 클래스: UserViewController, UserService
+
+* 테스팅 대상 기능
+- 계정 등록
+- 계정 로그인
+- 계정 로그아웃
+- 계정 수정
+- 계정 삭제
+- 계정 목록 조회
+
+* 결과
+- UserViewController.class: 100% methods, 100% lines covered
+- UserService.class: 72% methods, 75% lines covered (-> Favorite 기능은 별도로 테스팅하므로 커버되지 않음이 정상)
++----------------------------------------------------------------------------------------------------------------------+
+
++----------------------------------------------------------------------------------------------------------------------+
+* User-service >> FavoriteViewControllerTests 테스트 클래스
+- 테스트 실행 클래스: com.springboot.demo.unit.favorite.FavoriteViewControllerTests
+- 코드 커버리지 클래스: FavoriteViewController, UserService
+
+* 테스팅 대상 기능
+- 즐겨찾기 목록 조회
+- 즐겨찾기 등록
+
+* 결과
+- FavoriteViewController.class: 100% methods, 100% lines covered
+- UserService.class: 45% methods, 41% lines covered (-> User 기능은 별도로 테스팅하므로 커버되지 않음이 정상)
++----------------------------------------------------------------------------------------------------------------------+
+
++----------------------------------------------------------------------------------------------------------------------+
+* Board-service >> BoardViewControllerTests 테스트 클래스
+- 테스트 실행 클래스: com.springboot.demo.unit.board.BoardViewControllerTests
+- 코드 커버리지 클래스: BoardViewController, BoardService
+
+* 테스팅 대상 기능
+- 게시글 목록 조회
+- 게시글 상세 조회
+- 게시글 등록
+
+* 결과
+- BoardViewController.class: 66% methods, 45% lines covered
+- BoardService.class: 71% methods, 71% lines covered
++----------------------------------------------------------------------------------------------------------------------+
+
++----------------------------------------------------------------------------------------------------------------------+
+* Restaurant-service >> RestaurantViewControllerTests 테스트 클래스
+- 테스트 실행 클래스: com.springboot.demo.unit.restaurant.RestaurantViewControllerTests
+- 코드 커버리지 클래스: RestaurantViewController, RestaurantService
+
+* 테스팅 대상 기능
+- 식당 등록
+- 식당 목록 조회
+- 식당 상세 조회
+- 식당 수정
+- 식당 삭제
+- 평점 등록
+
+* 결과
+- RestaurantViewController.class: 100% methods, 100% lines covered
+- RestaurantService.class: 100% methods, 100% lines covered
++----------------------------------------------------------------------------------------------------------------------+

@@ -4,7 +4,7 @@
 <%@ taglib uri="http://www.springframework.org/tags" prefix="spring" %>
 
 <head>
-    <link href="/resources/css/board/posts/post.css" rel="stylesheet">
+    <link href="/resources/css/board/posts/post.css?v=<%=System.currentTimeMillis() %>" rel="stylesheet">
     <script src="/resources/js/board/posts/post.js?v=<%=System.currentTimeMillis() %>" type="text/javascript"></script>
     <title>명지리본: 맛집 매거진</title>
 </head>
@@ -12,7 +12,7 @@
 <div id="postItem" class="container">
     <spring:url var="postListUri" value="/board/posts"/>
 
-    <%-- 게시글 헤더 영역 --%>
+    <%-- 문의사항 헤더 영역 --%>
     <div class="container headerLine">
     </div>
     <div id="postItemHeader" class="container header">
@@ -20,13 +20,13 @@
         <p>&colon; ${question.qna_question}</p>
     </div>
 
-    <%-- 게시글 컨텐트 영역 --%>
+    <%-- 문의사항 컨텐트 영역 --%>
     <div id="postItemContent" class="container">
         <p>${question.qna_question}</p>
         <hr/>
     </div>
 
-    <%-- 게시글 푸터 영역 --%>
+    <%-- 문의사항 푸터 영역 --%>
     <div id="postItemFooter" class="container d-flex">
         <div id="postItemFooterPostButton" class="container">
             <button id="postItemView" type="button" class="btn btn-sm btn-outline-dark"><i class="far fa-eye"></i></button>

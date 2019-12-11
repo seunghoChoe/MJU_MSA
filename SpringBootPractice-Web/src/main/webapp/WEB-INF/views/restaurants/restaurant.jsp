@@ -26,7 +26,7 @@
                 <span id="restaurantItemCategory">카테고리: ${restaurant.res_category}</span>
             </div>
             <div id="restaurantItemHeaderButton" class="container ml-auto">
-                <button id="restaurantItemFavorite" type="button" class="btn btn-sm btn-outline-dark" onclick="location.href='/'"><i class="fas fa-star"></i> 즐겨찾기</button>
+                <button id="restaurantItemFavorite" type="button" class="btn btn-sm btn-outline-dark" onclick="addFavorite(${restaurant.res_index})"><i class="fas fa-star"></i> 즐겨찾기</button>
                 <button id="restaurantItemEdit" type="button" class="btn btn-sm btn-outline-dark" onclick="editRestaurant(${restaurant.res_index})"><i class="fas fa-edit"></i> 수정</button>
                 <button id="restaurantItemDelete" type="button" class="btn btn-sm btn-outline-dark" onclick="deleteRestaurant(${restaurant.res_index})"><i class="fas fa-eraser"></i> 삭제</button>
             </div>

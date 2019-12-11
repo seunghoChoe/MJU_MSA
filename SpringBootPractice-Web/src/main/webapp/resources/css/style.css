@@ -28,11 +28,31 @@ p, a, legend, span, label, strong {
     font-size: 1.5rem;
     font-weight: 700;
 }
+.blueText {
+    color: #0098F7;
+}
 
 /* Wrapper 영역 공통 속성 */
 #layoutWrapper {
     margin: 0 auto;
     /*background-color: lightcyan;*/
+}
+
+/* 로고 및 타이틀 */
+#layoutWrapper .navbar_logo_40 {
+    height: 40px;
+}
+#layoutWrapper .navbar_logo_50 {
+    height: 50px;
+}
+#layoutWrapper .navbar_logo_60 {
+    height: 60px;
+}
+#layoutWrapper .navbar_logo_70 {
+    height: 70px;
+}
+#layoutWrapper .navbar-brand {
+    font-size: 1.5rem;
 }
 
 /* A 태그 밑줄 삭제 */
@@ -72,8 +92,14 @@ p, a, legend, span, label, strong {
 
 /* Content 영역 공통 속성 */
 #layoutContent {
-    margin-top: 100px;
+    margin-top: 125px;
+    margin-bottom: 125px;
     font-size: 1.0rem;
+}
+
+/* 등록/취소 버튼 가운데 정렬*/
+.centerButtonGroup {
+    text-align: center;
 }
 
 /* 커스텀 스크롤바 */

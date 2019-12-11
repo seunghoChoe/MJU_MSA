@@ -34,7 +34,7 @@
 }
 #postListContent .card-img-header {
     position: absolute;
-    top: 45%;
+    top: 33%;
     left: 50%;
     transform: translate(-50%, -50%);
     text-align: center;
@@ -42,4 +42,31 @@
 }
 #postListContent .card-img-header .card-img-text {
     color: #FFFFFF;
+}
+
+#postListContent .card-title .qnaIcon {
+    color: #000000;
+    font-weight: bold;
+}
+
+#postListContent .card-title .qnaCategory {
+    font-size: 0.85rem;
+    font-weight: bold;
+    position: absolute;
+    left: 83%;
+}
+
+#postListContent .card-content {
+    margin-top: 15px;
+    margin-bottom: 75px;
+}
+
+#postListContent .card-footer {
+    padding: 1px;
+}
+
+#postListContent .card-footer .qnaUserId {
+    font-size: 0.85rem;
+    position: relative;
+    left: 1%;
 }

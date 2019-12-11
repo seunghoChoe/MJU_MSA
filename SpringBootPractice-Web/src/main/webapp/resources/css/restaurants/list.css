@@ -58,6 +58,7 @@
 }
 #restaurantListContent .restaurantView,
 #restaurantListContent .restaurantReview {
+    margin-top: 10px;
     margin-bottom: 0;
     font-size: 0.5rem;
 }
@@ -67,5 +68,5 @@
     position: absolute;
     left: 90%;
     top: 89%;
-    color: #000000;
+    color: #FFD34D;
 }

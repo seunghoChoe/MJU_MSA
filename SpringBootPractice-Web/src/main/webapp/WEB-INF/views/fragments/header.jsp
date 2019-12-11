@@ -28,7 +28,7 @@
     <spring:url var="newRestaurantUri" value="/restaurants/new"/>
 
     <%-- Header 로고 --%>
-    <img src="/resources/img/shards-logo-black.svg" alt="Example Navbar 1" class="mr-2" height="30">
+    <img src="/resources/img/MJ.png" alt="MJ Ribbon" class="navbar_logo_40 mr-2">
     <a class="navbar-brand" href=${homeUri}><strong>명지리본</strong></a>
 
     <%-- Header 메뉴 버튼 --%>
@@ -74,8 +74,8 @@
                 <div class="dropdown-menu" aria-labelledby="navbarDropdownBoardMenuLink">
                     <a class="dropdown-item" href="${postListUri}">게시글 목록</a>
                     <a class="dropdown-item" href="${newPostUri}">게시글 등록</a>
-                    <a class="dropdown-item" href="${questionListUri}">문의사항 조회</a>
-					<a class="dropdown-item" href="${questionPostUri}">문의사항 작성</a>
+                    <a class="dropdown-item" href="${questionListUri}">문의사항 목록</a>
+					<a class="dropdown-item" href="${questionPostUri}">문의사항 등록</a>
                 </div>
             </li>
             <li class="nav-item dropdown">
