@@ -43,7 +43,12 @@ public class FinalIntegrationTestCase {
 
 	@Before
 	public void setUp() {
-		System.setProperty("webdriver.chrome.driver", "src/test/driver/chromedriver.exe"); // ChromeDriver 위치
+		/*
+		 *  ChromeDriver 위치
+		 *  Window : "src/test/driver/chromedriver.exe"
+		 *  Mac : "src/test/driver/chromedriver"
+		 */
+		System.setProperty("webdriver.chrome.driver", "src/test/driver/chromedriver.exe"); 
 		driver = new ChromeDriver(); // Driver 생성
 	}
 
