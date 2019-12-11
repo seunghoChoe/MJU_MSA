@@ -33,7 +33,6 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
  * @description 배포 및 로컬 환경 기반 통합 테스트 클래스,
  *  셀레니움 드라이버 설치 필수 - 본 프로젝트는 ChromeDriver 78.0.3904.70 환경에 맞춰져 있음,
  *  배포환경 : http://13.125.99.51:8080/
- *
  */
 public class FinalIntegrationTestCase {
 	
