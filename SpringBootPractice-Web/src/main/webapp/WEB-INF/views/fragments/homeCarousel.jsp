@@ -17,12 +17,16 @@
                     <div class="row">
                         <%-- 슬라이드1 - 카드1 --%>
                         <div class="col-md-4">
-                            <div class="card mb-2 ribbonEffect">
+                            <div class="card ribbonEffect">
                                 <img class="card-img-top" src="${restaurantList[0].res_image}" alt="Card image cap">
-                                <div class="card-body">
+                                <div class="card-img-text">
                                     <p class="card-title">${restaurantList[0].res_name} <span class="card-category">${restaurantList[0].res_category}</span></p>
                                     <p class="card-text">${restaurantList[0].res_content}</p>
-                                    <span class="restaurantHref" data-toggle="tooltip" data-placement="top" title="맛집 보기" onclick="getRestaurant(${restaurantList[0].res_index})"><i class="fas fa-angle-double-right"></i> 더보기</span>
+                                </div>
+                                <div class="card-more">
+                                    <span class="restaurantHref" data-toggle="tooltip" data-placement="top" title="맛집 보기" onclick="getRestaurant(${restaurantList[0].res_index})">
+                                        <i class="fas fa-angle-double-right"></i> 더보기
+                                    </span>
                                 </div>
                             </div>
                         </div>
@@ -30,10 +34,14 @@
                         <div class="col-md-4">
                             <div class="card mb-2 ribbonEffect">
                                 <img class="card-img-top" src="${restaurantList[1].res_image}" alt="Card image cap">
-                                <div class="card-body">
+                                <div class="card-img-text">
                                     <p class="card-title">${restaurantList[1].res_name} <span class="card-category">${restaurantList[1].res_category}</span></p>
                                     <p class="card-text">${restaurantList[1].res_content}</p>
-                                    <span class="restaurantHref" data-toggle="tooltip" data-placement="top" title="맛집 보기" onclick="getRestaurant(${restaurantList[1].res_index})"><i class="fas fa-angle-double-right"></i> 더보기</span>
+                                </div>
+                                <div class="card-more">
+                                    <span class="restaurantHref" data-toggle="tooltip" data-placement="top" title="맛집 보기" onclick="getRestaurant(${restaurantList[1].res_index})">
+                                        <i class="fas fa-angle-double-right"></i> 더보기
+                                    </span>
                                 </div>
                             </div>
                         </div>
@@ -41,10 +49,14 @@
                         <div class="col-md-4">
                             <div class="card mb-2 ribbonEffect">
                                 <img class="card-img-top" src="${restaurantList[2].res_image}" alt="Card image cap">
-                                <div class="card-body">
+                                <div class="card-img-text">
                                     <p class="card-title">${restaurantList[2].res_name} <span class="card-category">${restaurantList[2].res_category}</span></p>
                                     <p class="card-text">${restaurantList[2].res_content}</p>
-                                    <span class="restaurantHref" data-toggle="tooltip" data-placement="top" title="맛집 보기" onclick="getRestaurant(${restaurantList[2].res_index})"><i class="fas fa-angle-double-right"></i> 더보기</span>
+                                </div>
+                                <div class="card-more">
+                                    <span class="restaurantHref" data-toggle="tooltip" data-placement="top" title="맛집 보기" onclick="getRestaurant(${restaurantList[2].res_index})">
+                                        <i class="fas fa-angle-double-right"></i> 더보기
+                                    </span>
                                 </div>
                             </div>
                         </div>
@@ -58,10 +70,14 @@
                         <div class="col-md-4">
                             <div class="card mb-2 ribbonEffect">
                                 <img class="card-img-top" src="${restaurantList[3].res_image}" alt="Card image cap">
-                                <div class="card-body">
+                                <div class="card-img-text">
                                     <p class="card-title">${restaurantList[3].res_name} <span class="card-category">${restaurantList[3].res_category}</span></p>
                                     <p class="card-text">${restaurantList[3].res_content}</p>
-                                    <span class="restaurantHref" data-toggle="tooltip" data-placement="top" title="맛집 보기" onclick="getRestaurant(${restaurantList[3].res_index})"><i class="fas fa-angle-double-right"></i> 더보기</span>
+                                </div>
+                                <div class="card-more">
+                                    <span class="restaurantHref" data-toggle="tooltip" data-placement="top" title="맛집 보기" onclick="getRestaurant(${restaurantList[3].res_index})">
+                                        <i class="fas fa-angle-double-right"></i> 더보기
+                                    </span>
                                 </div>
                             </div>
                         </div>
@@ -69,10 +85,14 @@
                         <div class="col-md-4">
                             <div class="card mb-2 ribbonEffect">
                                 <img class="card-img-top" src="${restaurantList[4].res_image}" alt="Card image cap">
-                                <div class="card-body">
+                                <div class="card-img-text">
                                     <p class="card-title">${restaurantList[4].res_name} <span class="card-category">${restaurantList[4].res_category}</span></p>
                                     <p class="card-text">${restaurantList[4].res_content}</p>
-                                    <span class="restaurantHref" data-toggle="tooltip" data-placement="top" title="맛집 보기" onclick="getRestaurant(${restaurantList[4].res_index})"><i class="fas fa-angle-double-right"></i> 더보기</span>
+                                </div>
+                                <div class="card-more">
+                                    <span class="restaurantHref" data-toggle="tooltip" data-placement="top" title="맛집 보기" onclick="getRestaurant(${restaurantList[4].res_index})">
+                                        <i class="fas fa-angle-double-right"></i> 더보기
+                                    </span>
                                 </div>
                             </div>
                         </div>
@@ -80,10 +100,14 @@
                         <div class="col-md-4">
                             <div class="card mb-2 ribbonEffect">
                                 <img class="card-img-top" src="${restaurantList[5].res_image}" alt="Card image cap">
-                                <div class="card-body">
+                                <div class="card-img-text">
                                     <p class="card-title">${restaurantList[5].res_name} <span class="card-category">${restaurantList[5].res_category}</span></p>
                                     <p class="card-text">${restaurantList[5].res_content}</p>
-                                    <span class="restaurantHref" data-toggle="tooltip" data-placement="top" title="맛집 보기" onclick="getRestaurant(${restaurantList[5].res_index})"><i class="fas fa-angle-double-right"></i> 더보기</span>
+                                </div>
+                                <div class="card-more">
+                                    <span class="restaurantHref" data-toggle="tooltip" data-placement="top" title="맛집 보기" onclick="getRestaurant(${restaurantList[5].res_index})">
+                                        <i class="fas fa-angle-double-right"></i> 더보기
+                                    </span>
                                 </div>
                             </div>
                         </div>
