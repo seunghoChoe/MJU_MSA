@@ -1,5 +1,7 @@
 CREATE DATABASE `Board_MSA` /*!40100 DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci */;
 
+USE `Board_MSA`
+
 CREATE TABLE `question` (
   `qna_id` int(11) NOT NULL AUTO_INCREMENT,
   `qna_user_id` varchar(20) NOT NULL,

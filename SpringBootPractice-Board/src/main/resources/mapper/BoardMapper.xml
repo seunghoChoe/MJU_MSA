@@ -44,13 +44,13 @@
       UPDATE post
       SET post_id = #{post_id},post_user_id = #{post_user_id}, post_title = #{post_title},post_content=#{post_content},post_image=#{post_image},
       post_updated_date= now()
-      WHERE post_id = #{post_id}
+      WHERE post_id = #{post_id} AND post_user_id = #{post_user_id};
  	  ]]>
 	</update>
 	
 	<!-- 게시글 삭제 -->
-	<delete id = "deletePost" parameterType = "Integer">
-	 DELETE FROM post WHERE post_id = #{post_id};
+	<delete id = "deletePost" parameterType = "Post">
+	 DELETE FROM post WHERE post_id = #{post_id} AND post_user_id = #{post_user_id};
 	 SET @CNT = 0; 
 	 UPDATE post SET post.post_id = @CNT:=@CNT+1;
 	</delete>
