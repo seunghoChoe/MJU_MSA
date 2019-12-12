@@ -1,5 +1,13 @@
+/**
+ * Copyright(c) 2019 All rights reserved by MJU-Team in 19-2 Teamproject2-Class
+ */
 package com.springboot.demo.config;
-
+/**
+ * @author KimNawoo
+ * @date 2019-12-13
+ * @version 0.9
+ * @description Swagger 환경설정 클래스
+ */
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 

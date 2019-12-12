@@ -11,14 +11,14 @@
 		<result property="qna_question" column="qna_question" javaType="java.lang.String" jdbcType="VARCHAR"/>
 		<result property="qna_answer" column="qna_answer" javaType="java.lang.String" jdbcType="VARCHAR"/>
 	</resultMap>
-	<!-- 문의사항 작성 -->
+	<!-- 문의글 작성 -->
 	<insert id="question" parameterType="Question">
 	<![CDATA[
 		INSERT INTO question(qna_user_id, qna_category, qna_question)VALUES (#{qna_user_id},#{qna_category},#{qna_question});
 	]]>
 	</insert>
 	
-	<!-- 전체 문의사항 조회 -->
+	<!-- 전체 문의글 조회 -->
 	<select id="selectAllQuestion" resultMap="Question">
 	<![CDATA[
 		SELECT *
@@ -26,13 +26,13 @@
 	]]>
 	</select>
 	
-	<!-- 문의사항 자세히 보기 -->
+	<!-- 문의글 자세히 보기 -->
 	<select id="selectOneQuestion" resultType="Question" parameterType = "Integer" >
 	<![CDATA[
 	   	SELECT * FROM question WHERE qna_id = #{qna_id};
 	]]>
 	</select>
-	<!-- 답변페이지 --> 
+	<!-- 문의글 답변페이지 --> 
 	<update id="answer" parameterType = "Question" > 
 	<![CDATA[
       UPDATE question SET qna_manager = #{qna_manager},qna_answer=#{qna_answer} WHERE qna_id = #{qna_id}
