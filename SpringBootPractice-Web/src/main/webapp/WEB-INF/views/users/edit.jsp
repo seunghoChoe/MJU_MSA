@@ -15,7 +15,8 @@
     <spring:url var="homeUri" value="/"/>
 
     <div class="container">
-        <h3>MJ Ribbon</h3>
+        <img src="/resources/img/MJ.png" alt="MJ Ribbon" class="navbar_logo_70">
+        <h3 class="joinAndLoginTitle">명지리본</h3>
     </div>
 
     <div class="card">

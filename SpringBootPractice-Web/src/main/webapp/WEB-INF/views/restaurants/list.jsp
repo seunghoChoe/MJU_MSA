@@ -17,7 +17,7 @@
     </div>
     <div id="restaurantListHeader" class="container header">
         <h5 class="headerStrongText">&ldquo; 맛집 스토리 &rdquo;</h5>
-        <p>&colon; 명지대 주변의 모든 식당</p>
+        <p>&colon; 명지대 주변의 모든 식당!</p>
         <div id="restaurantItemHeaderButton" class="container">
             <button id="restaurantItemNew" type="button" class="btn btn-sm btn-outline-dark" onclick="location.href='${newRestaurantUri}'">
                 <i class="fas fa-pen-square"></i> 등록
@@ -38,7 +38,7 @@
                         <div class="card" onclick="getRestaurant(${restaurant.res_index})">
                             <c:if test="${restaurant.res_grade >= 4.5}">
                                 <div class="restaurantMedal">
-                                    <i class="fas fa-award fa-3x"></i>
+                                    <img src="/resources/img/MJ.png" alt="MJ Ribbon" class="navbar_logo_50 mr-2">
                                 </div>
                             </c:if>
                             <img class="card-img" src="${restaurant.res_image}">
@@ -60,7 +60,7 @@
                         <div class="card" onclick="getRestaurant(${restaurant.res_index})">
                             <c:if test="${restaurant.res_grade >= 4.5}">
                                 <div class="restaurantMedal">
-                                    <i class="fas fa-award fa-3x"></i>
+                                    <img src="/resources/img/MJ.png" alt="MJ Ribbon" class="navbar_logo_50 mr-2">
                                 </div>
                             </c:if>
                             <img class="card-img" src="${restaurant.res_image}">
@@ -82,7 +82,7 @@
                         <div class="card" onclick="getRestaurant(${restaurant.res_index})">
                             <c:if test="${restaurant.res_grade >= 4.5}">
                                 <div class="restaurantMedal">
-                                    <i class="fas fa-award fa-3x"></i>
+                                    <img src="/resources/img/MJ.png" alt="MJ Ribbon" class="navbar_logo_50 mr-2">
                                 </div>
                             </c:if>
                             <img class="card-img" src="${restaurant.res_image}">

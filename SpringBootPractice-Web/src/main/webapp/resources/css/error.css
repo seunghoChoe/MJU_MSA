@@ -26,8 +26,8 @@
 }
 
 #error #homeHref {
-    color: #FF6F68;
-    border-bottom: 1px dashed #FF6F68;
+    color: #0098F7;
+    border-bottom: 1px dashed #0098F7;
     border-radius: 2px;
 }
 
@@ -43,6 +43,7 @@
 #error footer a {
     margin-left: 5px;
     margin-right: 5px;
+    font-size: 0.8rem;
 }
 
 /* 650px 미만 시 */

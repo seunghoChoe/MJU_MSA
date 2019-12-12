@@ -1,17 +1,22 @@
-/* Header ì˜ì—­ ê³µí†µ ì†ì„± */
+/* Header ¿µ¿ª °øÅë ¼Ó¼º */
 #layoutHeader {
     font-size: 1.0rem;
-}
-
-#layoutHeader .navbar-brand {
-    font-size: 1.5rem;
 }
 
 #layoutHeader li {
     margin-right: 10px;
 }
 
-/* 650px ë¯¸ë§Œ ì‹œ */
+#layoutHeader .nav-link,
+#layoutHeader .dropdown-item {
+    font-size: 0.9rem;
+}
+
+#layoutHeader .logoFont {
+
+}
+
+/* 650px ¹Ì¸¸ ½Ã */
 @media screen and (max-width: 650px) {
     #layoutHeader {
         font-size: 0.8rem;

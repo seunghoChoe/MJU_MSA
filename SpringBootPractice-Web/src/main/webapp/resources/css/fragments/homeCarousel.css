@@ -1,6 +1,16 @@
-/* homeCarousel 영역 속성 */
+/* homeCarousel 영역 */
 #homeCarousel {
     text-align: center;
+}
+
+#homeCarousel .colorText {
+    font-size: 1.25rem;
+    color: #0098F7;
+}
+
+#homeCarousel h5 {
+    font-weight: bold;
+    margin-bottom: 15px;
 }
 
 /*#homeCarousel .carousel {*/
@@ -8,8 +18,52 @@
 /*}*/
 
 #homeCarousel .card {
-    box-shadow: none;
-    border: 1px solid #E5E5E5;
+    padding: 15px;
+    margin-top: 30px;
+    margin-bottom: 50px;
+}
+
+#homeCarousel .card img {
+    border-radius: .625rem;
+    -webkit-filter: blur(0.01rem) brightness(0.8);  /* Chrome, Safari, Opera */
+    filter: blur(0.01rem) brightness(0.9);
+}
+#homeCarousel .card .card-img-top {
+    width: 100%;
+    height: 150px;
+}
+#homeCarousel .card-img-text {
+	margin-top: 20px;
+	margin-bottom: 50px;
+}
+
+/* 식당 이름, 평점 */
+#homeCarousel .card-title {
+	font-size: 1.2rem;
+    font-weight: bold;
+}
+#homeCarousel .card-category {
+    margin-left: 7px;
+    font-size: 0.8rem;
+}
+#homeCarousel .card-text {
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+    max-width: 250px;
+    max-height: 75px;
+    margin: 15px auto;
+}
+
+#homeCarousel .restaurantHref {
+    font-size: 0.8rem;
+    color: #0098F7 !important;
+    border-bottom: 1px dashed #0098F7;
+    border-radius: 2px;
+    cursor: pointer;
+	position: absolute;
+    left: 80%;
+    top: 90%;
 }
 
 /*#homeCarousel .controls-side {*/
@@ -18,9 +72,34 @@
 
 #homeCarousel .carousel-control-prev,
 #homeCarousel .carousel-control-next {
+    color: #0098F7 !important;
     max-width: 30px;
 }
 
 #homeCarousel .carousel-indicators {
     margin-top: 50px;
+}
+
+.ribbonEffect {
+    position: relative;
+    /* display: inline-block; */
+    overflow: hidden; /* 불필요한 부분 가리기 */
+}
+
+.ribbonEffect:after {
+    position: absolute;
+    z-index: 1;
+    width: 100px;
+    height: auto;
+    background: #0098F7;
+    content: "new";  /* 보여주는 텍스트 */
+    text-align: center;
+    color: #FFFFFF;
+    font-size: 0.8rem;
+    font-weight: bold;
+    padding: 1px 1px;
+    left: -30px;
+    top: 5px;
+    transform: rotate(-40deg);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
 }

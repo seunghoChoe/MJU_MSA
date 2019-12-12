@@ -40,8 +40,10 @@
         </div>
 
         <%-- 게시글 등록 푸터 영역 --%>
-        <button id="newPostButton" type="submit" class="btn btn-dark">등록</button>
-        <button id="newPostCancelButton" type="button" class="btn btn-default" onclick="location.href='${postListUri}'">취소</button>
+        <div class="centerButtonGroup">
+            <button id="newPostButton" type="submit" class="btn btn-dark">등록</button>
+            <button id="newPostCancelButton" type="button" class="btn btn-default" onclick="location.href='${postListUri}'">취소</button>
+        </div>
     </form:form>
 </div>
 

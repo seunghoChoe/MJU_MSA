@@ -1,4 +1,4 @@
-/* Menu ì˜ì—­ ê³µí†µ ì†ì„± */
+/* Menu ¿µ¿ª °øÅë ¼Ó¼º */
 #layoutMenu {
     font-size: 1.0rem;
 }
@@ -11,12 +11,18 @@
 }
 
 #layoutMenu form legend {
+    text-align: center;
     font-size: 1.5rem;
-    font-weight: 300;
     margin-bottom: 25px;
+    color: #000000;
 }
 
-/* 650px ë¯¸ë§Œ ì‹œ */
+#layoutMenu .colorText {
+    font-size: 1.5rem;
+    color: #0098F7;
+}
+
+/* 650px ¹Ì¸¸ ½Ã */
 @media screen and (max-width: 650px) {
     #layoutMenu .container {
         max-width: 350px;
