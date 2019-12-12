@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper 
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+
+<mapper namespace="mapper.UserMapper">
+	<resultMap type="UserVO" id="UserVO">
+		<result property="user_id" column="user_id" javaType="java.lang.String" jdbcType="VARCHAR"/>
+		<result property="user_password" column="user_password" javaType="java.lang.String" jdbcType="VARCHAR"/>
+		<result property="user_name" column="user_name" javaType="java.lang.String" jdbcType="VARCHAR"/>
+		<result property="user_email" column="user_email" javaType="java.lang.String" jdbcType="VARCHAR"/>
+	</resultMap>
+	
+	<select id="userLogin" parameterType="String"
+		resultType="com.example.demo.user.model.UserVO">
+		<![CDATA[
+		SELECT *
+		FROM user
+		WHERE user_id = #{user_id}
+		]]>
+	</select>
+
+	<!-- 아이디 중복 검사: UserServiceImpl에서 로그인, 회원가입, 회원삭제 시  사용-->
+	<select id="check_id" parameterType="String" resultType="int">
+		SELECT
+		count(*)
+		FROM user
+		WHERE user_id = #{user_id}
+	</select>
+
+	<!-- test용 query-->
+	<select id="userList"
+		resultType="com.example.demo.user.model.UserVO">
+		<![CDATA[
+		SELECT *
+		FROM user
+		]]>
+	</select>
+
+	<insert id="userInsert"
+		parameterType="UserVO">
+		<![CDATA[
+		INSERT INTO `User_MSA`.`user`
+		(`user_id`, `user_password`, `user_name`, `user_email`) 
+		VALUES
+		(#{user_id}, #{user_password}, #{user_name}, #{user_email});
+		]]>
+	</insert>
+	
+	<select id="selectUserById"
+		parameterType="String" resultType="com.example.demo.user.model.UserVO">
+		<![CDATA[
+		SELECT *
+		FROM user
+		WHERE user_id = #{user_id}
+		]]>
+	</select>
+	
+    <update id="userModify" parameterType="com.example.demo.user.model.UserVO" >
+	<![CDATA[
+		UPDATE user
+		SET user_id = user_id, user_password = #{user_password}, user_name = #{user_name}, user_email = #{user_email}
+		WHERE user.user_id = #{user_id}
+	]]>
+    </update>
+    
+    <delete id="userDelete" parameterType="String">
+		DELETE 
+		FROM user
+		WHERE user.user_id = #{user_id}
+	</delete>
+    
+    
+    
+    <!-- /////////////////////my_restaurant/////////////////////// -->
+	<select id="selectResById"
+		parameterType="String" resultType="com.example.demo.user.model.MyRestaurantVO">
+		<![CDATA[
+		SELECT user.user_id, myrestaurant.res_index
+		FROM user, myrestaurant
+		WHERE user.user_id = #{user_id} and user.user_id = myrestaurant.user_id
+		]]>
+	</select>
+	
+    <insert id="myresInsert"
+    	parameterType="MyRestaurantVO">
+		<![CDATA[
+		INSERT INTO `User_MSA`.`myrestaurant`
+		(`user_id`,`res_index`)
+		VALUES
+		(#{user_id}, #{res_index});
+		]]>
+	</insert>
+
+</mapper>
