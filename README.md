@@ -17,7 +17,7 @@
 <img width="900" alt="스크린샷 2019-12-12 오후 6 33 16" src="https://user-images.githubusercontent.com/55579896/70700425-0f337680-1d0e-11ea-82b8-215bf619ddc5.png">
 
  * Web-service 패키지 뷰 
-<img width="600" alt="스크린샷 2019-12-12 오후 6 36 44" src="https://user-images.githubusercontent.com/55579896/70700696-7b15df00-1d0e-11ea-9136-fcdd5469a950.png">
+<img width="600" alt="스크린샷 2019-12-12 오후 8 50 26" src="https://user-images.githubusercontent.com/55579896/70709800-1fa11c80-1d21-11ea-9c37-46f673b1f50a.png">
 <br>
 
  * User-service 클래스 뷰 
