@@ -13,10 +13,13 @@ spring:
     url: jdbc:mysql://database-1.cd6kxidf399v.ap-northeast-2.rds.amazonaws.com:3306/Restaurant_MSA?useUnicode=yes&characterEncoding=utf8&useSSL=false&serverTimezone=Asia/Seoul
     username: admin
     password: xlavmfhwprxm123!
-# h2
-#    url: jdbc:h2:tcp://localhost/~/test
-#    driver-class-name: org.h2.Driver
-#    username: sa
+ #zipkin
+  zipkin:
+    base-url: http://52.78.141.63:9411/
+  sleuth:
+    sampler:
+      probability: 1
+    
   jpa:
     database-platform: org.hibernate.dialect.MySQL5InnoDBDialect
     properties.hibernate:
@@ -33,14 +36,6 @@ eureka:
     fetch-registry: false
     enable-self-preservation: true
     
-  # change private ip to public ip address
   instance:
     prefer-ip-address: true
     ip-address: 13.209.77.33
-    
-
-# h2  
-#    database-platform: org.hibernate.dialect.H2Dialect
-#    properties.hibernate.hbm2ddl.auto: update # 개발시 디비의 테이블과 비교하여 다른 부분만 크리에잇한다 
-#   #properties.hibernate.hbm2ddl.auto: none  # 서비스시 테이블 자동 생성될 수 없게 합니다.
-#    showSql: true
