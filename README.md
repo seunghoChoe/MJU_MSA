@@ -31,6 +31,3 @@
  * Restaurant-service 클래스 뷰 
 <img width="600" alt="스크린샷 2019-12-12 오후 6 37 34" src="https://user-images.githubusercontent.com/55579896/70700815-aac4e700-1d0e-11ea-933b-8ae476f80d8b.png">
 <br>
-
-### 프로젝트 도구
-<img width="601" alt="스크린샷 2019-11-02 오후 2 52 08" src="https://user-images.githubusercontent.com/55579896/68066758-61cd5a80-fd80-11e9-8f19-7b180ee8ca28.png">
